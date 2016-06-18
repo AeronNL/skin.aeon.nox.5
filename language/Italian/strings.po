@@ -179,7 +179,7 @@ msgstr ""
 # Kodi
 msgctxt "#31103"
 msgid "N/A"
-msgstr "Non disponibile"
+msgstr "N/D"
 
 # Kodi
 msgctxt "#31106"
@@ -204,27 +204,27 @@ msgstr "Fanart"
 # Plex
 msgctxt "#31133"
 msgid "Subtitles"
-msgstr ""
+msgstr "Sottotitoli"
 
 # Plex
 msgctxt "#31134"
 msgid "Cast"
-msgstr ""
+msgstr "Cast"
 
 # Plex
 msgctxt "#31138"
 msgid "Watched"
-msgstr ""
+msgstr "Visti"
 
 # Plex
 msgctxt "#31139"
 msgid "Unwatched"
-msgstr ""
+msgstr "Non visti"
 
 # Aeon Nox for Plex
 msgctxt "#31157"
 msgid "Submenu always visible"
-msgstr ""
+msgstr "Sottomenu sempre visibile"
 
 # Plex
 msgctxt "#31225"
@@ -239,7 +239,7 @@ msgstr "Cambia"
 # Plex
 msgctxt "#31227"
 msgid "Your Preset"
-msgstr "Il Preset"
+msgstr "Il tuo Preset"
 
 # Plex
 msgctxt "#31228"
@@ -279,7 +279,7 @@ msgstr "[B]CONFIGURA IMPOSTAZIONI DI RETE[/B][CR][CR]Imposta il controllo di Kod
 # Aeon Nox for Plex
 msgctxt "#31421"
 msgid "Select your PLEX user Profile[CR]to login and continue"
-msgstr ""
+msgstr "Seleziona il tuo Profilo utente PLEX[CR]per loggarti e continuare"
 
 # Plex
 msgctxt "#31602"
@@ -289,7 +289,7 @@ msgstr "Rete"
 # Plex
 msgctxt "#31610"
 msgid "Playback"
-msgstr ""
+msgstr "Riproduzione"
 
 # Plex
 msgctxt "#31656"
@@ -309,7 +309,7 @@ msgstr "Posizione orizzontale del menù principale di Aeon Nox"
 # Kodi
 msgctxt "#31914"
 msgid "Change the horizontal position of the main menu. Default is a lower position on screen."
-msgstr "Cambia la posizione orizzontale del menù principale. Di default è centrato nello schermo."
+msgstr "Cambia la posizione orizzontale del menù principale. Di default è in basso nello schermo."
 
 # Kodi
 msgctxt "#31915"
@@ -414,117 +414,118 @@ msgstr "Seleziona quale immagine mostrare nelle anteprime nelle viste basate su 
 # Plex
 msgctxt "#31952"
 msgid "Channel Directory"
-msgstr ""
+msgstr "Lista dei Canali"
 
 # Plex
 msgctxt "#31955"
 msgid "Preferences"
-msgstr ""
+msgstr "Preferenze"
 
 # Plex
 msgctxt "#31970"
 msgid "Channels"
-msgstr ""
+msgstr "Canali"
 
 # Plex
 msgctxt "#32003"
 msgid "[B]Welcome to Plex![/B]  [CR][CR]In order to ensure the best experience, let's take a minute to determine some audio settings and get signed in to [B]Plex[/B].  [CR][CR][B]Plex[/B] lets you queue and share online videos, and access shared media from your friends' libraries.  [CR][CR]If you don't already have a free [B]Plex[/B] account, you can create one now at [COLOR=orange]http://www.plex.tv[/COLOR] before continuing."
-msgstr ""
+msgstr "[B]Benvenuto in Plex![/B]  [CR][CR]Per garantire la migliore esperienza possibile, prendiamo un minuto per determinare alcune impostazioni audio e connettersi a [B]Plex[/BR].  [CR][CR][B]Plex[/B] ti consente di accodare e convidere video online e accedere a media condivisi dalle librerie dei tuoi amici.  [CR][CR]Se non hai già un account gratuito [B]Plex[/B], puoi crearne uno ora su [COLOR=orange]http://www.plex.tv[/COLOR] prima di continuare." 
+ 
 
 # Plex
 msgctxt "#32100"
 msgid "Set Rating"
-msgstr ""
+msgstr "Imposta Valutazione"
 
 # Plex
 msgctxt "#32103"
 msgid "There is no description available for this media"
-msgstr ""
+msgstr "Non c'è descrizione disponibile per questo media"
 
 # Plex
 msgctxt "#32104"
 msgid "You can add one for it in the Media Manager"
-msgstr ""
+msgstr "Puoi aggiungerne una nel Media Manager"
 
 # Plex
 msgctxt "#32105"
 msgid "* Plot hidden to avoid spoilers *"
-msgstr ""
+msgstr "* Trama nascosta per evitare spoiler *"
 
 # Plex
 msgctxt "#41000"
 msgid "System Settings"
-msgstr ""
+msgstr "Impostazioni di Sistema"
 
 # Plex
 msgctxt "#41001"
 msgid "Control Precaching"
-msgstr ""
+msgstr "Controllo Precaching"
 
 # Plex
 msgctxt "#41002"
 msgid "Select Servers to cache"
-msgstr ""
+msgstr "Seleziona i Server di cui fare la cache"
 
 # Plex
 msgctxt "#41003"
 msgid "Precaching Section"
-msgstr ""
+msgstr "Sezione Precaching"
 
 # Plex
 msgctxt "#41004"
 msgid "Precaching"
-msgstr ""
+msgstr "Precaching"
 
 # Plex
 msgctxt "#41005"
 msgid "Action : Retrieving content from"
-msgstr ""
+msgstr "Azione : recupero contenuto da"
 
 # Plex
 msgctxt "#41006"
 msgid "Action : Precaching item"
-msgstr ""
+msgstr "Azione : Precaching di elemento"
 
 # Plex
 msgctxt "#41007"
 msgid "Progress"
-msgstr ""
+msgstr "Progresso"
 
 # Plex
 msgctxt "#41008"
 msgid "Extras"
-msgstr ""
+msgstr "Extra"
 
 # Plex
 msgctxt "#41009"
 msgid "Switch User"
-msgstr ""
+msgstr "Cambia Utente"
 
 # Aeon Nox for Plex
 msgctxt "#42001"
 msgid "Set Section Background"
-msgstr ""
+msgstr "Imposta Sfondo Sezione"
 
 # Aeon Nox for Plex
 msgctxt "#42002"
 msgid "Set Timer"
-msgstr ""
+msgstr "Imposta Timer"
 
 # Aeon Nox for Plex
 msgctxt "#42003"
 msgid "The system will shut down at"
-msgstr ""
+msgstr "Il sistema si spegnerà alle"
 
 # Aeon Nox for Plex
 msgctxt "#42004"
 msgid "Sign In"
-msgstr ""
+msgstr "Accedi"
 
 # Aeon Nox for Plex
 msgctxt "#42012"
 msgid "Set Background"
-msgstr ""
+msgstr "Imposta Sfondo"
 
 # Aeon Nox for Plex
 msgctxt "#42013"
@@ -534,7 +535,7 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42015"
 msgid "SORT"
-msgstr ""
+msgstr "ORDINA"
 
 # Aeon Nox for Plex
 msgctxt "#42016"
@@ -554,12 +555,12 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42019"
 msgid "User ID"
-msgstr ""
+msgstr "ID Utente"
 
 # Aeon Nox for Plex
 msgctxt "#42021"
 msgid "Shared Content"
-msgstr ""
+msgstr "Contenuto Condiviso"
 
 # Aeon Nox for Plex
 msgctxt "#42022"
@@ -574,17 +575,17 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42029"
 msgid "Rate"
-msgstr ""
+msgstr "Valuta"
 
 # Aeon Nox for Plex
 msgctxt "#42030"
 msgid "New Search"
-msgstr ""
+msgstr "Nuova Ricerca"
 
 # Aeon Nox for Plex
 msgctxt "#42033"
 msgid "Enter PIN"
-msgstr ""
+msgstr "Inserisci PIN"
 
 # Aeon Nox for Plex
 msgctxt "#42034"
@@ -594,17 +595,17 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42035"
 msgid "Playback Settings"
-msgstr ""
+msgstr "Impostazioni Riproduzione"
 
 # Aeon Nox for Plex
 msgctxt "#42036"
 msgid "Network Settings"
-msgstr ""
+msgstr "Impostazione Rete"
 
 # Aeon Nox for Plex
 msgctxt "#42037"
 msgid "Font size for Plot"
-msgstr ""
+msgstr "Dimensione Font della Trama"
 
 # Aeon Nox for Plex
 msgctxt "#42038"
@@ -614,7 +615,7 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42039"
 msgid "Disable Search Icon"
-msgstr ""
+msgstr "Disabilita Icona di Ricerca"
 
 # Aeon Nox for Plex
 msgctxt "#42040"
@@ -669,7 +670,7 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42051"
 msgid "Section Name:"
-msgstr ""
+msgstr "Nome Sezione:"
 
 # Aeon Nox for Plex
 msgctxt "#42052"
@@ -834,7 +835,7 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42087"
 msgid "Position"
-msgstr ""
+msgstr "Posizione"
 
 # Aeon Nox for Plex
 msgctxt "#42088"
