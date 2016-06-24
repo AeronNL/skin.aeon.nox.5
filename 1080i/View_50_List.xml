@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+	<!-- Views: List Theme Colour -->
+	<variable name="Colour_ListThemeColourVar">
+		<value condition="!IsEmpty(Skin.String(Colour.ListThemeColour))">$INFO[Skin.String(Colour.ListThemeColour)]</value>
+		<value condition="!IsEmpty(Skin.String(Colour.ThemeColour))">$INFO[Skin.String(Colour.ThemeColour)]</value>
+		<value>FF6db9e5</value>
+	</variable>
+
+	<!-- Views: List Highlight Colour -->
+	<variable name="Colour_ListHighlightColourVar">
+		<value condition="!IsEmpty(Skin.String(Colour.ListHighlightColour))">$INFO[Skin.String(Colour.ListHighlightColour)]</value>
+		<value condition="!IsEmpty(Skin.String(Colour.GeneralHighlightColour))">$INFO[Skin.String(Colour.GeneralHighlightColour)]</value>
+		<value condition="!IsEmpty(Skin.String(Colour.ThemeColour))">$INFO[Skin.String(Colour.ThemeColour)]</value>
+		<value>FF6db9e5</value>
+	</variable>
+
+	<!-- Views: List Watched Status Colour -->
+	<variable name="Colour_ListWatchedStatusColourVar">
+		<value condition="!IsEmpty(Skin.String(Colour.ListWatchedStatusColour))">$INFO[Skin.String(Colour.ListWatchedStatusColour)]</value>
+		<value condition="!IsEmpty(Skin.String(Colour.WatchedStatusColour))">$INFO[Skin.String(Colour.WatchedStatusColour)]</value>
+		<value condition="!IsEmpty(Skin.String(Colour.ThemeColour))">$INFO[Skin.String(Colour.ThemeColour)]</value>
+		<value>FF6db9e5</value>
+	</variable>
+
+	<!-- List Label -->
+	<variable name="VideoListLabel2Var">
+		<value condition="Container.Content(episodes) + !IsEmpty(Container.Property(primaryFilterActivated))">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Container.PlexContent(homemovies) | Container.Content(episodes)">$INFO[ListItem.Date]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+
 	<!-- Video List -->
 	<include name="VideoList">
 		<control type="group" id="777">
@@ -38,29 +69,30 @@
 					<pagecontrol>60</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">200</scrolltime>
 					<visible>!Container.Content(empty)</visible>
-					<itemlayout height="120" width="1140" condition="Container.Content(movies)">
+					<itemlayout height="120" width="1140" condition="[Container.Content(movies) | [Container.PlexContent(homemovies) + Skin.HasSetting(Advanced.PortraitHomeVideos)]] + !Skin.HasSetting(List.Slimlist)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
-						
+
 						<!-- Display Poster -->
 						<control type="image">
 							<posx>15</posx>
 							<posy>8</posy>
-							<width>105</width>
+							<width>70</width>
 							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+							<texture background="true" fallback="DefaultMovies_poster.png">$INFO[ListItem.Art(smallThumb)]</texture>
 							<colordiffuse>grey2</colordiffuse>
 						</control>
 
+						<!-- Title -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>100</posx>
 							<posy>0</posy>
-							<width>790</width>
+							<width>825</width>
 							<height>70</height>
 							<font>font30</font>
 							<textcolor>grey2</textcolor>
@@ -68,25 +100,30 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="[IsEmpty(ListItem.Genre) + Container.Content(movies)] | [Container.PlexContent(homemovies) + Skin.HasSetting(Advanced.PortraitHomeVideos) + IsEmpty(ListItem.Date)]">Conditional</animation>
 						</control>
+
+						<!-- Genre / Date -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>100</posx>
 							<posy>55</posy>
-							<width>790</width>
+							<width>825</width>
 							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Genre]</label>
+							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
+
+						<!-- Resolution -->
 						<control type="image">
 							<posx>935</posx>
 							<posy>46</posy>
 							<width>42</width>
 							<height>28</height>
-							<aspectratio>scale</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
 							<colordiffuse>grey2</colordiffuse>
 						</control>
@@ -97,7 +134,7 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
 							<textcolor>$VAR[Colour_ListThemeColourVar]</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
@@ -112,7 +149,7 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
@@ -127,7 +164,7 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
@@ -136,6 +173,7 @@
 							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
 						</control>
 
+						<!-- Watched Status -->
 						<control type="image">
 							<posx>1076</posx>
 							<posy>28</posy>
@@ -145,14 +183,17 @@
 							<texture>$VAR[ListItem.Overlay]</texture>
 							<colordiffuse>$VAR[Colour_ListWatchedStatusColourVar]</colordiffuse> 
 						</control>
+
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(movies)">
+					<focusedlayout height="120" width="1140" condition="[Container.Content(movies) | [Container.PlexContent(homemovies) + Skin.HasSetting(Advanced.PortraitHomeVideos)]] + !Skin.HasSetting(List.Slimlist)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
+
+						<!-- Highlight -->
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -167,45 +208,48 @@
 						<control type="image">
 							<posx>15</posx>
 							<posy>8</posy>
-							<width>105</width>
+							<width>70</width>
 							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+							<texture background="true" fallback="DefaultMovies_poster.png">$INFO[ListItem.Art(smallThumb)]</texture>
 						</control>
+
+						<!-- Title -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>100</posx>
 							<posy>0</posy>
-							<width>790</width>
+							<width>825</width>
 							<height>70</height>
 							<font>font30</font>
 							<textcolor>white</textcolor>
-							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
+							<selectedcolor>white</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="[IsEmpty(ListItem.Genre) + Container.Content(movies)] | [Container.PlexContent(homemovies) + Skin.HasSetting(Advanced.PortraitHomeVideos) + IsEmpty(ListItem.Date)]">Conditional</animation>
 						</control>
+
+						<!-- Genre -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>100</posx>
 							<posy>55</posy>
-							<width>790</width>
+							<width>825</width>
 							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
-							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
+							<selectedcolor>white</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Genre]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
+
 						<control type="image">
 							<posx>935</posx>
 							<posy>46</posy>
 							<width>42</width>
 							<height>28</height>
-							<aspectratio>scale</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 
 						<!-- User Rating -->
@@ -214,7 +258,7 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
 							<textcolor>$VAR[Colour_ListThemeColourVar]</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
@@ -229,9 +273,9 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
-							<textcolor>grey2</textcolor>
+							<textcolor>white</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
 							<aligny>center</aligny>
 							<label>$VAR[RatingVar]</label>
@@ -244,7 +288,7 @@
 							<posy>0</posy>
 							<width>116</width>
 							<height>116</height>
-							<font>font15</font>
+							<font>font30</font>
 							<align>center</align>
 							<textcolor>grey2</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
@@ -253,6 +297,7 @@
 							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
 						</control>
 
+						<!-- Watched Status -->
 						<control type="image">
 							<posx>1076</posx>
 							<posy>28</posy>
@@ -263,7 +308,7 @@
 							<colordiffuse>$VAR[Colour_ListWatchedStatusColourVar]</colordiffuse>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.Content(episodes)">
+					<itemlayout height="120" width="1140" condition="Container.Content(episodes) + !Skin.HasSetting(List.Slimlist)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
@@ -275,18 +320,18 @@
 						<control type="image">
 							<posx>15</posx>
 							<posy>8</posy>
-							<width>105</width>
+							<width>187</width>
 							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true" fallback="DefaultMovies_landscape.png">$VAR[EpisodeThumbnailVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
 						</control>
 
 						<!-- Episode Title -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>217</posx>
 							<posy>0</posy>
-							<width>790</width>
+							<width>708</width>
 							<height>70</height>
 							<font>font30</font>
 							<textcolor>grey2</textcolor>
@@ -294,20 +339,21 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Date)">Conditional</animation>
 						</control>
 
-						<!-- First Aired Date -->
+						<!-- Date / Series Name -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>217</posx>
 							<posy>55</posy>
-							<width>790</width>
+							<width>708</width>
 							<height>60</height>
 							<font>font15</font>
 							<textcolor>grey3</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Date]</label>
+							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 
 						<!-- Resolution Indicator -->
@@ -316,7 +362,7 @@
 							<posy>46</posy>
 							<width>42</width>
 							<height>28</height>
-							<aspectratio>scale</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
 							<colordiffuse>grey2</colordiffuse>
 						</control>
@@ -361,13 +407,15 @@
 							<colordiffuse>$VAR[Colour_ListWatchedStatusColourVar]</colordiffuse>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.Content(episodes)">
+					<focusedlayout height="120" width="1140" condition="Container.Content(episodes) + !Skin.HasSetting(List.Slimlist)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
 							<height>60</height>
 							<texture border="1">separator2.png</texture>
 						</control>
+
+						<!-- Highlight -->
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -382,17 +430,17 @@
 						<control type="image">
 							<posx>15</posx>
 							<posy>8</posy>
-							<width>105</width>
+							<width>187</width>
 							<height>105</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+							<texture background="true">$VAR[EpisodeThumbnailVar]</texture>
 						</control>
 
 						<!-- Episode Title -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>217</posx>
 							<posy>0</posy>
-							<width>790</width>
+							<width>708</width>
 							<height>70</height>
 							<font>font30</font>
 							<textcolor>white</textcolor>
@@ -400,20 +448,21 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
-							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,25" time="0" condition="IsEmpty(ListItem.Date)">Conditional</animation>
 						</control>
+
+						<!-- Date / Series Name -->
 						<control type="label">
-							<posx>135</posx>
+							<posx>217</posx>
 							<posy>55</posy>
-							<width>790</width>
+							<width>708</width>
 							<height>60</height>
 							<font>font15</font>
 							<textcolor>white</textcolor>
 							<selectedcolor>$VAR[Colour_ListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Date]</label>
-							<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
+							<label>$VAR[VideoListLabel2Var]</label>
 						</control>
 
 						<!-- Resolution Indicator -->
@@ -422,9 +471,8 @@
 							<posy>46</posy>
 							<width>42</width>
 							<height>28</height>
-							<aspectratio>scale</aspectratio>
+							<aspectratio>keep</aspectratio>
 							<texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
-							<animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 
 						<!-- User Rating -->
@@ -967,7 +1015,7 @@
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(50)">Conditional</animation>
 						</control>
 					</focusedlayout>
-					<itemlayout height="120" width="1140" condition="Container.PlexContent(homemovies)">
+					<itemlayout height="120" width="1140" condition="Container.PlexContent(homemovies) + !Skin.HasSetting(Advanced.PortraitHomeVideos)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
@@ -1014,7 +1062,7 @@
 							<colordiffuse>$VAR[Colour_ListWatchedStatusColourVar]</colordiffuse>
 						</control>
 					</itemlayout>
-					<focusedlayout height="120" width="1140" condition="Container.PlexContent(homemovies)">
+					<focusedlayout height="120" width="1140" condition="Container.PlexContent(homemovies) + !Skin.HasSetting(Advanced.PortraitHomeVideos)">
 						<control type="image">
 							<posy>62</posy>
 							<width>1140</width>
@@ -1292,6 +1340,161 @@
 							<visible>![Container.PlexContent(channels) | Container.PlexContent(channel)]</visible>
 						</control>
 					</focusedlayout>
+					<itemlayout height="60" width="1140" condition="!Container.PlexContent(channels) + Skin.HasSetting(List.Slimlist)">
+						<control type="image">
+							<posy>2</posy>
+							<width>1140</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="label">
+							<posx>30</posx>
+							<width>895</width>
+							<height>60</height>
+							<font>font15</font>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>$VAR[ThemeLabelColor]</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<posx>960</posx>
+							<posy>17</posy>
+							<width>42</width>
+							<height>28</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[UnFocusHDIndicator]</texture>
+							<colordiffuse>grey2</colordiffuse>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<posx>5</posx>
+							<width>1060</width>
+							<height>60</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>$VAR[ThemeLabelColor]</selectedcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="image">
+							<posx>1076</posx>
+							<posy>0</posy>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture colordiffuse="$VAR[ThemeLabelColor]">$VAR[ListItem.Overlay]</texture>
+						</control>
+						<control type="group">
+							<description>Unwatched episodes</description>
+							<posx>1076</posx>
+							<posy>0</posy>
+							<visible>Container.Content(seasons) | Container.Content(tvshows)</visible>
+							<control type="image">
+								<posx>0</posx>
+								<posy>-2</posy>
+								<width>64</width>
+								<height>64</height>
+								<texture>overlays/list/OverlayUnWatched.png</texture>
+								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+							</control>
+							<control type="label">
+								<posx>32</posx>
+								<posy>0</posy>
+								<width>100</width>
+								<height>62</height>
+								<font>font12_title</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$VAR[ListOverlayEpisodesVar]</label>
+								<textcolor>grey3</textcolor>
+								<textoffsetx>18</textoffsetx>
+								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="60" width="1140" condition="!Container.PlexContent(channels) + Skin.HasSetting(List.Slimlist)">
+						<control type="image">
+							<posy>2</posy>
+							<width>1140</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+						</control>
+						<control type="image">
+							<width>1140</width>
+							<height>60</height>
+							<texture colordiffuse="$VAR[HighlightBarColor]" border="4">listselect_fo.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+							<include>VisibleFadeEffect</include>
+						</control>
+						<control type="label">
+							<posx>30</posx>
+							<width>895</width>
+							<height>60</height>
+							<font>font15</font>
+							<textcolor>white</textcolor>
+							<selectedcolor>$VAR[ThemeLabelColor]</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<posx>960</posx>
+							<posy>17</posy>
+							<width>42</width>
+							<height>28</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[UnFocusHDIndicator]</texture>
+							<visible>StringCompare(ListItem.Label2,ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<posx>5</posx>
+							<width>1060</width>
+							<height>60</height>
+							<font>font15</font>
+							<align>right</align>
+							<textcolor>white</textcolor>
+							<selectedcolor>$VAR[ThemeLabelColor]</selectedcolor>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+						<control type="image">
+							<posx>1076</posx>
+							<posy>0</posy>
+							<width>64</width>
+							<height>64</height>
+							<aspectratio>keep</aspectratio>
+							<texture  colordiffuse="$VAR[ThemeLabelColor]" fallback="overlays/list/">$VAR[ListItem.Overlay]</texture>
+						</control>
+						<control type="group">
+							<description>Unwatched episodes</description>
+							<posx>1076</posx>
+							<posy>0</posy>
+							<visible>Container.Content(seasons) | Container.Content(tvshows)</visible>
+							<control type="image">
+								<posx>0</posx>
+								<posy>-2</posy>
+								<width>64</width>
+								<height>64</height>
+								<texture>overlays/list/OverlayUnWatched.png</texture>
+								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
+							</control>
+							<control type="label">
+								<posx>32</posx>
+								<posy>0</posy>
+								<width>100</width>
+								<height>62</height>
+								<font>font12_title</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$VAR[ListOverlayEpisodesVar]</label>
+								<textoffsetx>18</textoffsetx>
+								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+							</control>
+						</control>
+					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
 					<posx>1140</posx>
@@ -1426,7 +1629,7 @@
 					<width>570</width>
 					<height>348</height>
 					<aspectratio>scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
+					<texture background="true">$VAR[EpisodeThumbnailVar]</texture>
 					<fadetime>400</fadetime>
 					<bordersize>32</bordersize>
 				</control>
@@ -1943,6 +2146,15 @@
 					<posx>98</posx>
 					<width>335</width>
 					<height>335</height>
+					<aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
+					<texture background="true">back.png</texture>
+					<fadetime>400</fadetime>
+				</control>				
+				<control type="image">
+					<posy>140</posy>
+					<posx>98</posx>
+					<width>335</width>
+					<height>335</height>
 					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
 					<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 					<fadetime>400</fadetime>
@@ -2046,7 +2258,7 @@
 							<width>105</width>
 							<height>105</height>
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<texture background="true">$VAR[EpisodeThumbnailVar]</texture>
 							<colordiffuse>grey2</colordiffuse>
 						</control>
 						<control type="label">
@@ -2266,7 +2478,7 @@
 							<width>105</width>
 							<height>105</height>
 							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(smallThumb)]</texture>
+							<texture background="true">$VAR[EpisodeThumbnailVar]</texture>
 						</control>
 						<control type="label">
 							<posx>135</posx>
@@ -2537,7 +2749,7 @@
 					<width>570</width>
 					<height>348</height>
 					<aspectratio>scale</aspectratio>
-					<texture>$INFO[ListItem.Art(thumb)]</texture>
+					<texture>$VAR[EpisodeThumbnailVar]</texture>
 					<fadetime>400</fadetime>
 					<bordersize>32</bordersize>
 				</control>
@@ -2615,6 +2827,15 @@
 				<posx>1296</posx>
 				<posy>185</posy>
 				<visible>!ListItem.Type(movie) + !ListItem.Type(episode) + !ListItem.Type(photo)</visible>
+				<control type="image">
+					<posy>140</posy>
+					<posx>98</posx>
+					<width>335</width>
+					<height>335</height>
+					<aspectratio scalediffuse="false" aligny="top">stretch</aspectratio>
+					<texture>back.png</texture>
+					<fadetime>400</fadetime>
+				</control>
 				<control type="image">
 					<posy>140</posy>
 					<posx>98</posx>

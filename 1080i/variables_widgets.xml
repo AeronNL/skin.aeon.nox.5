@@ -7,10 +7,22 @@
 		<value>$INFO[Container(11001).ListItem.Art(thumb)]</value>
 	</variable>
 	
+	<!-- On Deck Thumbnail2 -->
+	<variable name="Widget_OnDeckThumbnail2">
+		<value condition="Container(11001).ListItem.Type(episode) + Skin.HasSetting(Disable.UnwatchedPlot) + [Container(11001).ListItem.Status(unwatched) | Container(11001).ListItem.Status(inprogress)]">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
+	</variable>
+	
 	<!-- Recently Added Thumbnail -->
 	<variable name="Widget_RecentlyAddedThumbnail">
 		<value condition="Container(11000).ListItem.Type(episode) + Skin.HasSetting(Disable.UnwatchedPlot) + [Container(11000).ListItem.Status(unwatched) | Container(11000).ListItem.Status(inprogress)]">$INFO[Container(11000).ListItem.Art(fanart)]</value>
-		<value>$INFO[Container(11000).ListItem.Art(thumb)]</value>
+		<value>$INFO[Container(11000).ListItem.Art(smallThumb)]</value>
+	</variable>
+	
+	<!-- Recently Added Thumbnail2 -->
+	<variable name="Widget_RecentlyAddedThumbnail2">
+		<value condition="Container(11000).ListItem.Type(episode) + Skin.HasSetting(Disable.UnwatchedPlot) + [Container(11000).ListItem.Status(unwatched) | Container(11000).ListItem.Status(inprogress)]">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Art(smallThumb)]</value>
 	</variable>
 
 	<variable name="Widget_Provider">
@@ -84,6 +96,7 @@
 	
 	<!-- Duration On Deck -->
 	<variable name="OnDeck_Duration">
+		<value condition="StringCompare(Container(11001).ListItem.Duration,)">$LOCALIZE[42407]</value>
 		<value condition="StringCompare(Container(11001).ListItem.Duration,0)">1 [LOWERCASE]$LOCALIZE[42223][/LOWERCASE]</value>
 		<value condition="!IntegerGreaterThan(Container(11001).ListItem.Duration,59)">$INFO[Container(11001).ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="StringCompare(Container(11001).ListItem.Duration,60)">1 [LOWERCASE]$LOCALIZE[42222][/LOWERCASE]</value>
@@ -512,6 +525,7 @@
 	
 	<!-- Duration Recently Added -->
 	<variable name="RecentlyAdded_Duration">
+		<value condition="StringCompare(Container(11000).ListItem.Duration,)">$LOCALIZE[42407]</value>
 		<value condition="StringCompare(Container(11000).ListItem.Duration,0)">1 [LOWERCASE]$LOCALIZE[42223][/LOWERCASE]</value>
 		<value condition="!IntegerGreaterThan(Container(11000).ListItem.Duration,59)">$INFO[Container(11000).ListItem.Duration,, $LOCALIZE[12391]]</value>
 		<value condition="StringCompare(Container(11000).ListItem.Duration,60)">1 [LOWERCASE]$LOCALIZE[42222][/LOWERCASE]</value>
@@ -1836,7 +1850,7 @@
 	
 	<!-- List Widget Poster Image  -->
 	<variable name="HomeWidgetPosterListVar">
-		<value condition="!IsEmpty(Container(11001).ListItem.Label) + Container(11001).ListItem.Type(movie) + Control.IsVisible(11001)">$INFO[Container(11001).ListItem.Art(smallThumb)]</value>
+		<value condition="!IsEmpty(Container(11001).ListItem.Label) + [Container(11001).ListItem.Type(movie) | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos)]]+ Control.IsVisible(11001)">$INFO[Container(11001).ListItem.Art(smallThumb)]</value>
 		<value condition="!IsEmpty(Container(11001).ListItem.Label) + Container(11001).ListItem.Type(episode) + Control.IsVisible(11001)">$INFO[Container(11001).ListItem.Art(smallGrandparentThumb)]</value>
 	</variable>
 	
@@ -1850,7 +1864,7 @@
 		
 	<!-- List Widget Recently Added Poster Image  -->
 	<variable name="HomeWidgetPosterList2Var">
-		<value condition="!IsEmpty(Container(11000).ListItem.Label) + Container(11000).ListItem.Type(movie) + Control.IsVisible(11000)">$INFO[Container(11000).ListItem.Art(smallThumb)]</value>
+		<value condition="!IsEmpty(Container(11000).ListItem.Label) + [Container(11000).ListItem.Type(movie) | [Container(11000).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos)]] + Control.IsVisible(11000)">$INFO[Container(11000).ListItem.Art(smallThumb)]</value>
 		<value condition="!IsEmpty(Container(11000).ListItem.Label) + Container(11000).ListItem.Type(episode) + Control.IsVisible(11000) + IsEmpty(Skin.String(Widget.RecentlyAdded.TV.Artwork))">$INFO[Container(11000).ListItem.Art(smallGrandparentThumb)]</value>
 		<value condition="!IsEmpty(Container(11000).ListItem.Label) + Container(11000).ListItem.Type(episode) + Control.IsVisible(11000) + StringCompare(Skin.String(Widget.RecentlyAdded.TV.Artwork),Season Poster)">$INFO[Container(11000).ListItem.Art(parentThumb)]</value>
 		<value condition="!IsEmpty(Container(11000).ListItem.Icon)">$INFO[Container(11000).ListItem.Art(smallThumb)]</value>

@@ -2402,3 +2402,60 @@ msgstr ""
 msgctxt "#42404"
 msgid "Replaces the thumbnails of unwatched episodes with fanart to avoid spoilers."
 msgstr ""
+
+msgctxt "#42405"
+msgid "Home Videos icon style"
+msgstr ""
+
+msgctxt "#42406"
+msgid "Portrait"
+msgstr ""
+
+msgctxt "#42407"
+msgid "Unknown duration"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42408"
+msgid "Display a text label showing the name of home video."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42409"
+msgid "Choose the case type for Recommended videos.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42410"
+msgid "Change the orientation of Home Video posters from landscape to portrait.  For users who have made custom portrait posters for a home video section."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42411"
+msgid "Default Play File path:"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42412"
+msgid "Reset default Play File path"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42413"
+msgid "Set a file path for the Play File option to start from by default."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42414"
+msgid "Removes the custom Play File default path."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42415"
+msgid "Recently Released"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42416"
+msgid "Recently Viewed"
+msgstr ""

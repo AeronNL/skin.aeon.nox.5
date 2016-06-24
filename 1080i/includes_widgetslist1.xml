@@ -26,7 +26,7 @@
 					<fadetime>400</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + IsEmpty(Skin.String(Widget.OnDeck.Movies.Case))</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + IsEmpty(Skin.String(Widget.OnDeck.Movies.Case))] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 
 				<!-- Glass Movies -->
@@ -39,7 +39,7 @@
 					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
 					<fadetime>400</fadetime>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 				<control type="image">
 					<posx>-20</posx>
@@ -49,7 +49,7 @@
 					<texture>homewidgets/glass/portrait.png</texture>
 					<fadetime>400</fadetime>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 
 				<!-- Clear Case Movies -->
@@ -145,7 +145,7 @@
 					<fadetime>400</fadetime>
 					<bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>
 
 				<!-- Glass Home Videos -->
@@ -158,7 +158,7 @@
 					<texture diffuse="thumbs/boxes/landscape_mask.png">$INFO[Container(11001).ListItem.Art(thumb)]</texture>
 					<fadetime>400</fadetime>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>
 				<control type="image">
 					<posx>-408</posx>
@@ -167,7 +167,7 @@
 					<height>350</height>
 					<texture>homewidgets/glass/landscape.png</texture>
 					<bordersize>20</bordersize>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>
 				
 				<!-- Poster Episodes -->
@@ -611,7 +611,7 @@
 					<height>200</height>
 					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>					
 					<texture>$VAR[HomeWidgetPosterListVar]</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + IsEmpty(Skin.String(Widget.OnDeck.Movies.Case))</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + IsEmpty(Skin.String(Widget.OnDeck.Movies.Case))] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 
 				<!-- Movie Glass Case -->
@@ -622,7 +622,7 @@
 					<height>194</height>
 					<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>					
 					<texture diffuse="thumbs/boxes/movieposter_mask.png">$VAR[HomeWidgetPosterListVar]</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 				<control type="image">
 					<posy>40</posy>
@@ -630,7 +630,7 @@
 					<width>134</width>
 					<height>200</height>					
 					<texture>homewidgets/glass/portrait.png</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)</visible>
+					<visible>Control.IsVisible(11001) + [[Container(11001).ListItem.Type(movie) + !Skin.HasSetting(Widget.OnDeck.Movies.Fanart) + StringCompare(Skin.String(Widget.OnDeck.Movies.Case),Glass)] | [Container(11001).ListItem.Type(clip) + Skin.HasSetting(Advanced.PortraitHomeVideos) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)]]</visible>
 				</control>
 
 				<!-- Movie Clear Case -->
@@ -710,7 +710,7 @@
 					<height>169</height>
 					<aspectratio>scale</aspectratio>					
 					<texture>$INFO[Container(11001).ListItem.Art(smallThumb)]</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + !Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>
 
 				<!-- Glass Home Videos -->
@@ -721,7 +721,7 @@
 					<height>163</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>					
 					<texture diffuse="thumbs/boxes/landscape_mask.png">$INFO[Container(11001).ListItem.Art(smallThumb)]</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -730,7 +730,7 @@
 					<height>169</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>homewidgets/glass/landscape.png</texture>
-					<visible>Control.IsVisible(11001) + Container(11001).ListItem.Type(clip) + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
+					<visible>Control.IsVisible(11001) + [Container(11001).ListItem.Type(clip) + !Skin.HasSetting(Advanced.PortraitHomeVideos)] + Skin.HasSetting(Widget.OnDeck.HomeVideos.Fanart.Glass)</visible>
 				</control>				
 				
 				<!-- Episode Poster -->

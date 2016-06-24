@@ -174,7 +174,7 @@ msgstr "Επιλογή αντικειμένων"
 # Aeon Nox for Plex
 msgctxt "#31093"
 msgid "Advanced"
-msgstr ""
+msgstr "Προχωρημένος"
 
 # Kodi
 msgctxt "#31103"
@@ -199,42 +199,42 @@ msgstr "Μετρητής μη προβληθέντων επεισοδίων"
 # Plex
 msgctxt "#31118" 
 msgid "Fanart"
-msgstr ""
+msgstr "Fanart"
 
 # Plex
 msgctxt "#31133"
 msgid "Subtitles"
-msgstr ""
+msgstr "Υπότιτλοι"
 
 # Plex
 msgctxt "#31134"
 msgid "Cast"
-msgstr ""
+msgstr "Ηθοποιοί"
 
 # Plex
 msgctxt "#31138"
 msgid "Watched"
-msgstr ""
+msgstr "Προβληθέν"
 
 # Plex
 msgctxt "#31139"
 msgid "Unwatched"
-msgstr ""
+msgstr "Μη Προβληθέν"
 
 # Aeon Nox for Plex
 msgctxt "#31157"
 msgid "Submenu always visible"
-msgstr ""
+msgstr "Υπομενού πάντα φανερό"
 
 # Plex
 msgctxt "#31225"
 msgid "Rating"
-msgstr ""
+msgstr "Αξιολόγηση"
 
 # Plex
 msgctxt "#31226"
 msgid "Change"
-msgstr ""
+msgstr "Αλλαγή"
 
 # Plex
 msgctxt "#31227"
@@ -244,7 +244,7 @@ msgstr ""
 # Plex
 msgctxt "#31228"
 msgid "Lyrics"
-msgstr ""
+msgstr "Στίχοι"
 
 # Kodi
 msgctxt "#31320"
@@ -279,27 +279,27 @@ msgstr "[B]ΡΥΘΜΙΣΕΙΣ ΥΠΗΡΕΣΙΩΝ[/B][CR][CR]Χειρισμός �
 # Aeon Nox for Plex
 msgctxt "#31421"
 msgid "Select your PLEX user Profile[CR]to login and continue"
-msgstr ""
+msgstr "Επέλεξε το δικό σου προφίλ PLEX [CR] για είσοδο και συνέχισε"
 
 # Plex
 msgctxt "#31602"
 msgid "Network"
-msgstr ""
+msgstr "Δίκτυο"
 
 # Plex
 msgctxt "#31610"
 msgid "Playback"
-msgstr ""
+msgstr "Αναπαραγωγή"
 
 # Plex
 msgctxt "#31656"
 msgid "Backgrounds"
-msgstr ""
+msgstr "Φόντα"
 
 # Plex
 msgctxt "#31704"
 msgid "Photo"
-msgstr ""
+msgstr "Φώτο"
 
 # Kodi
 msgctxt "#31913"
@@ -414,37 +414,37 @@ msgstr "Επιλογή των ενδείξεων που θα εμφανίζον�
 # Plex
 msgctxt "#31952"
 msgid "Channel Directory"
-msgstr ""
+msgstr "Κατάλογος Καναλιού"
 
 # Plex
 msgctxt "#31955"
 msgid "Preferences"
-msgstr ""
+msgstr "Προτιμήσεις"
 
 # Plex
 msgctxt "#31970"
 msgid "Channels"
-msgstr ""
+msgstr "Κανάλια"
 
 # Plex
 msgctxt "#32003"
 msgid "[B]Welcome to Plex![/B]  [CR][CR]In order to ensure the best experience, let's take a minute to determine some audio settings and get signed in to [B]Plex[/B].  [CR][CR][B]Plex[/B] lets you queue and share online videos, and access shared media from your friends' libraries.  [CR][CR]If you don't already have a free [B]Plex[/B] account, you can create one now at [COLOR=orange]http://www.plex.tv[/COLOR] before continuing."
-msgstr ""
+msgstr "msgid "[B] Καλώς ήλθατε στο Plex! [/ B] [CR] [CR] Προκειμένου να εξασφαλιστεί η καλύτερη δυνατή εμπειρία, δώστε ένα λεπτό για να καθορίσετε ορισμένες ρυθμίσεις ήχου και να συνδεθείτε στο [B] Plex [/ B]. [CR] [CR] [B] το Plex [/ B] σας επιτρέπει να περιμένετε στην ουρά και να μοιράζεστε online βίντεο, καθώς και την πρόσβαση από κοινού με τα μέσα ενημέρωσης από τις βιβλιοθήκες των φίλων σας. [CR] [CR] Αν δεν έχετε ήδη έναν δωρεάν [B] Plex [/ B] λογαριασμό, μπορείτε να δημιουργήσετε έναν τώρα σε [COLOR = orange] http://www.plex.tv [/ COLOR] πριν συνεχίσετε. " "
 
 # Plex
 msgctxt "#32100"
 msgid "Set Rating"
-msgstr ""
+msgstr "Όρισε Αξιολόγηση"
 
 # Plex
 msgctxt "#32103"
 msgid "There is no description available for this media"
-msgstr ""
+msgstr "Δεν υπάρχει περιγραφή διαθέσιμη για αυτό το πολυμέσο"
 
 # Plex
 msgctxt "#32104"
 msgid "You can add one for it in the Media Manager"
-msgstr ""
+msgstr "Μπορείς να προσθέσεις ένα από αυτό στον Διαχειριστή Πολυμέσων"
 
 # Plex
 msgctxt "#32105"
@@ -454,22 +454,22 @@ msgstr ""
 # Plex
 msgctxt "#41000"
 msgid "System Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Συστήματος"
 
 # Plex
 msgctxt "#41001"
 msgid "Control Precaching"
-msgstr ""
+msgstr "Έλεγχος Precaching"
 
 # Plex
 msgctxt "#41002"
 msgid "Select Servers to cache"
-msgstr ""
+msgstr "Επιλογή σέρβερ για κρυφή μνήμη"
 
 # Plex
 msgctxt "#41003"
 msgid "Precaching Section"
-msgstr ""
+msgstr "Τμήμα Precaching"
 
 # Plex
 msgctxt "#41004"
@@ -489,82 +489,82 @@ msgstr ""
 # Plex
 msgctxt "#41007"
 msgid "Progress"
-msgstr ""
+msgstr "Πρόοδος"
 
 # Plex
 msgctxt "#41008"
 msgid "Extras"
-msgstr ""
+msgstr "Επιπρόσθετα"
 
 # Plex
 msgctxt "#41009"
 msgid "Switch User"
-msgstr ""
+msgstr "Αλλαγή Χρήστη"
 
 # Aeon Nox for Plex
 msgctxt "#42001"
 msgid "Set Section Background"
-msgstr ""
+msgstr "Ορισμός Ενότητας Φόντων"
 
 # Aeon Nox for Plex
 msgctxt "#42002"
 msgid "Set Timer"
-msgstr ""
+msgstr "Όρισμός Χρονοδιακόπτη"
 
 # Aeon Nox for Plex
 msgctxt "#42003"
 msgid "The system will shut down at"
-msgstr ""
+msgstr "Το Σύστημα θα απενεργοποιηθεί σε"
 
 # Aeon Nox for Plex
 msgctxt "#42004"
 msgid "Sign In"
-msgstr ""
+msgstr "Συνδεθείτε"
 
 # Aeon Nox for Plex
 msgctxt "#42012"
 msgid "Set Background"
-msgstr ""
+msgstr "Ορισμός Φόντου"
 
 # Aeon Nox for Plex
 msgctxt "#42013"
 msgid "LowList Toggle"
-msgstr ""
+msgstr "Εναλλαγή Χαμηλής λίστας"
 
 # Aeon Nox for Plex
 msgctxt "#42015"
 msgid "SORT"
-msgstr ""
+msgstr "ΕΙΔΟΣ"
 
 # Aeon Nox for Plex
 msgctxt "#42016"
 msgid "No Audio Matching Filters"
-msgstr ""
+msgstr "Δεν ταιριάζουν τα φίλτρα Ήχου"
 
 # Aeon Nox for Plex
 msgctxt "#42017"
 msgid "No Photos Matching Filters"
-msgstr ""
+msgstr "Δεν ταιριάζουν τα φίλτρα φωτογραφιών"
 
 # Aeon Nox for Plex
 msgctxt "#42018"
 msgid "Plex Log In"
-msgstr ""
+msgstr "Plex Είσοδος "
 
 # Aeon Nox for Plex
 msgctxt "#42019"
 msgid "User ID"
-msgstr ""
+msgstr "ID χρήστη"
 
 # Aeon Nox for Plex
 msgctxt "#42021"
 msgid "Shared Content"
-msgstr ""
+msgstr "Περιεχόμενο Κοινής Χρήσης"
 
 # Aeon Nox for Plex
 msgctxt "#42022"
 msgid "No Videos Matching Filters"
-msgstr ""
+msgstr "Δεν ταιριάζουν τα φίλτρα Βίντεο"
 
 # Aeon Nox for Plex
 msgctxt "#42023"
@@ -574,52 +574,52 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42029"
 msgid "Rate"
-msgstr ""
+msgstr "Αξιολόγηση"
 
 # Aeon Nox for Plex
 msgctxt "#42030"
 msgid "New Search"
-msgstr ""
+msgstr "Νέα Αναζήτηση"
 
 # Aeon Nox for Plex
 msgctxt "#42033"
 msgid "Enter PIN"
-msgstr ""
+msgstr "Εισαγωγή PIN"
 
 # Aeon Nox for Plex
 msgctxt "#42034"
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Εξατομίκευσης"
 
 # Aeon Nox for Plex
 msgctxt "#42035"
 msgid "Playback Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Αναπαραγωγής"
 
 # Aeon Nox for Plex
 msgctxt "#42036"
 msgid "Network Settings"
-msgstr ""
+msgstr "Ρυθμίσεις Δικτύου"
 
 # Aeon Nox for Plex
 msgctxt "#42037"
 msgid "Font size for Plot"
-msgstr ""
+msgstr "Μέγεθος γραμματοσειράς για πλοκή"
 
 # Aeon Nox for Plex
 msgctxt "#42038"
 msgid "Navigational Style for Home Menu"
-msgstr ""
+msgstr "Στυλ πλοήγησης για το Κεντρικό Μενού"
 
 # Aeon Nox for Plex
 msgctxt "#42039"
 msgid "Disable Search Icon"
-msgstr ""
+msgstr "Απενεργοποίηση εικονιδίου Αναζήτησης"
 
 # Aeon Nox for Plex
 msgctxt "#42040"
 msgid "Enable Plex Server Info"
-msgstr ""
+msgstr "Ενεργοποίηση πληροφοριών του σέρβερ του Plex"
 
 # Aeon Nox for Plex
 msgctxt "#42041"
@@ -629,77 +629,77 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42042"
 msgid "Movie Icon Style"
-msgstr ""
+msgstr "Στυλ εινοκινίου Ταινίας"
 
 # Aeon Nox for Plex
 msgctxt "#42043"
 msgid "TV Icon Style"
-msgstr ""
+msgstr "Στυλ εινοκινίου ΤV"
 
 # Aeon Nox for Plex
 msgctxt "#42044"
 msgid "Music Icon Style"
-msgstr ""
+msgstr "Στυλ εινοκινίου Μουσικής"
 
 # Aeon Nox for Plex
 msgctxt "#42045"
 msgid "Photo Icon Style"
-msgstr ""
+msgstr "Στυλ εινοκινίου Φώτο"
 
 # Aeon Nox for Plex
 msgctxt "#42046"
 msgid "Enable Live DVD/CD Cases"
-msgstr ""
+msgstr "Ενεργοποίηση DVD/CD θήκες "
 
 # Aeon Nox for Plex
 msgctxt "#42047"
 msgid "Enable Single Image Home Background"
-msgstr ""
+msgstr "Ενεργοποίηση απλής εικόνας Κεντικού Φόντου"
 
 # Aeon Nox for Plex
 msgctxt "#42048"
 msgid "Image:"
-msgstr ""
+msgstr "Εικόνα"
 
 # Aeon Nox for Plex
 msgctxt "#42049"
 msgid "Enable Home Slideshow"
-msgstr ""
+msgstr "Ενεργοποίηση Κεντρικού Slideshow"
 
 # Aeon Nox for Plex
 msgctxt "#42051"
 msgid "Section Name:"
-msgstr ""
+msgstr "Όνομα Ενότητας"
 
 # Aeon Nox for Plex
 msgctxt "#42052"
 msgid "Image Path:"
-msgstr ""
+msgstr "Διαδρομή Εικόνας"
 
 # Aeon Nox for Plex
 msgctxt "#42054"
 msgid "Recent"
-msgstr ""
+msgstr "Πρόσφατα"
 
 # Aeon Nox for Plex
 msgctxt "#42056"
 msgid "Glass"
-msgstr ""
+msgstr "Γυαλί"
 
 # Aeon Nox for Plex
 msgctxt "#42057"
 msgid "DVD/Bluray"
-msgstr ""
+msgstr "DVD/Bluray"
 
 # Aeon Nox for Plex
 msgctxt "#42058"
 msgid "Poster"
-msgstr ""
+msgstr "Αφίσα"
 
 # Aeon Nox for Plex
 msgctxt "#42059"
 msgid "Square"
-msgstr ""
+msgstr "Τετράγωνο"
 
 # Aeon Nox for Plex
 msgctxt "#42061"
@@ -709,72 +709,72 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42062"
 msgid "Change the way the Home Menu scrolls in Aeon Nox. Default will scroll the menu in a cycle. "Fixed" has a beginning and end."
-msgstr ""
+msgstr "Αλλαγή στον τρόπο πλοήγησης του Κεντρικού Μενού στο AEON NOX."Προεπιλογή" το μενού πλοηγείται κυκλικά."Fixed" με αρχή και τέλος."
 
 # Aeon Nox for Plex
 msgctxt "#42063"
 msgid "Enable to make the submenu permanently visible.  Default is hidden until pressing down."
-msgstr ""
+msgstr "Ενεργοποίηση μόνιμης προβολής του Υπομενού.  Η Προεπιλογή είναι να παραμένει κρυμμένη μέχρι να πατηθεί το κουμπί κάτω."
 
 # Aeon Nox for Plex
 msgctxt "#42064"
 msgid "This setting moves the Global Search icon on the home screen to the home menu list."
-msgstr ""
+msgstr "Αυτή η ρύθμιση μετακινεί το εικονίδιο της Αναζήτησης στην κεντρική οθόνη στην λίστα του κεντρικού μενού."
 
 # Aeon Nox for Plex
 msgctxt "#42065"
 msgid "Display Server, User Login and Security Status on home menu."
-msgstr ""
+msgstr "Εμφάνιση σέρβερ, Είσοδος Χρήστη και Κατάσταση Ασφαλείας στο Κεντρικό Μενού"
 
 # Aeon Nox for Plex
 msgctxt "#42066"
 msgid "Disable Home menu widgets."
-msgstr ""
+msgstr "Απενεργοποίηση widgets Κεντρικού Μενού"
 
 # Aeon Nox for Plex
 msgctxt "#42067"
 msgid "Choose the icon style for movie widgets.  Choices include Posters, Clear Cases, Glass Cases and DVD/Bluray Cases."
-msgstr ""
+msgstr "Επιλογή στυλ εικονιδίου για τα widgets Ταινίας. Επιλογές Αφίσες, Θήκες, Γυάλινες Θήκες και DVD/Bluray θήκες."
 
 # Aeon Nox for Plex
 msgctxt "#42068"
 msgid "Choose the icon style for TV widgets.  Choices include Posters and Glass Cases."
-msgstr ""
+msgstr "Επιλογή στυλ εικονιδίου για τα widgets"
 
 # Aeon Nox for Plex
 msgctxt "#42069"
 msgid "Choose the icon style for Music widgets.  Choices include Posters and Glass Cases."
-msgstr ""
+msgstr "Επιλογή στυλ εικονιδίου για τα widgets Μουσικής. Επιλογές Αφίσες και Γυάλινες Θήκες "
 
 # Aeon Nox for Plex
 msgctxt "#42070"
 msgid "Choose the icon shape for Photo widgets.  Choices include Square and Landscape."
-msgstr ""
+msgstr "Επιλογή σχήματος εικονιδίου για τα widgets Φωτογραφιών.  Επιλογές Τετράγωνο και Τοπίο"
 
 # Aeon Nox for Plex
 msgctxt "#42071"
 msgid "Enable a Collage of DVD/Bluray cases as the Home menu background."
-msgstr ""
+msgstr "Ενεργοποίηση Κολάζ από θήκες DVD/Bluray ως Φόντο του Κεντρικού Μενού"
 
 # Aeon Nox for Plex
 msgctxt "#42072"
 msgid "Set a single image as the background for the Home menu."
-msgstr ""
+msgstr "Όρισε απλή εικόνα ως φόντο για το Κεντρικό Μενού"
 
 # Aeon Nox for Plex
 msgctxt "#42073"
 msgid "Choose the background image."
-msgstr ""
+msgstr "Επιλογή εικόνας για Φόντο"
 
 # Aeon Nox for Plex
 msgctxt "#42074"
 msgid "Set a slideshow as the background for the Home menu."
-msgstr ""
+msgstr "Όρισε διαφάνεια ως φόντο για το Κεντρικό Μενού."
 
 # Aeon Nox for Plex
 msgctxt "#42075"
 msgid "Choose the folder for the Home menu slideshow."
-msgstr ""
+msgstr "Επιλογή φακέλου διαφανειών για το Κεντρικό μενού."
 
 # Aeon Nox for Plex
 msgctxt "#42076"
@@ -794,17 +794,17 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42079"
 msgid "Lower"
-msgstr ""
+msgstr "Χαμηλά"
 
 # Aeon Nox for Plex
 msgctxt "#42080"
 msgid "Middle"
-msgstr ""
+msgstr "Μέση"
 
 # Aeon Nox for Plex
 msgctxt "#42081"
 msgid "Watch Later"
-msgstr ""
+msgstr "Προβολή Αργότερα"
 
 # Aeon Nox for Plex
 msgctxt "#42082"
@@ -814,29 +814,1606 @@ msgstr ""
 # Aeon Nox for Plex
 msgctxt "#42083"
 msgid "Disables the box which shows the first letter of the current item when scrolling through media."
-msgstr ""
+msgstr "Απεργοποίηση του κουτιού που εμφανίζεται στο 1ο γράμμα του αντικειμένου όταν πλοηγείστε στα πολυμέσα."
 
 # Aeon Nox for Plex
 msgctxt "#42084"
 msgid "Icon Style"
-msgstr ""
+msgstr "Στυλ εικονιδίου"
 
 # Aeon Nox for Plex
 msgctxt "#42085"
 msgid "Circles"
-msgstr ""
+msgstr "Κύκλοι"
 
 # Aeon Nox for Plex
 msgctxt "#42086"
 msgid "Ribbons"
-msgstr ""
+msgstr "Κορδέλες"
 
 # Aeon Nox for Plex
 msgctxt "#42087"
 msgid "Position"
-msgstr ""
+msgstr "Θέση"
 
 # Aeon Nox for Plex
 msgctxt "#42088"
 msgid "Higher"
+msgstr "Ψηλότερα"
+
+
+# Aeon Nox for Plex
+msgctxt "#42089"
+msgid "Coloured Circles"
+msgstr "Χρωματιστοί κύκλοι"
+
+# Aeon Nox for Plex
+msgctxt "#42090"
+msgid "OSD Settings"
+msgstr "Ρυθμίσεις OSD"
+
+# Aeon Nox for Plex
+msgctxt "#42091"
+msgid "Hide Topbar in OSD when Paused"
+msgstr "Απόκρυψη μπάρας στο OSD όταν είναι σε Παύση"
+
+# Aeon Nox for Plex
+msgctxt "#42092"
+msgid "Show"
+msgstr "Προβολή"
+
+# Aeon Nox for Plex
+msgctxt "#42093"
+msgid "Disabled"
+msgstr "Απενεργοποιημένο"
+
+# Aeon Nox for Plex
+msgctxt "#42094"
+msgid "Hide"
+msgstr "Απόκρυψη"
+
+# Aeon Nox for Plex
+msgctxt "#42095"
+msgid "Hide Delay"
+msgstr "Απόκρυωη Καθυστέρησης"
+
+# Aeon Nox for Plex
+msgctxt "#42096"
+msgid "15 Seconds"
+msgstr "15 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42097"
+msgid "20 Seconds"
+msgstr "20 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42098"
+msgid "25 Seconds"
+msgstr "25 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42099"
+msgid "30 Seconds"
+msgstr "30 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42100"
+msgid "5 Seconds"
+msgstr "5 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42101"
+msgid "10 Seconds"
+msgstr "10 Δεύτερα"
+
+# Aeon Nox for Plex
+msgctxt "#42102"
+msgid "Hides the topbar in the OSD after a delay."
 msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42103"
+msgid "Amount of time to wait after pausing to hide the topbar in the Video OSD. Range from 5 seconds to 30 seconds."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42104"
+msgid "End Time"
+msgstr "Τέλος Χρόνου"
+
+# Aeon Nox for Plex
+msgctxt "#42105"
+msgid "Fast Forward"
+msgstr "Γρήγορη Προώθηση "
+
+# Aeon Nox for Plex
+msgctxt "#42106"
+msgid "Rewind"
+msgstr "Επιστροφή"
+
+# Aeon Nox for Plex
+msgctxt "#42107"
+msgid "Playing"
+msgstr "Παίζει"
+
+# Aeon Nox for Plex
+msgctxt "#42108"
+msgid "Default OSD Button"
+msgstr "Προπιλεγμένο κουμπί OSD"
+
+# Aeon Nox for Plex
+msgctxt "#42109"
+msgid "Play"
+msgstr "Έναρξη"
+
+# Aeon Nox for Plex
+msgctxt "#42110"
+msgid "Playlists"
+msgstr "Λίστες Αναπαραγωγής"
+
+# Aeon Nox for Plex
+msgctxt "#42111"
+msgid "Bookmarks"
+msgstr "Σελιδοδείκτες"
+
+# Aeon Nox for Plex
+msgctxt "#42112"
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+# Aeon Nox for Plex
+msgctxt "#42113"
+msgid "Stop"
+msgstr "Σταμάτημα"
+
+# Aeon Nox for Plex
+msgctxt "#42114"
+msgid "Next"
+msgstr "Επόμενο"
+
+# Aeon Nox for Plex
+msgctxt "#42115"
+msgid "Video Settings"
+msgstr "Ρυθμίσεις Βίντεο"
+
+# Aeon Nox for Plex
+msgctxt "#42116"
+msgid "Audio Settings"
+msgstr "Ρυθμίσεις Ήχου"
+
+# Aeon Nox for Plex
+msgctxt "#42117"
+msgid "Show Large Pause Symbol"
+msgstr "Προβολή Μεγάλων Συμβόλων Παύσης"
+
+# Aeon Nox for Plex
+msgctxt "#42118"
+msgid "Show Media Flags on OSD Controls"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42119"
+msgid "Resolution Flag Style"
+msgstr "Ανάλυση στυλ Σημαίας"
+
+# Aeon Nox for Plex
+msgctxt "#42120"
+msgid "Mini"
+msgstr "Μίνι"
+
+# Aeon Nox for Plex
+msgctxt "#42121"
+msgid "Full"
+msgstr "Γεμάτο"
+
+# Aeon Nox for Plex
+msgctxt "#42122"
+msgid "Spinning Disc"
+msgstr "Περιστρεφόμενος Δίσκος"
+
+# Aeon Nox for Plex
+msgctxt "#42123"
+msgid "Taking a Screenshot"
+msgstr "Λήψη Στιγμιότυπου"
+
+# Aeon Nox for Plex
+msgctxt "#42124"
+msgid "Poster Style"
+msgstr "Στυλ Αφίσας"
+
+# Aeon Nox for Plex
+msgctxt "#42125"
+msgid "Clear"
+msgstr "Καθαρισμός"
+
+# Aeon Nox for Plex
+msgctxt "#42126"
+msgid "Show End Time"
+msgstr "Προβολή Χρόνο Τέλους"
+
+# Aeon Nox for Plex
+msgctxt "#42127"
+msgid "Screenshot"
+msgstr "Στιγμιότυπο"
+
+# Aeon Nox for Plex
+msgctxt "#42128"
+msgid "There is no description available for this video"
+msgstr "Δεν υπάρχει διαθέσιμη περιγραφή για αυτό το βίντεο"
+
+# Aeon Nox for Plex
+msgctxt "#42129"
+msgid "There is no description available for this episode"
+msgstr "Δεν υπάρχει διαθέσιμη περιγραφή για αυτό το επεισόδιο"
+
+# Aeon Nox for Plex
+msgctxt "#42130"
+msgid "Disc Art"
+msgstr "Τέχνη Δίσκου"
+
+# Aeon Nox for Plex
+msgctxt "#42131"
+msgid "Show Plot on OSD"
+msgstr "Προβολή Πλοκής στο OSD"
+
+# Aeon Nox for Plex
+msgctxt "#42132"
+msgid "When Paused"
+msgstr "Όταν είναι σε Παύση"
+
+# Aeon Nox for Plex
+msgctxt "#42133"
+msgid "Always"
+msgstr "Πάντα"
+
+# Aeon Nox for Plex
+msgctxt "#42134"
+msgid "Reset All OSD Settings to Default"
+msgstr "Επαναφορά Όλων των ρυθμίσεων OSD σε προεπιλογή"
+
+# Aeon Nox for Plex
+msgctxt "#42135"
+msgid "Warning!"
+msgstr "Προσοχή!"
+
+# Aeon Nox for Plex
+msgctxt "#42136"
+msgid "All OSD settings will be reset to default.  This process is irreversible.  Are you Sure?"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42137"
+msgid "Now Playing"
+msgstr "Τώρα Παίζει"
+
+# Aeon Nox for Plex
+msgctxt "#42138"
+msgid "Up Next"
+msgstr "Στο Επόμενο"
+
+# Aeon Nox for Plex
+msgctxt "#42139"
+msgid "OSD Background"
+msgstr "OSD Φόντο"
+
+# Aeon Nox for Plex
+msgctxt "#42140"
+msgid "Transparent"
+msgstr "Διαφανή"
+
+# Aeon Nox for Plex
+msgctxt "#42141"
+msgid "Opaque"
+msgstr "Θολό"
+
+# Aeon Nox for Plex
+msgctxt "#42142"
+msgid "Now Playing Settings"
+msgstr "Τώρα Παίζετε Ρυθμίσεις"
+
+# Aeon Nox for Plex
+msgctxt "#42143"
+msgid "CD"
+msgstr "CD"
+
+# Aeon Nox for Plex
+msgctxt "#42144"
+msgid "CD-R"
+msgstr "CD-R"
+
+# Aeon Nox for Plex
+msgctxt "#42145"
+msgid "Enable \"Up Next\" Scrolling Text"
+msgstr "Ενεργοποίηση \"Στο Επόμενο\"Κινούμενο κείμενο"
+
+# Aeon Nox for Plex
+msgctxt "#42146"
+msgid "Default \"Now Playing\" Button"
+msgstr "Προεπιλογή \"Τώρα Παίζετε\" Κουμπί"
+
+# Aeon Nox for Plex
+msgctxt "#42147"
+msgid "Random"
+msgstr "Τυχαίο"
+
+# Aeon Nox for Plex
+msgctxt "#42148"
+msgid "Repeat"
+msgstr "Επανάληψη"
+
+# Aeon Nox for Plex
+msgctxt "#42149"
+msgid "Options"
+msgstr "Επιλογές"
+
+# Aeon Nox for Plex
+msgctxt "#42150"
+msgid "Enable Codec Flag"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42151"
+msgid "Record"
+msgstr "Ρεκόρ"
+
+# Aeon Nox for Plex
+msgctxt "#42152"
+msgid "Gold Record"
+msgstr "Χρυσό Ρεκόρ"
+
+# Aeon Nox for Plex
+msgctxt "#42153"
+msgid "Reset All \"Now Playing\" Settings to Default"
+msgstr "Επαναφορά Όλων \"Τώρα Παίζετε\ "Ρυθμίσεις σε Προεπιλογή"
+
+# Aeon Nox for Plex
+msgctxt "#42154"
+msgid "All \"Now Playing\" settings will be reset to default.  This process is irreversible.  Are you Sure?"
+msgstr "Όλα \"Τώρα Παίζετε\" οι ρυθμίσεις θα επαναφερθούν σε προεπιλογή.   Αυτή η διαδικασία είναι μη αναστρέψιμη.  Είστε Σίγουρος/η;"
+
+# Aeon Nox for Plex
+msgctxt "#42155"
+msgid "Blur background"
+msgstr "Θολό Φόντο"
+
+# Aeon Nox for Plex
+msgctxt "#42156"
+msgid "Preplay"
+msgstr "Προαναπαραγωγή"
+
+# Aeon Nox for Plex
+msgctxt "#42157"
+msgid "Music OSD Settings"
+msgstr "Ρυθμίσεις OSD Μουσικής "
+
+# Aeon Nox for Plex
+msgctxt "#42158"
+msgid "Visualization"
+msgstr "Οπτικοποίηση"
+
+# Aeon Nox for Plex
+msgctxt "#42159"
+msgid "Visualization Settings"
+msgstr "Ρυθμίσεις Οπτικοποίησης"
+
+# Aeon Nox for Plex
+msgctxt "#42160"
+msgid "Alternate Layout"
+msgstr "Εναλλακτική Διάταξη "
+
+# Aeon Nox for Plex
+msgctxt "#42161"
+msgid "Show MP3 Player"
+msgstr "Προβολή MP3 συσκευής"
+
+# Aeon Nox for Plex
+msgctxt "#42162"
+msgid "Custom main menu script 1"
+msgstr "Βασικό αρχικό μενού script 1"
+
+# Aeon Nox for Plex
+msgctxt "#42163"
+msgid "Custom main menu script 2"
+msgstr "Βασικό αρχικό μενού script 2"
+
+# Aeon Nox for Plex
+msgctxt "#42164"
+msgid "Custom main menu script 3"
+msgstr "Βασικό αρχικό μενού script 3"
+
+# Aeon Nox for Plex
+msgctxt "#42165"
+msgid "Custom main menu script 4"
+msgstr "Βασικό αρχικό μενού script 4"
+
+# Aeon Nox for Plex
+msgctxt "#42166"
+msgid "Custom main menu script 5"
+msgstr "Βασικό αρχικό μενού script 5"
+
+# Aeon Nox for Plex
+msgctxt "#42167"
+msgid "Custom main menu script file"
+msgstr "Βασικό αρχικό μενού αρχείο script"
+
+# Aeon Nox for Plex
+msgctxt "#42168"
+msgid "Custom main menu script name"
+msgstr "Βασικό αρχικό μενού όνομα script"
+
+# Aeon Nox for Plex
+msgctxt "#42169"
+msgid "Enable movie preplay screen"
+msgstr "Ενεργοποίηση οθόνη προαναπαραγωγής ταινίας"
+
+# Aeon Nox for Plex
+msgctxt "#42170"
+msgid "Enable episode preplay screen"
+msgstr "Ενεργοποίηση οθόνη προαναπαραγωγής επεισοδίου"
+
+# Aeon Nox for Plex
+msgctxt "#42171"
+msgid "Enable clip preplay screen"
+msgstr "Ενεργοποίηση οθόνη προαναπαραγωγής κλιπ"
+
+# Aeon Nox for Plex
+msgctxt "#42172"
+msgid "Enable movie postplay screen"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42173"
+msgid "Enable episode postplay screen"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42174"
+msgid "Enable clip postplay screen"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42175"
+msgid "Blur the fanart background in the preplay screen.  Only works in OpenPHT."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42176"
+msgid "Show the preplay screen for movies."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42177"
+msgid "Show the preplay screen for TV episodes."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42178"
+msgid "Show the preplay screen for video clips (such as \"Watch Later\")."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42179"
+msgid "Show the postplay screen for movies."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42180"
+msgid "Show the postplay screen for TV episodes."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42181"
+msgid "Show the postplay screen for video clips (such as \"Watch Later\")."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42182"
+msgid "Main menu orientation"
+msgstr "Κεντρικό μενού προσανατολισμού"
+
+# Aeon Nox for Plex
+msgctxt "#42183"
+msgid "Vertical"
+msgstr"Κάθετα"
+
+# Aeon Nox for Plex
+msgctxt "#42184"
+msgid "Horizontal"
+msgstr "Παράλληλα"
+
+# Aeon Nox for Plex
+msgctxt "#42185"
+msgid "1 Item"
+msgstr "1 αντικείμενο"
+
+# Aeon Nox for Plex
+msgctxt "#42186"
+msgid "3 Items"
+msgstr "3 αντικείμενα"
+
+# Aeon Nox for Plex
+msgctxt "#42187"
+msgid "5 Items"
+msgstr "5 αντικείμενα"
+
+# Aeon Nox for Plex
+msgctxt "#42188"
+msgid "Infobar position"
+msgstr "Θέση μπάρας Πληροφοριών"
+
+# Aeon Nox for Plex
+msgctxt "#42189"
+msgid "Upper"
+msgstr "Ανώτερο"
+
+# Aeon Nox for Plex
+msgctxt "#42190"
+msgid "Widget panel background"
+msgstr "Φόντο πάνελ Widget"
+
+# Aeon Nox for Plex
+msgctxt "#42191"
+msgid "Flat"
+msgstr "Επίπεδο"
+
+# Aeon Nox for Plex
+msgctxt "#42192"
+msgid "Clear white"
+msgstr "Καθαρισμός λευκού"
+
+# Aeon Nox for Plex
+msgctxt "#42193"
+msgid "Widgets"
+msgstr "Widgets"
+
+# Aeon Nox for Plex
+msgctxt "#42194"
+msgid "Transparency"
+msgstr "Διαφάνεια"
+
+# Aeon Nox for Plex
+msgctxt "#42195"
+msgid "Recently Added Movies"
+msgstr "Πρόσφατες Ταινίες"
+
+# Aeon Nox for Plex
+msgctxt "#42196"
+msgid "Text Label"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42197"
+msgid "Recently Added"
+msgstr "Πρόσφατες"
+
+# Aeon Nox for Plex
+msgctxt "#42198"
+msgid "Case"
+msgstr "Υπόθεση"
+
+# Aeon Nox for Plex
+msgctxt "#42199"
+msgid "None"
+msgstr "Κανένα"
+
+# Aeon Nox for Plex
+msgctxt "#42200"
+msgid "Artwork"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42201"
+msgid "Menu bar graphic"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42202"
+msgid "Black leaf"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42203"
+msgid "Mesh"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42204"
+msgid "Recently Added Episodes"
+msgstr "Πρόσφατα Επεισόδια"
+
+# Aeon Nox for Plex
+msgctxt "#42205"
+msgid "Thumbnail"
+msgstr "Μινιατούρες"
+
+# Aeon Nox for Plex
+msgctxt "#42206"
+msgid "Banner"
+msgstr "Πανό"
+
+# Aeon Nox for Plex
+msgctxt "#42207"
+msgid "Recently Added Albums"
+msgstr "Πρόσφατα Άλμπουμ"
+
+# Aeon Nox for Plex
+msgctxt "#42208"
+msgid "Search"
+msgstr "Αναζήτηση"
+
+# Aeon Nox for Plex
+msgctxt "#42209"
+msgid "Main menu"
+msgstr "Κεντρικό μενού"
+
+# Aeon Nox for Plex
+msgctxt "#42210"
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+# Aeon Nox for Plex
+msgctxt "#42211"
+msgid "Recently Added Photos"
+msgstr "Πρόσφατες Φώτο"
+
+# Aeon Nox for Plex
+msgctxt "#42212"
+msgid "Recently Used Channels"
+msgstr "Πρόσφατα χρησιμοποιημένα Κανάλια"
+
+# Aeon Nox for Plex
+msgctxt "#42213"
+msgid "On Deck Movies"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42214"
+msgid "General"
+msgstr "Γενικά"
+
+# Aeon Nox for Plex
+msgctxt "#42215"
+msgid "On Deck Episodes"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42216"
+msgid "Enable widgets"
+msgstr "Ενεργοποίηση Widgets"
+
+# Aeon Nox for Plex
+msgctxt "#42217"
+msgid "Hide Widgets"
+msgstr "Απόκρυψη Widgets "
+
+# Aeon Nox for Plex
+msgctxt "#42218"
+msgid "Widget Style"
+msgstr "Στυλ Widget"
+
+# Aeon Nox for Plex
+msgctxt "#42219"
+msgid "List"
+msgstr "Λίστα"
+
+# Aeon Nox for Plex
+msgctxt "#42220"
+msgid "Panel"
+msgstr "Πάνελ"
+
+# Aeon Nox for Plex
+msgctxt "#42221"
+msgid "Season Poster"
+msgstr "Αφίσα Σεζόν"
+
+# Aeon Nox for Plex
+msgctxt "#42222"
+msgid "hour"
+msgstr "ώρα"
+
+# Aeon Nox for Plex
+msgctxt "#42223"
+msgid "minute"
+msgstr "λεπτό"
+
+# Aeon Nox for Plex
+msgctxt "#42224"
+msgid "There is no description available for this album"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42225"
+msgid "Shutdown"
+msgstr "Κλείσιμο"
+
+# Aeon Nox for Plex
+msgctxt "#42226"
+msgid "Choose between horizontal and vertical layouts for the main menu."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42227"
+msgid "Choose the graphic image used for the main menu.  Only applies to the horizontal main menu."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42228"
+msgid "Hide the widgets when they are not in use."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42229"
+msgid "Choose from panel-style widgets or list-style widgets."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42230"
+msgid "Choose the background used for the widgets.  Choices include default, flat, clear and clear-white."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42231"
+msgid "Set the amount of transparency for the widgets."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42232"
+msgid "Choose the artwork type for On Deck Movies.  Choices include poster and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42233"
+msgid "Choose the case type for On Deck Movies.  Choices include none, clear, glass and DVD/Bluray."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42234"
+msgid "Choose the case type for On Deck Movies.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42235"
+msgid "Display a text label showing the name of the movie."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42236"
+msgid "Choose the artwork type for On Deck Episodes.  Choices include poster, thumbnail and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42237"
+msgid "Choose the case type for On Deck Episodes.  Choices include none, clear, glass and DVD/Bluray."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42238"
+msgid "Choose the case type for On Deck Episodes.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42239"
+msgid "Display a text label showing the name of the episode."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42240"
+msgid "Choose the artwork type for Recently Added Movies.  Choices include poster and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42241"
+msgid "Choose the case type for Recently Added Movies.  Choices include none, clear, glass and DVD/Bluray."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42242"
+msgid "Choose the case type for Recently Added Movies.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42243"
+msgid "Choose the artwork type for Recently Added Episodes.  Choices include poster, season poster, thumbnail and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42244"
+msgid "Choose the case type for Recently Added Episodes.  Choices include none, clear, glass and DVD/Bluray."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42245"
+msgid "Choose the case type for Recently Added Episodes.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42246"
+msgid "Choose the artwork type for Recently Added Albums.  Choices include poster and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42247"
+msgid "Choose the case type for Recently Added Albums.  Choices include none, clear, glass and CD."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42248"
+msgid "Choose the case type for Recently Added Albums.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42249"
+msgid "Display a text label showing the name of the album."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42250"
+msgid "Choose the artwork type for Recently Added Photos.  Choices include square and landscape."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42251"
+msgid "Choose the case type for Recently Added Photos.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42252"
+msgid "Display a text label showing the name of the photo."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42253"
+msgid "Choose the artwork type for Recently Used Channels.  Choices include icon and fanart."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42254"
+msgid "Choose the case type for Recently Used Channels.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42255"
+msgid "Display a text label showing the name of the Channel."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42256"
+msgid "Choose the case type for Playlists.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42257"
+msgid "Choose the case type for Watch Later.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42258"
+msgid "tomatometer"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42259"
+msgid "audience score"
+msgstr "Σκορ θεατών"
+
+# Aeon Nox for Plex
+msgctxt "#42260"
+msgid "Episodes"
+msgstr "Επεισόδια"
+
+# Aeon Nox for Plex
+msgctxt "#42261"
+msgid "Unwatched"
+msgstr "Μη Προβληθέντα"
+
+# Aeon Nox for Plex
+msgctxt "#42262"
+msgid "Hours"
+msgstr "Ώρες"
+
+# Aeon Nox for Plex
+msgctxt "#42263"
+msgid "Colours"
+msgstr "Χρώματα"
+
+# Aeon Nox for Plex
+msgctxt "#42264"
+msgid "General: Theme"
+msgstr "Γενικά: Θέμα"
+
+# Aeon Nox for Plex
+msgctxt "#42265"
+msgid "Colour Customization"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42266"
+msgid "Highlight"
+msgstr "Αποκορύφωμα"
+
+# Aeon Nox for Plex
+msgctxt "#42267"
+msgid "rainbow"
+msgstr "Ουράνιο Τόξο"
+
+# Aeon Nox for Plex
+msgctxt "#42268"
+msgid "webcolours"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42269"
+msgid "material-design"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42270"
+msgid "basic"
+msgstr "Βασικό"
+
+# Aeon Nox for Plex
+msgctxt "#42271"
+msgid "Font"
+msgstr "Γραμματοσειρά"
+
+# Aeon Nox for Plex
+msgctxt "#42272"
+msgid "Show signed in user"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42273"
+msgid "Choose the font to be used for the main menu."
+msgstr "Επιλογή γραμματοσειράς για το κεντρικό μενού."
+
+# Aeon Nox for Plex
+msgctxt "#42274"
+msgid "Show the signed in user on the main menu"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42275"
+msgid "Display plot for unwatched episodes"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42276"
+msgid "Hide or display the plot for episodes that are unwatched."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42277"
+msgid "* Plot hidden to avoid spoilers. *"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42278"
+msgid "There is no description available for this artist"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42279"
+msgid "Opacity"
+msgstr "Αδιαφάνεια"
+
+# Aeon Nox for Plex
+msgctxt "#42280"
+msgid "Palette"
+msgstr "Παλέτα"
+
+# Aeon Nox for Plex
+msgctxt "#42281"
+msgid "Custom home window background 1"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42282"
+msgid "Custom home window background 2"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42283"
+msgid "Custom home window background 3"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42284"
+msgid "Custom home window background 4"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42285"
+msgid "Custom home window background 5"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42286"
+msgid "Custom home window background 6"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42287"
+msgid "Custom home window background 7"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42288"
+msgid "Custom home window background 8"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42289"
+msgid "Custom home window background 9"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42290"
+msgid "Custom home window background 10"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42291"
+msgid "Custom home window background 11"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42292"
+msgid "Custom home window background 12"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42293"
+msgid "Custom home window background 13"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42294"
+msgid "Custom home window background 14"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42295"
+msgid "Custom home window background 15"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42296"
+msgid "Home window: Theme"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42297"
+msgid "Home window: Focussed main menu text"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42298"
+msgid "Home window: Unfocussed main menu text"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42299"
+msgid "Home window: Submenu highlight"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42300"
+msgid "Home window: Submenu text"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42301"
+msgid "Widgets: Media highlight"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42302"
+msgid "General: Media highlight"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42303"
+msgid "Theme colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42304"
+msgid "Progress bar colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42305"
+msgid "OSD: Theme colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42306"
+msgid "OSD: Progress bar colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42307"
+msgid "Music OSD Settings"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42308"
+msgid "Media: Watched status indicator"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42309"
+msgid "List view:"
+msgstr "Προβολή Λίστας"
+
+# Aeon Nox for Plex
+msgctxt "#42310"
+msgid "Theme"
+msgstr "Θέμα"
+
+# Aeon Nox for Plex
+msgctxt "#42311"
+msgid "Watched Status"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42312"
+msgid "InfoWall View:"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42313"
+msgid "Highlight Colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42314"
+msgid "Watched Status Colour"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42315"
+msgid "Landscape View:"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42316"
+msgid "Show media flags"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42317"
+msgid "Enable/disable media flags on the Preplay screen.  Disabling allocates more space for plot text."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42318"
+msgid "Time display"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42319"
+msgid "Time remaining"
+msgstr "Υπολειπόμενος χρόνος"
+
+# Aeon Nox for Plex
+msgctxt "#42320"
+msgid "Total duration"
+msgstr "Συνολική διάρκεια"
+
+# Aeon Nox for Plex
+msgctxt "#42321"
+msgid "Home videos"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42322"
+msgid "Showcase view:"
+msgstr "Προβολή Showcase"
+
+# Aeon Nox for Plex
+msgctxt "#42323"
+msgid "TriPanel view:"
+msgstr "Προβολή τριπλού πάνελ"
+
+# Aeon Nox for Plex
+msgctxt "#42324"
+msgid "Posters view:"
+msgstr "Προβολή Αφίσες"
+
+# Aeon Nox for Plex
+msgctxt "#42325"
+msgid "Shift view:"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42326"
+msgid "BannerWall view:"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42327"
+msgid "Small Icons view:"
+msgstr "Προβολή Μικρά εικονίδια"
+
+# Aeon Nox for Plex
+msgctxt "#42328"
+msgid "Icons view:"
+msgstr "Προβολή Εικονίδια"
+
+# Aeon Nox for Plex
+msgctxt "#42329"
+msgid "LowList view:"
+msgstr "Προβολή Χαμηλή λίστα"
+
+# Aeon Nox for Plex
+msgctxt "#42330"
+msgid "Episode view:"
+msgstr "Προβολή Επεισοδίων"
+
+# Aeon Nox for Plex
+msgctxt "#42331"
+msgid "Wall view:"
+msgstr "Προβολή Τοίχος"
+
+# Aeon Nox for Plex
+msgctxt "#42332"
+msgid "Gallery view:"
+msgstr "Προβολή Συλλογή"
+
+# Aeon Nox for Plex
+msgctxt "#42333"
+msgid "BannerInfo view:"
+msgstr "Προβολή infoΠανό"
+
+# Aeon Nox for Plex
+msgctxt "#42334"
+msgid "Panel view:"
+msgstr "Προβολή Πάνελ"
+
+# Aeon Nox for Plex
+msgctxt "#42335"
+msgid "FanartList view:"
+msgstr "Προβολή Fanart"
+
+# Aeon Nox for Plex
+msgctxt "#42336"
+msgid "SongList view:"
+msgstr "Προβολή Songlist"
+
+# Aeon Nox for Plex
+msgctxt "#42337"
+msgid "BigList view:"
+msgstr "Προβολή Μεγάλη λίστα"
+
+# Aeon Nox for Plex
+msgctxt "#42338"
+msgid "BigFan view:"
+msgstr "Προβολή BigFan"
+
+# Aeon Nox for Plex
+msgctxt "#42339"
+msgid "BigInfo view:"
+msgstr "Προβολή BigInfo"
+
+# Aeon Nox for Plex
+msgctxt "#42340"
+msgid "BannerPlex view:"
+msgstr "Προβολή BannerPlex"
+
+# Aeon Nox for Plex
+msgctxt "#42341"
+msgid "Fullscreen Wall view:"
+msgstr "Προβολή Πλήρης οθόνη Τοίχος"
+
+# Aeon Nox for Plex
+msgctxt "#42342"
+msgid "RightList view:"
+msgstr "Προβολή rightlist "
+
+# Aeon Nox for Plex
+msgctxt "#42343"
+msgid "Shelf 3D view:"
+msgstr "Προβολή Shelf 3D"
+
+# Aeon Nox for Plex
+msgctxt "#42344"
+msgid "Big Icons view:"
+msgstr "Προβολή Μεγάλα εικονίδια"
+
+# Aeon Nox for Plex
+msgctxt "#42345"
+msgid "Change the theme colour skin wide.  Colour settings for specific areas of the skin will override this setting."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42346"
+msgid "Change the colour for selected media skin wide.  Colour settings for specific areas of the skin will override this setting."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42347"
+msgid "Change the theme colour for the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42348"
+msgid "Change the colour for the selected item on the main menu in the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42349"
+msgid "Change the colour for unselected items on the main menu in the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42350"
+msgid "Change the colour for the selected item on the submenu in the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42351"
+msgid "Change the colour for unselected items on the submenu in the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42352"
+msgid "Change the colour for selected media in the On Deck / Recently Added Widgets.  This setting overrides the \"General: Media highlight\" setting for the home window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42353"
+msgid "Change the colour for watched status indicators skin wide.  Colour settings for specific areas of the skin will override this setting."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42354"
+msgid "On Deck Home Videos"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42355"
+msgid "Recently Added Home Videos"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42356"
+msgid "Choose the case type for On Deck Home Videos.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42357"
+msgid "Choose the case type for Recently Added Home Videos.  Choices include none and glass."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42358"
+msgid "Extras Opacity"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42359"
+msgid "Set the amount of transparency for Extras thumbnails in the Preplay window."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42360"
+msgid "Recommended"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42361"
+msgid "Reset skin"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42362"
+msgid "Overlays debug info overtop media sections.  For development use only."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42363"
+msgid "Restore all skin settings to default.  Affects Aeon Nox 5 only.  Other skins will retain their settings.  WARNING: This is irreversible. "
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42364"
+msgid "All skin settings will be reset to default.  This process is irreversible.  Are you Sure?"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42365"
+msgid "View:"
+msgstr "Προβολή"
+
+# Aeon Nox for Plex
+msgctxt "#42366"
+msgid "Choose view"
+msgstr "Επιλογή Προβολής"
+
+# Aeon Nox for Plex
+msgctxt "#42367"
+msgid "RightList"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42368"
+msgid "FanartList"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42369"
+msgid "LowList"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42370"
+msgid "SongList"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42371"
+msgid "BigList"
+msgstr "Μεγάλη λίστα"
+
+# Aeon Nox for Plex
+msgctxt "#42372"
+msgid "Episode"
+msgstr "Επεισόδιο"
+
+# Aeon Nox for Plex
+msgctxt "#42373"
+msgid "Posters"
+msgstr "Αφίσες"
+
+# Aeon Nox for Plex
+msgctxt "#42374"
+msgid "Wall"
+msgstr "Τοίχος"
+
+# Aeon Nox for Plex
+msgctxt "#42375"
+msgid "Fullscreen Wall"
+msgstr "Τοίχος Πλήρης Οθόνης"
+
+# Aeon Nox for Plex
+msgctxt "#42376"
+msgid "InfoWall"
+msgstr "Τοίχος Πληροφοριών"
+
+# Aeon Nox for Plex
+msgctxt "#42377"
+msgid "BigFan"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42378"
+msgid "BigInfo"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42379"
+msgid "Gallery"
+msgstr "Συλλογή"
+
+# Aeon Nox for Plex
+msgctxt "#42380"
+msgid "Disable Views"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42381"
+msgid "BannerPlex"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42382"
+msgid "BannerInfo"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42383"
+msgid "Panel"
+msgstr "Πάνελ"
+
+# Aeon Nox for Plex
+msgctxt "#42384"
+msgid "Shelf3D"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42385"
+msgid "Small Icons"
+msgstr "Μικρά εικονίδια"
+
+# Aeon Nox for Plex
+msgctxt "#42386"
+msgid "Big Icons"
+msgstr "Μεγάλα εικονίδια"
+
+# Aeon Nox for Plex
+msgctxt "#42387"
+msgid "General: Topbar"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42388"
+msgid "Change the colour of the navigation bar."
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42389"
+msgid "Play File"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42390"
+msgid "Show \"Search\" on Homemenu"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42391"
+msgid "Show \"Play File\" on Homemenu"
+msgstr ""
+
+# Aeon Nox for Plex
+msgctxt "#42392"
+msgid "Adds a homemenu item that allows playback of local files not on the Plex server."
+msgstr ""
+
+msgctxt "#42393"
+msgid "Show background \"Now Playing\" video"
+msgstr ""
+
+msgctxt "#42394"
+msgid "Show background \"Now Playing\" visualisation"
+msgstr ""
+
+msgctxt "#42395"
+msgid "Show snow animation"
+msgstr ""
+
+msgctxt "#42396"
+msgid "Show slide & zoom animation"
+msgstr ""
+
+msgctxt "#42397"
+msgid "Set background rotation speed"
+msgstr ""
+
+msgctxt "#42398"
+msgid "Show music visualization overlaid on top of background fanart throughout the skin."
+msgstr ""
+
+msgctxt "#42399"
+msgid "Show currently playing video as the background throughout the skin."
+msgstr ""
+
+msgctxt "#42400"
+msgid "Slide and zoom the background fanart across the screen."
+msgstr ""
+
+msgctxt "#42401"
+msgid "Display animated falling snow overtop the fanart background."
+msgstr ""
+
+msgctxt "#42402"
+msgid "Set the amount of time to elapse before changing the background fanart in a slideshow."
+msgstr ""
+
+msgctxt "#42403"
+msgid "Display thumbnails for unwatched episodes"
+msgstr ""
+
+msgctxt "#42404"
+msgid "Replaces the thumbnails of unwatched episodes with fanart to avoid spoilers."
+msgstr ""
+
+msgctxt "#42405"
+msgid "Home Videos icon style"
+msgstr ""
+
+msgctxt "#42406"
+msgid "Portrait"
+msgstr "Πορτραίτο"
