@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <!-- Defaults -->
-    <include name="FullscreenDimensions">
+    <include name="MediaFlagVarsShelf">
+		<width>120</width>
+		<height>65</height>
+		<aspectratio>keep</aspectratio>
+		<fadetime>250</fadetime>
+		<colordiffuse>white</colordiffuse>
+		<animation effect="fade" time="200">VisibleChange</animation>
+	</include>	
+	<include name="FullscreenDimensions">
         <posx>0</posx>
         <posy>0</posy>
         <width>1920</width>
         <height>1080</height>
     </include>
-    <include name="HiddenObject">
+	<include name="HiddenObject">
         <posx>-300</posx>
         <posy>-300</posy>
         <width>1</width>
@@ -50,6 +58,18 @@
         <font>font13</font>
         <radioposx>340</radioposx>
     </include>
+	<include name="RighListButtonsValues">
+		<height>90</height>
+		<width>501</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>font14</font>
+		<textcolor>grey</textcolor>
+		<focusedcolor>grey</focusedcolor>
+		<texturefocus border="1">separator5.png</texturefocus>
+		<texturenofocus border="1">separator5.png</texturenofocus>
+		<onclick>noop</onclick>
+	</include>
     
     <!-- KeyBoard -->
     <include name="Objects_KeyOffVars">
@@ -61,14 +81,40 @@
         <focusedcolor>white</focusedcolor>
         <selectedcolor>grey2</selectedcolor>
     </include>
+	<include name="SearchKeys">
+		<width>60</width>
+		<height>60</height>
+		<texturefocus border="4">listselect_fo.png</texturefocus>
+		<texturenofocus border="4">empty.png</texturenofocus>
+		<textoffsety>32</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font15</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<selectedcolor>grey2</selectedcolor>
+	</include>
+	<include name="Search_Keyboard_Press_Button">
+		<width>120</width>
+		<height>60</height>
+		<texturefocus border="4">listselect_fo.png</texturefocus>
+		<texturenofocus border="4">empty.png</texturenofocus>
+		<textoffsety>32</textoffsety>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font15</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<selectedcolor>grey2</selectedcolor>
+	</include>
     <include name="Objects_DoubleKeyOff">
         <posx>-123</posx>
         <width>320</width>
         <height>80</height>
-        <texturefocus border="4">button_middle_focus.png</texturefocus>
-        <texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
-        <alttexturefocus border="4">button_middle_focus.png</alttexturefocus>
-        <alttexturenofocus border="4">thumbs/panel_border.png</alttexturenofocus>
+        <texturefocus border="4">listselect_fo.png</texturefocus>
+        <texturenofocus border="4">empty.png</texturenofocus>
+        <alttexturefocus border="4">listselect_fo.png</alttexturefocus>
+        <alttexturenofocus border="4">empty.png</alttexturenofocus>
         <include>Objects_KeyOffVars</include>
     </include>
     <include name="Objects_DoubleKeyOffSymbol">
@@ -76,8 +122,8 @@
         <height>80</height>
         <align>center</align>
         <aligny>center</aligny>
-        <texturefocus border="4">button_middle_focus.png</texturefocus>
-        <texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
+        <texturefocus border="4">listselect_fo.png</texturefocus>
+        <texturenofocus border="4">empty.png</texturenofocus>
         <font>font15</font>
         <textcolor>grey2</textcolor>
         <selectedcolor>grey2</selectedcolor>
@@ -86,8 +132,8 @@
     <include name="Objects_SingleKeyOff">
         <width>80</width>
         <height>80</height>
-        <texturefocus border="4">button_middle_focus.png</texturefocus>
-        <texturenofocus border="4">thumbs/panel_border.png</texturenofocus>
+        <texturefocus border="4">listselect_fo.png</texturefocus>
+        <texturenofocus border="4">empty.png</texturenofocus>
         <include>Objects_KeyOffVars</include>
     </include>
     <include name="ShowCaseInfoPanelButtonsValues">
@@ -115,13 +161,13 @@
         <texturenofocus border="1">separator5.png</texturenofocus>
         <onclick>noop</onclick>
     </include>
+	
     <!-- Media Flags -->
     <include name="MediaFlagVars">
         <width>135</width>
         <height>90</height>
         <aspectratio>keep</aspectratio>
         <fadetime>250</fadetime>
-        <colordiffuse>white</colordiffuse>
         <animation effect="fade" time="200">VisibleChange</animation>
     </include>
 </includes>

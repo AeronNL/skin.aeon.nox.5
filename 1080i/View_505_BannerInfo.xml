@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
     <!-- Video BannerInfo -->
     <include name="VideoBannerInfo">
         <control type="group">
@@ -29,8 +30,8 @@
                 <height>905</height>
                 <width>980</width>
                 <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                <onleft>SetFocus(9050)</onleft>
-                <onright>60</onright>
+                <onleft>SetFocus(9050,0)</onleft>
+                <onright>noop</onright>
                 <onup>505</onup>
                 <ondown>505</ondown>
                 <orientation>vertical</orientation>
@@ -43,9 +44,8 @@
                     <control type="image">
                         <width>980</width>
                         <height>181</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture background="true">$VAR[BannerThumb]</texture>
-                        <fadetime>400</fadetime>
+                        <aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+                        <texture>$INFO[ListItem.Art(banner)]</texture>
                         <bordertexture border="2">thumbs/panel_border3.png</bordertexture>
                         <bordersize>2</bordersize>
                         <colordiffuse>BAffffff</colordiffuse>
@@ -57,36 +57,57 @@
                             <width>980</width>
                             <height>181</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                            <fadetime>400</fadetime>
+                            <texture>$INFO[ListItem.Art(fanart)]</texture>
                             <bordertexture border="2">thumbs/panel_border3.png</bordertexture>
                             <bordersize>2</bordersize>
                             <colordiffuse>BAffffff</colordiffuse>
                         </control>
-                        <!-- No Clearlog in Plex -->
-                        <!-- <control type="image">
-							<width>400</width>
-							<height>181</height>
-							<aspectratio>keep</aspectratio>
-							<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-							<fadetime>400</fadetime>
-							<bordersize>2</bordersize>
-							<colordiffuse>BAffffff</colordiffuse>
-						</control> -->
                     </control>
                     <control type="image">
                         <posx>895</posx>
                         <posy>0</posy>
                         <width>80</width>
                         <height>80</height>
-                        <texture>$INFO[ListItem.Overlay]</texture>
+                        <texture>$VAR[OverlayVar]</texture>
                         <aspectratio align="center" aligny="top">keep</aspectratio>
                         <bordersize>1</bordersize>
+						<visible>!Skin.HasSetting(Enable.Circles)</visible>
                     </control>
+										
+					<!-- Watched Status Upper Circle -->
+					<control type="image">
+						<posx>929</posx>
+						<posy>15</posy>
+						<width>36</width>
+						<height>36</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[OverlayVar]</texture>
+						<colordiffuse>$VAR[Colour_BannerInfoWatchedStatusColourVar]</colordiffuse>
+						<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+					</control>
+					
+					<!-- Watched Status Lower Circle -->
+					<control type="image">
+						<posx>929</posx>
+						<posy>130</posy>
+						<width>36</width>
+						<height>36</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[OverlayVar]</texture>
+						<colordiffuse>$VAR[Colour_BannerInfoWatchedStatusColourVar]</colordiffuse>
+						<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+					</control>
+										
                     <control type="group">
                         <posx>15</posx>
                         <posy>15</posy>
-                        <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
+                        <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon</include>
+                    </control>
+					
+					<control type="group">
+                        <posx>15</posx>
+                        <posy>130</posy>
+                        <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon</include>
                     </control>
                 </itemlayout>
                 <focusedlayout width="980" height="181">
@@ -95,51 +116,93 @@
                             <effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
                             <effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
                         </animation>
+						
+						<!-- Banner -->
                         <control type="image">
                             <width>980</width>
                             <height>181</height>
-                            <aspectratio>stretch</aspectratio>
-                            <texture background="true">$VAR[BannerThumb]</texture>
-                            <fadetime>400</fadetime>
-                            <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                            <aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+                            <texture>$INFO[ListItem.Art(banner)]</texture>
                             <bordersize>8</bordersize>
                             <visible>!IsEmpty(ListItem.Art(banner)) | IsEmpty(ListItem.Art(fanart))</visible>
                         </control>
+						<control type="image">
+                            <width>980</width>
+                            <height>181</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>empty.png</texture>
+                            <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                            <bordersize>8</bordersize>
+							<colordiffuse>$VAR[Colour_BannerInfoHighlightColourVar]</colordiffuse>
+                            <visible>!IsEmpty(ListItem.Art(banner)) | IsEmpty(ListItem.Art(fanart))</visible>
+                        </control>
+						
+						
                         <control type="group">
                             <visible>IsEmpty(ListItem.Art(banner))</visible>
                             <control type="image">
                                 <width>980</width>
                                 <height>181</height>
                                 <aspectratio>scale</aspectratio>
-                                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                                <fadetime>400</fadetime>
-                                <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                                <texture>$INFO[ListItem.Art(fanart)]</texture>
                                 <bordersize>8</bordersize>
                             </control>
-                            <!-- No Clearlogo in Plex -->
-                            <!-- <control type="image">
-								<width>400</width>
-								<height>181</height>
-								<aspectratio>keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-								<fadetime>400</fadetime>
-								<bordersize>2</bordersize>
-							</control> -->
+							<control type="image">
+                                <width>980</width>
+                                <height>181</height>
+                                <aspectratio>scale</aspectratio>
+                                <texture>empty.png</texture>
+                                <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                                <bordersize>8</bordersize>
+								<colordiffuse>$VAR[Colour_BannerInfoHighlightColourVar]</colordiffuse>
+                            </control>
                         </control>
                         <control type="image">
                             <posx>895</posx>
                             <posy>6</posy>
                             <width>80</width>
                             <height>80</height>
-                            <texture>$INFO[ListItem.Overlay]</texture>
+                            <texture>$VAR[OverlayVar]</texture>
                             <aspectratio align="center" aligny="top">keep</aspectratio>
                             <bordersize>2</bordersize>
+							<visible>!Skin.HasSetting(Enable.Circles)</visible>
                         </control>
-                        <control type="group">
-                            <posx>15</posx>
-                            <posy>15</posy>
-                            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
-                        </control>
+						
+                        <!-- Watched Status Upper Circle -->
+						<control type="image">
+							<posx>929</posx>
+							<posy>15</posy>
+							<width>36</width>
+							<height>36</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[OverlayVar]</texture>
+							<colordiffuse>$VAR[Colour_BannerInfoWatchedStatusColourVar]</colordiffuse>
+							<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+						</control>
+					
+						<!-- Watched Status Lower Circle -->
+						<control type="image">
+							<posx>929</posx>
+							<posy>130</posy>
+							<width>36</width>
+							<height>36</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$VAR[OverlayVar]</texture>
+							<colordiffuse>$VAR[Colour_BannerInfoWatchedStatusColourVar]</colordiffuse>
+							<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+						</control>
+										
+						<control type="group">
+							<posx>15</posx>
+							<posy>15</posy>
+							<include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon</include>
+						</control>
+					
+						<control type="group">
+							<posx>15</posx>
+							<posy>130</posy>
+							<include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon</include>
+						</control>
                     </control>
                 </focusedlayout>
             </control>
@@ -164,7 +227,7 @@
                 <width>685</width>
                 <height>385</height>
                 <aspectratio>scale</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                <texture>$INFO[ListItem.Art(fanart)]</texture>
                 <fadetime>400</fadetime>
                 <bordertexture border="2">thumbs/panel_border3.png</bordertexture>
                 <bordersize>2</bordersize>
@@ -194,124 +257,24 @@
                     <visible>!IsEmpty(ListItem.Genre)</visible>
                 </control>
                 <control type="label">
-                    <label>[COLOR=blue]Episodes:[/COLOR] $INFO[ListItem.episode] ($INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched)</label>
+                    <label>[COLOR=$VAR[Colour_BannerInfoThemeColourVar]]Episodes:[/COLOR] $INFO[ListItem.episode] ($INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched)</label>
                     <width>680</width>
                     <height>40</height>
                     <include>ShowCaseInfoPanelButtonsValues</include>
                 </control>
             </control>
             <control type="textbox">
-                <label>$VAR[VideoPlotVar]</label>
+                <label>$VAR[PlotVar]</label>
                 <posy>727</posy>
                 <posx>1130</posx>
                 <width>655</width>
-                <height>247</height>
+                <height>345</height>
                 <font>font14_textbox</font>
-                <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
+                <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(61)</autoscroll>
                 <pagecontrol>61</pagecontrol>
                 <include>ShowCaseInfoPanelButtonsValues</include>
             </control>
-            <control type="image">
-                <posx>1113</posx>
-                <posy>568</posy>
-                <width>2</width>
-                <height>510</height>
-                <texture border="1">separator3.png</texture>
-            </control>
-            <control type="image">
-                <posx>1115</posx>
-                <posy>890</posy>
-                <height>90</height>
-                <width>684</width>
-                <texture border="1">separator5.png</texture>
-            </control>
-            <!-- TV -->
-            <control type="group">
-                <posx>1140</posx>
-                <posy>990</posy>
-                <width>1815</width>
-                <height>90</height>
-                <orientation>horizontal</orientation>
-                <include>VisibleFadeEffect</include>
-                <visible>Container.Content(tvshows)</visible>
-                <control type="group">
-                    <posy>-5</posy>
-                    <width>175</width>
-                    <visible>!IsEmpty(ListItem.Property(TotalSeasons))</visible>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>2</posy>
-                        <width>165</width>
-                        <height>60</height>
-                        <align>center</align>
-                        <label>[B]$INFO[ListItem.Property(TotalSeasons)][/B]</label>
-                        <font>font48</font>
-                        <wrapmultiline>true</wrapmultiline>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posy>52</posy>
-                        <width>165</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <label>[LOWERCASE]$VAR[OneOrMoreSeasonsVar][/LOWERCASE]</label>
-                        <font>font12</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>!IsEmpty(ListItem.Property(TotalEpisodes))</visible>
-                    <width>167</width>
-                    <posx>165</posx>
-                    <posy>-5</posy>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>2</posy>
-                        <width>165</width>
-                        <height>60</height>
-                        <align>center</align>
-                        <label>[B]$INFO[ListItem.Property(TotalEpisodes)][/B]</label>
-                        <font>font48</font>
-                        <wrapmultiline>true</wrapmultiline>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                    <control type="label">
-                        <posy>52</posy>
-                        <width>165</width>
-                        <height>30</height>
-                        <align>center</align>
-                        <label>[LOWERCASE]$VAR[OneOrMoreEpisodesVar][/LOWERCASE]</label>
-                        <font>font12</font>
-                        <textcolor>grey2</textcolor>
-                    </control>
-                </control>
-                <control type="image" id="800014">
-                    <posx>330</posx>
-                    <width>165</width>
-                    <colordiffuse>grey2</colordiffuse>
-                    <include>MediaFlagVars</include>
-                    <bordersize>2</bordersize>
-                    <texture>$VAR[StudioFlag]</texture>
-                    <visible>!IsEmpty(Control.GetLabel(800014))</visible>
-                </control>
-                <control type="label">
-                    <posx>330</posx>
-                    <width>165</width>
-                    <height>90</height>
-                    <align>center</align>
-                    <label>$INFO[ListItem.Studio]</label>
-                    <font>font10</font>
-                    <textcolor>white</textcolor>
-                    <wrapmultiline>true</wrapmultiline>
-                    <visible>IsEmpty(Control.GetLabel(800014))</visible>
-                </control>
-                <control type="image">
-                    <posx>495</posx>
-                    <colordiffuse>grey2</colordiffuse>
-                    <include>MediaFlagVars</include>
-                    <texture fallback="flags/mpaa/NR.png">$VAR[MPAAFlag]</texture>
-                </control>
-            </control>
+            
             <control type="scrollbar" id="61">
                 <posx>1797</posx>
                 <posy>725</posy>
@@ -320,7 +283,7 @@
 				<colordiffuse>55ffffff</colordiffuse>
                 <onleft>505</onleft>
                 <onright>SetProperty(MediaMenu,True,home)</onright>
-                <onright>SetFocus(9050)</onright>
+                <onright>SetFocus(9050,0)</onright>
                 <ondown>61</ondown>
                 <onup>61</onup>
                 <showonepage>false</showonepage>

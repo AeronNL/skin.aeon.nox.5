@@ -59,7 +59,7 @@
                         <height>38</height>
                         <font>font14</font>
                         <textcolor>grey</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -68,8 +68,8 @@
                         <width>738</width>
                         <height>45</height>
                         <font>font14</font>
-                        <textcolor>labelheader</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label2]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -86,6 +86,7 @@
                         <width>738</width>
                         <height>90</height>
                         <texture border="4">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <visible>Control.HasFocus(9002)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
@@ -95,7 +96,7 @@
                         <height>38</height>
                         <font>font14</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(9002)">Conditional</animation>
                         <textoffsetx>15</textoffsetx>
@@ -106,7 +107,7 @@
                         <height>45</height>
                         <font>font14</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(9002)">Conditional</animation>
                         <textoffsetx>15</textoffsetx>
@@ -267,7 +268,7 @@
                         <width>310</width>
                         <height>332</height>
                         <aspectratio aligny="top">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
                         <bordertexture border="5">dialogs/default/inner.png</bordertexture>
                         <bordersize>1</bordersize>
                     </control>

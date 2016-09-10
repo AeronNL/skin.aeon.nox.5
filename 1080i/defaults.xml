@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<!-- Sorting Buttons -->
+	<control type="filterorderbutton" id="19011">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>350</width>
+		<height>35</height>
+		<radiowidth>35</radiowidth>
+		<radioheight>35</radioheight>
+		<radioposx>300</radioposx>
+		<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
+		<textureorderascending>android/numberpicker_up_longpressed_holo_dark.png</textureorderascending> 
+		<textureorderdescending>android/numberpicker_down_longpressed_holo_dark.png</textureorderdescending>
+		<texturefocus border="1">listselect_fo.png</texturefocus>
+		<texturenofocus border="0"></texturenofocus>
+		<font>font12</font>
+		<label>-</label>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<textoffsetx>15</textoffsetx>
+		<aligny>center</aligny>
+		<pulseonselect>false</pulseonselect>				
+	</control>
     <default type="image">
         <posx>0</posx>
         <posy>0</posy>
@@ -8,7 +30,7 @@
     </default>
     <default type="multiimage">
         <aspectratio align="center">scale</aspectratio>
-        <fadetime>FanartCrossfadeTime</fadetime>
+        <fadetime>500</fadetime>
         <include>FullscreenDimensions</include>
         <timeperimage>7000</timeperimage>
         <randomize>true</randomize>
@@ -39,11 +61,11 @@
         <height>60</height>
         <texturefocus border="1">listselect_fo.png</texturefocus>
         <texturenofocus border="1">separator2.png</texturenofocus>
+		<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
         <font>font14</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!--<invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <textoffsetx>15</textoffsetx>
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>
@@ -58,10 +80,9 @@
         <texturenofocus border="1">separator2.png</texturenofocus>
         <alttexturefocus border="1">listselect_fo.png</alttexturefocus>
         <alttexturenofocus border="1">separator2.png</alttexturenofocus>
-        <textcolor>grey2</textcolor>
+		<textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <label>-</label>
         <aligny>center</aligny>
         <font>font14</font>
@@ -100,7 +121,6 @@
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <subtype>text</subtype>
         <textoffsetx>0</textoffsetx>
         <textoffsety>0</textoffsety>
@@ -120,11 +140,11 @@
         <texturedown>android/numberpicker_down_normal_holo_dark.png</texturedown>
         <textureupfocus>android/numberpicker_up_longpressed_holo_dark.png</textureupfocus>
         <texturedownfocus>android/numberpicker_down_longpressed_holo_dark.png</texturedownfocus>
-        <font>font14</font>
+        <colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
+		<font>font14</font>
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <textoffsetx>15</textoffsetx>
         <aligny>center</aligny>
         <reverse>yes</reverse>
@@ -137,16 +157,16 @@
         <height>60</height>
         <radiowidth>64</radiowidth>
         <radioheight>64</radioheight>
-        <textureradiofocus>android/btn_radio_on_holo_dark.png</textureradiofocus>
+		<textureradiofocus>android/btn_radio_on_holo_dark.png</textureradiofocus>
         <textureradionofocus>android/btn_radio_off_holo_dark.png</textureradionofocus>
         <texturefocus border="1">listselect_fo.png</texturefocus>
         <texturenofocus border="1">separator2.png</texturenofocus>
+		<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
         <label>215</label>
         <font>font14</font>
-        <textcolor>grey2</textcolor>
+		<textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <textoffsetx>15</textoffsetx>
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>
@@ -156,7 +176,7 @@
         <posy>0</posy>
         <width>450</width>
         <height>60</height>
-		<colordiffuse>labelheader</colordiffuse>
+		<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
         <label>-</label>
         <font>font14</font>
         <texturefocus>-</texturefocus>
@@ -171,7 +191,6 @@
         <textoffsetx>15</textoffsetx>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <align>left</align>
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>
@@ -199,7 +218,6 @@
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>grey4</disabledcolor>
-        <!-- <invalidcolor>invalid</invalidcolor> Not Available in Frodo -->
         <pulseonselect>false</pulseonselect>
     </default>
     <default type="mover">

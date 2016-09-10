@@ -106,25 +106,51 @@
                             <visible>Container.OnNext</visible>
                             <animation effect="rotatey" center="608" end="-55" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <control type="image">
-                                <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
+                                <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
                                 <include>MovieShowcaseThumb</include>
                             </control>
                             <control type="image">
-                                <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
+                                <texture>thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
                                 <include>MovieSchowcaseDVDCoverVars</include>
                                 <visible>Skin.HasSetting(toggleshowcasecovers)</visible>
                             </control>
                             <control type="image">
                                 <include>WatchedOverlayShowCase</include>
                                 <texture>$VAR[IconOverlay-1Var]</texture>
+								<visible>!Skin.HasSetting(Enable.Circles)</visible>
                             </control>
+							<control type="image">
+								<posx>230</posx>
+								<posy>22</posy>
+								<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+								<width>36</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+								<texture>$VAR[IconOverlay-1Var]</texture>
+							</control>
+							<control type="image">
+								<posx>230</posx>
+								<posy>348</posy>
+								<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+								<width>36</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+								<texture>$VAR[IconOverlay-1Var]</texture>
+							</control>
                             <control type="group">
-                                <posx>28</posx>
-                                <posy>22</posy>
-                                <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-1</include>
-                            </control>
-                            <control type="image">
-                                <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
+								<posx>28</posx>
+								<posy>22</posy>
+								<include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
+							</control>
+							<control type="group">
+								<posx>28</posx>
+								<posy>348</posy>
+								<include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
+							</control>
+							<control type="image">
+                                <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
                                 <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
                                 <include>MovieShowcaseThumbReflection</include>
                             </control>
@@ -182,7 +208,7 @@
                         <animation effect="rotatey" center="-270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-6</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-6Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-6Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -192,7 +218,7 @@
                         <animation effect="rotatey" center="-135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-5</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-5Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-5Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -202,7 +228,7 @@
                         <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-4</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-4Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-4Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -212,7 +238,7 @@
                         <animation effect="rotatey" center="135" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-3</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-3Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-3Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -222,7 +248,7 @@
                         <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-2</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-2Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-2Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -232,7 +258,7 @@
                         <animation effect="rotatey" center="405" start="-55" end="-55" time="0" condition="true">Conditional</animation>
                         <include>MovieShowCaseItem-1</include>
                         <control type="image">
-                            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
+                            <texture>thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
                             <include>MovieSchowcaseDVDCoverVars</include>
                         </control>
                     </control>
@@ -253,25 +279,46 @@
                             <visible>Container.OnPrevious</visible>
                             <animation effect="rotatey" center="1223" end="55" time="200" reversible="false" tween="quadratic">Hidden</animation>
                             <control type="image">
-                                <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+                                <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
                                 <include>MovieShowcaseThumb</include>
                             </control>
                             <control type="image">
-                                <texture background="true">thumbs/boxes/$VAR[ShowcaseCase1Var]</texture>
+                                <texture>thumbs/boxes/$VAR[ShowcaseCase1Var]</texture>
                                 <include>MovieSchowcaseDVDCoverVars</include>
                                 <visible>Skin.HasSetting(toggleshowcasecovers)</visible>
                             </control>
                             <control type="image">
                                 <include>WatchedOverlayShowCase</include>
                                 <texture>$VAR[IconOverlay1Var]</texture>
+								<visible>!Skin.HasSetting(Enable.Circles)</visible>
                             </control>
+							<control type="image">
+								<posx>240</posx>
+								<posy>22</posy>
+								<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+								<width>36</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+								<texture>$VAR[IconOverlay1Var]</texture>
+							</control>
+							<control type="image">
+								<posx>240</posx>
+								<posy>348</posy>
+								<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+								<width>36</width>
+								<height>36</height>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+								<texture>$VAR[IconOverlay1Var]</texture>
+							</control>
                             <control type="group">
                                 <posx>28</posx>
                                 <posy>22</posy>
-                                <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon1</include>
+                                <include condition="!Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon1</include>
                             </control>
                             <control type="image">
-                                <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+                                <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
                                 <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
                                 <include>MovieShowcaseThumbReflection</include>
                             </control>
@@ -415,11 +462,11 @@
                     <posy>162</posy>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31001]:[/COLOR][CR]$INFO[ListItem.Writer]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31001]:[/COLOR][CR]$INFO[ListItem.Writer]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                 </control>
@@ -427,30 +474,15 @@
                     <posx>137</posx>
                     <posy>162</posy>
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+                    
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[126]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.Status)]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.Status))</visible>
                     </control>
+                    
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>IsEmpty(Window(Home).Property(NextAired.Status))</visible>
-                    </control>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
-                    </control>
-                    <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.LatestDate)) + IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
-                    </control>-->
-                    <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <!--<visible>IsEmpty(Window(Home).Property(NextAired.NextDate)) + IsEmpty(Window(Home).Property(NextAired.LatestDate))</visible>-->
                     </control>
                 </control>
                 <control type="image">
@@ -465,29 +497,106 @@
                     <posy>162</posy>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[563]:[/COLOR][CR]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Top250, / $LOCALIZE[13409] #]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[2050]:[/COLOR][CR]$VAR[DurationHrMinVar]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                     <control type="group">
-                        <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                            <width>251</width>
-                            <include>ShowCaseInfoPanelButtonsValues</include>
-                        </control>
-                        <control type="image">
+						
+						<!-- User Rating -->
+						<control type="button">
+							<label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[CR]$VAR[RatingVar][/COLOR]</label>
+							<width>251</width>
+							<include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
+						</control>
+						
+						<!-- Standard Rating -->
+						<control type="button">
+							<label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR][CR]$VAR[RatingVar]</label>	
+							<width>251</width>
+							<include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + IsEmpty(ListItem.Property(ratingImage)) + !IsEmpty(ListItem.RatingAndVotes)</visible>
+						</control>
+						
+						<!-- Rotten Tomatoes Rating -->
+						<control type="grouplist">
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+							<orientation>vertical</orientation>
+							<posx>15</posx>
+							
+							<control type="label">
+								<label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR]</label>	
+								<width>251</width>
+								<height>45</height>
+								<aligny>top</aligny>
+								<font>font14</font>
+								<textcolor>grey2</textcolor>
+							</control>
+						
+							<control type="grouplist">
+								<orientation>horizontal</orientation>
+								<control type="image">
+									<width>32</width>
+									<height>40</height>
+									<align>left</align>
+									<aligny>center</aligny>
+									<texture>$INFO[ListItem.Property(ratingImage)]</texture>
+									<aspectratio align="left" aligny="center">keep</aspectratio>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="label">
+									<height>40</height>
+									<width min="20" max="121">auto</width>
+									<aligny>center</aligny>
+									<font>font14</font>
+									<textcolor>grey2</textcolor>
+									<label>$INFO[ListItem.Property(ratingPercent)]%  </label>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="image">
+									<width>32</width>
+									<height>40</height>
+									<aligny>center</aligny>
+									<texture>$INFO[ListItem.Property(audienceRatingImage)]</texture>
+									<aspectratio align="left" aligny="center">keep</aspectratio>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="label">
+									<height>40</height>
+									<width min="20" max="121">auto</width>
+									<aligny>center</aligny>
+									<font>font14</font>
+									<textcolor>grey2</textcolor>
+									<label>$INFO[ListItem.Property(audienceRatingPercent)]%</label>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+							</control>
+						</control>
+						
+						<control type="image">
+							<posx>0</posx>
+							<posy>30</posy>
+							<width>251</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+						</control>
+						
+						<control type="image">
                             <posx>251</posx>
                             <width>2</width>
+							<height>90</height>
                             <texture border="1">separator3.png</texture>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
                             <posx>251</posx>
                             <width>250</width>
                             <include>ShowCaseInfoPanelButtonsValues</include>
                             <visible>Container.Content(movies)</visible>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Premiered]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Date]</label>
                             <posx>251</posx>
                             <width>250</width>
                             <include>ShowCaseInfoPanelButtonsValues</include>
@@ -499,62 +608,57 @@
                     <posx>640</posx>
                     <posy>162</posy>
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$INFO[ListItem.Property(TotalSeasons)]$VAR[OneOrMoreSeasonsVar, , / ]$INFO[ListItem.Property(TotalEpisodes),, ]$VAR[OneOrMoreEpisodesVar]:[/COLOR][CR]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>Container.Content(tvshows) + !IsEmpty(Window(Home).Property(NextAired.Status))</visible>
-                    </control>-->
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.episode]$INFO[ListItem.Property(UnWatchedEpisodes), (,[LOWERCASE] $LOCALIZE[16101][/LOWERCASE])]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.episode]$INFO[ListItem.Property(UnWatchedEpisodes), (,[LOWERCASE] $LOCALIZE[16101][/LOWERCASE])]</label>
                         <width>502</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>Container.Content(tvshows)</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.Property(TotalEpisodes)]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.Episode]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>Container.Content(seasons)</visible>
+                        <visible>Container.Content(seasons) + !stringcompare(ListItem.Label,All Episodes)</visible>
+                    </control>
+					<control type="button">
+                        <label>-</label>
+                        <include>ShowCaseInfoPanelButtonsValues</include>
+                        <visible>Container.Content(seasons) + stringcompare(ListItem.Label,All Episodes)</visible>
                     </control>
                     <control type="group">
-                        <!--<control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$VAR[DurationVar,, $LOCALIZE[12391]]</label>
-                            <width>251</width>
-                            <include>ShowCaseInfoPanelButtonsValues</include>
-                            <visible>Container.Content(tvshows) + !IsEmpty(Window(Home).Property(NextAired.Runtime))</visible>
-                        </control>-->
                         <control type="button">
-                            <label>[COLOR labelheader]Year:[/COLOR][CR]$INFO[ListItem.Property(Year)]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]First Aired:[/COLOR][CR]$INFO[ListItem.Date]</label>
                             <width>502</width>
                             <include>ShowCaseInfoPanelButtonsValues</include>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[16101]:[/COLOR][CR]$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[16101]:[/COLOR][CR]$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
                             <include>ShowCaseInfoPanelButtonsValues</include>
                             <visible>Container.Content(seasons)</visible>
                         </control>
-                        <!--<control type="image">
-                            <posx>251</posx>
-                            <width>2</width>
-                            <texture border="1">separator3.png</texture>
-                        </control>
-                        <control type="button">
-                            <label>Barf: [COLOR labelheader]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Property(originally_available_at)]</label>
-                            <posx>251</posx>
-                            <width>250</width>
-                            <include>ShowCaseInfoPanelButtonsValues</include>
-                        </control>-->
                     </control>
                 </control>
                 <control type="textbox">
-                    <label>$VAR[VideoPlotVar]</label>
+                    <label>$VAR[PlotVar]</label>
                     <posy>342</posy>
                     <posx>152</posx>
                     <width>970</width>
                     <height>180</height>
                     <font>font14_textbox2</font>
-                    <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
                     <include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>!Skin.HasSetting(General.SmallPlotText)</visible>
+                </control>
+				<control type="textbox">
+                    <label>$VAR[PlotVar]</label>
+                    <posy>342</posy>
+                    <posx>152</posx>
+                    <width>970</width>
+                    <height>180</height>
+                    <font>font14_textbox2_landscape</font>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                    <include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>Skin.HasSetting(General.SmallPlotText)</visible>
                 </control>
                 <control type="image">
                     <posx>137</posx>
@@ -569,8 +673,9 @@
                     <width>640</width>
                     <height>360</height>
                     <fadetime>200</fadetime>
-                    <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                    <bordertexture border="1,1,2,1">thumbs/panel_border.png</bordertexture>
+					<aspectratio>scale</aspectratio>
+                    <texture>$INFO[ListItem.Art(fanart)]</texture>
+                    <bordertexture border="1,1,2,1">empty.png</bordertexture>
                     <bordersize>1,1,2,1</bordersize>
                 </control>
             </control>
@@ -582,24 +687,101 @@
                     <posy>162</posy>
                     <visible>Container.Content(movies) | Container.Content(episodes)</visible>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31001]:[/COLOR][CR]$INFO[ListItem.Writer]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31001]:[/COLOR][CR]$INFO[ListItem.Writer]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[563]:[/COLOR][CR]$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Top250, / $LOCALIZE[13409] #]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[2050]:[/COLOR][CR]$VAR[DurationHrMinVar]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
                     <control type="group">
+					
+						<!-- User Rating -->
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[CR]$VAR[RatingVar][/COLOR]</label>
                             <width>251</width>
                             <height>92</height>
                             <include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- Standard Rating -->
+						<control type="button">
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR][CR]$VAR[RatingVar]</label>
+                            <width>251</width>
+                            <height>92</height>
+                            <include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + IsEmpty(ListItem.Property(ratingImage)) + !IsEmpty(ListItem.RatingAndVotes)</visible>
+                        </control>
+						
+						<!-- Rotten Tomatoes Rating -->
+						<control type="grouplist">
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+							<orientation>vertical</orientation>
+							<posx>15</posx>
+							
+							<control type="label">
+								<label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR]</label>	
+								<width>251</width>
+								<height>45</height>
+								<aligny>top</aligny>
+								<font>font14</font>
+								<textcolor>grey2</textcolor>
+							</control>
+						
+							<control type="grouplist">
+								<orientation>horizontal</orientation>
+								<control type="image">
+									<width>32</width>
+									<height>40</height>
+									<align>left</align>
+									<aligny>center</aligny>
+									<texture>$INFO[ListItem.Property(ratingImage)]</texture>
+									<aspectratio align="left" aligny="center">keep</aspectratio>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="label">
+									<height>40</height>
+									<width min="20" max="121">auto</width>
+									<aligny>center</aligny>
+									<font>font14</font>
+									<textcolor>grey2</textcolor>
+									<label>$INFO[ListItem.Property(ratingPercent)]%  </label>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="image">
+									<width>32</width>
+									<height>40</height>
+									<aligny>center</aligny>
+									<texture>$INFO[ListItem.Property(audienceRatingImage)]</texture>
+									<aspectratio align="left" aligny="center">keep</aspectratio>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+								<control type="label">
+									<height>40</height>
+									<width min="20" max="121">auto</width>
+									<aligny>center</aligny>
+									<font>font14</font>
+									<textcolor>grey2</textcolor>
+									<label>$INFO[ListItem.Property(audienceRatingPercent)]%</label>
+									<visible>!IsEmpty(ListItem.Property(ratingImage)) + IsEmpty(ListItem.Property(hasUserRating))</visible>
+								</control>
+							</control>
+						</control>
+						
+						<control type="image">
+							<posx>0</posx>
+							<posy>32</posy>
+							<width>251</width>
+							<height>60</height>
+							<texture border="1">separator2.png</texture>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+						</control>
+						
                         <control type="image">
                             <posx>251</posx>
                             <width>2</width>
@@ -607,7 +789,7 @@
                             <texture border="1">separator3.png</texture>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
                             <posx>251</posx>
                             <width>250</width>
                             <height>92</height>
@@ -615,7 +797,7 @@
                             <visible>Container.Content(movies)</visible>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Premiered]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Date]</label>
                             <posx>251</posx>
                             <width>250</width>
                             <height>92</height>
@@ -628,48 +810,44 @@
                     <posx>137</posx>
                     <posy>162</posy>
                     <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[126]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.Status)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.Status))</visible>
-                    </control>-->
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                     </control>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
-                    </control>-->
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(Window(Home).Property(NextAired.LatestDate)) + IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
-                    </control>-->
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <!--<visible>IsEmpty(Window(Home).Property(NextAired.NextDate)) + IsEmpty(Window(Home).Property(NextAired.LatestDate))</visible>-->
                     </control>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$VAR[DurationVar,, $LOCALIZE[12391]]</label>
-                        <height>92</height>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>Container.Content(tvshows) + !IsEmpty(Window(Home).Property(NextAired.Runtime))</visible>
-                    </control>-->
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.episode]$INFO[ListItem.Property(UnWatchedEpisodes), (,[LOWERCASE] $LOCALIZE[16101][/LOWERCASE])]</label>
+                        <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[20360]:[/COLOR][CR]$INFO[ListItem.episode]$INFO[ListItem.Property(UnWatchedEpisodes), (,[LOWERCASE] $LOCALIZE[16101][/LOWERCASE])]</label>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>Container.Content(tvshows)</visible>
                     </control>
                     <control type="group">
+					
+						<!-- No Rating -->
                         <control type="button">
                             <width>251</width>
-                            <label>[COLOR labelheader]$LOCALIZE[563]:[/COLOR][CR]$INFO[ListItem.RatingAndVotes]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR][CR]$LOCALIZE[31103]</label>
 							<height>94</height>
                             <include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>IsEmpty(ListItem.RatingAndVotes)</visible>
                         </control>
+						<control type="button">
+                            <width>251</width>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR][CR]$VAR[RatingVar]</label>
+							<height>94</height>
+                            <include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.RatingAndVotes)</visible>
+                        </control>
+						<control type="button">
+                            <width>251</width>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]$LOCALIZE[563]:[/COLOR][CR][COLOR $VAR[Colour_ShowcaseThemeColourVar]]$VAR[RatingVar][/COLOR]</label>
+							<height>94</height>
+                            <include>ShowCaseInfoPanelButtonsValues</include>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>251</posx>
                             <width>2</width>
@@ -677,7 +855,7 @@
                             <texture border="1">separator3.png</texture>
                         </control>
                         <control type="button">
-                            <label>[COLOR labelheader]Year:[/COLOR][CR]$INFO[ListItem.Year]</label>
+                            <label>[COLOR $VAR[Colour_ShowcaseThemeColourVar]]First Aired:[/COLOR][CR]$INFO[ListItem.Date]</label>
                             <posx>251</posx>
                             <width>250</width>
                             <height>94</height>
@@ -694,13 +872,25 @@
                 </control>
                 <control type="textbox">
                     <posx>655</posx>
-                    <label>$VAR[VideoPlotVar]</label>
+                    <label>$VAR[PlotVar]</label>
                     <posy>162</posy>
                     <width>800</width>
                     <height>354</height>
                     <font>font14_textbox</font>
-                    <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
                     <include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>!Skin.HasSetting(General.SmallPlotText)</visible>
+                </control>
+				<control type="textbox">
+                    <posx>655</posx>
+                    <label>$VAR[PlotVar]</label>
+                    <posy>162</posy>
+                    <width>800</width>
+                    <height>354</height>
+                    <font>font14_textbox_landscape</font>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                    <include>ShowCaseInfoPanelButtonsValues</include>
+					<visible>Skin.HasSetting(General.SmallPlotText)</visible>
                 </control>
                 <control type="image">
                     <posx>637</posx>
@@ -716,8 +906,8 @@
                     <height>360</height>
                     <fadetime>200</fadetime>
                     <aspectratio align="right">keep</aspectratio>
-                    <texture background="true">$VAR[PosterThumbVar]</texture>
-                    <bordertexture border="1,1,2,1">thumbs/panel_border.png</bordertexture>
+                    <texture>$INFO[ListItem.Art(thumb)]</texture>
+                    <bordertexture border="1,1,2,1">empty.png</bordertexture>
                     <bordersize>1,1,2,1</bordersize>
                 </control>
             </control>
@@ -741,9 +931,9 @@
         <onleft>53</onleft>
         <onright>53</onright>
         <onup>SetProperty(MediaMenu,True,home)</onup>
-        <onup>SetFocus(9050)</onup>
-        <ondown>61</ondown>
-        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets)</visible>
+        <onup>SetFocus(9050,0)</onup>
+        <ondown>noop</ondown>
+        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons)</visible>
         <viewtype label="31077">bigwrap</viewtype>
         <pagecontrol>61</pagecontrol>
         <scrolltime tween="quadratic">300</scrolltime>
@@ -791,35 +981,45 @@
     </include>
     <include name="MovieShowCaseItem-7">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-7Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-7Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-7</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-7</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-7</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-7Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-7Var]</texture>
             <include>MovieShowcaseThumbReflection</include>
         </control>
     </include>
     <include name="MovieShowCaseItem-6">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-6Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-6Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-6Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-6Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-6</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-6</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-6</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-6Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-6Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>121</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -827,20 +1027,25 @@
     </include>
     <include name="MovieShowCaseItem-5">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-5Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-5Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-5Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-5Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-5</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-5</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-5</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-5Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-5Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>131</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -848,20 +1053,25 @@
     </include>
     <include name="MovieShowCaseItem-4">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-4Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-4Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-4Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-4Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-4</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-4</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-4</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-4Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-4Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>145</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -869,20 +1079,25 @@
     </include>
     <include name="MovieShowCaseItem-3">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-3Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-3Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-3Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-3Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-3</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-3</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-3</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-3Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-3Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>160</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -890,20 +1105,25 @@
     </include>
     <include name="MovieShowCaseItem-2">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-2Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-2Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-2Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-2Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-2</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-2</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-2</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-2Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-2Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>179</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -911,24 +1131,50 @@
     </include>
     <include name="MovieShowCaseItem-1">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase-1Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay-1Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>230</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay-1Var]</texture>
+        </control>
+		<control type="image">
+            <posx>230</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay-1Var]</texture>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-1</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>180</width>
             <include>MovieShowcaseThumbReflection</include>
@@ -936,59 +1182,109 @@
     </include>
     <include name="MovieShowCaseItem0">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase0Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase0Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay0Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay0Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>230</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay0Var]</texture>
+        </control>
+		<control type="image">
+            <posx>230</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay0Var]</texture>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon0</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon0</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon0</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
             <include>MovieShowcaseThumbReflection</include>
         </control>
     </include>
     <include name="MovieShowCaseItem1">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase1Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase1Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay1Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay1Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay1Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay1Var]</texture>
         </control>
         <control type="group">
             <posx>28</posx>
             <posy>22</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon1</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon1</include>
+        </control>
+		<control type="group">
+            <posx>28</posx>
+            <posy>348</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon1</include>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>86</posx>
             <width>192</width>
@@ -997,25 +1293,45 @@
     </include>
     <include name="MovieShowCaseItem2">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase2Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase2Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay2Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay2Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay2Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay2Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>102</posx>
             <width>177</width>
@@ -1024,25 +1340,45 @@
     </include>
     <include name="MovieShowCaseItem3">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase3Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase3Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay3Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay3Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay3Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay3Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>121</posx>
             <width>158</width>
@@ -1051,25 +1387,45 @@
     </include>
     <include name="MovieShowCaseItem4">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase4Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase4Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay4Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay4Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay4Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay4Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>136</posx>
             <width>142</width>
@@ -1078,25 +1434,45 @@
     </include>
     <include name="MovieShowCaseItem5">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase5Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase5Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay5Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay5Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay5Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay5Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>146</posx>
             <width>133</width>
@@ -1105,25 +1481,45 @@
     </include>
     <include name="MovieShowCaseItem6">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase6Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase6Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay6Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay6Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay6Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay6Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>158</posx>
             <width>122</width>
@@ -1132,156 +1528,340 @@
     </include>
     <include name="MovieShowCaseItem7">
         <control type="image">
-            <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
             <include>MovieShowcaseThumb</include>
         </control>
         <control type="image">
-            <texture background="true">thumbs/boxes/$VAR[ShowcaseCase7Var]</texture>
+            <texture>thumbs/boxes/$VAR[ShowcaseCase7Var]</texture>
             <include>MovieSchowcaseDVDCoverVars</include>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase</include>
             <texture>$VAR[IconOverlay7Var]</texture>
-            <visible>!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]</visible>
+            <visible>[!Skin.HasSetting(toggleshowcasecovers) | [Skin.HasSetting(toggleshowcasecovers) + !Container.Content(movies)]] + !Skin.HasSetting(Enable.Circles)</visible>
         </control>
         <control type="image">
             <include>WatchedOverlayShowCase2</include>
             <texture>$VAR[IconOverlay7Var]</texture>
-            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(toggleshowcasecovers) + Container.Content(movies) + !Skin.HasSetting(Enable.Circles)</visible>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>22</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay7Var]</texture>
+        </control>
+		<control type="image">
+            <posx>240</posx>
+            <posy>348</posy>
+            <visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_ShowcaseWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay7Var]</texture>
         </control>
         <control type="image">
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
             <include>MovieShowcaseThumbReflection</include>
         </control>
     </include>
     <variable name="ShowcaseItem-7Var">
-        <value condition="!IsEmpty(ListItem(-7).Art(poster))">$INFO[ListItem(-7).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-7).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-7).Icon]</value>
+        <value>$INFO[ListItem(-7).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-6Var">
-        <value condition="!IsEmpty(ListItem(-6).Art(poster))">$INFO[ListItem(-6).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-6).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-6).Icon]</value>
+        <value>$INFO[ListItem(-6).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-5Var">
-        <value condition="!IsEmpty(ListItem(-5).Art(poster))">$INFO[ListItem(-5).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-5).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-5).Icon]</value>
+        <value>$INFO[ListItem(-5).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-4Var">
-        <value condition="!IsEmpty(ListItem(-4).Art(poster))">$INFO[ListItem(-4).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-4).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-4).Icon]</value>
+        <value>$INFO[ListItem(-4).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-3Var">
-        <value condition="!IsEmpty(ListItem(-3).Art(poster))">$INFO[ListItem(-3).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-3).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-3).Icon]</value>
+        <value>$INFO[ListItem(-3).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-2Var">
-        <value condition="!IsEmpty(ListItem(-2).Art(poster))">$INFO[ListItem(-2).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-2).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-2).Icon]</value>
+        <value>$INFO[ListItem(-2).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem-1Var">
-        <value condition="!IsEmpty(ListItem(-1).Art(poster))">$INFO[ListItem(-1).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(-1).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(-1).Icon]</value>
+        <value>$INFO[ListItem(-1).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem0Var">
-        <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem.Icon]</value>
+        <value>$INFO[ListItem.Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem1Var">
-        <value condition="!IsEmpty(ListItem(1).Art(poster))">$INFO[ListItem(1).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(1).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(1).Icon]</value>
+        <value>$INFO[ListItem(1).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem2Var">
-        <value condition="!IsEmpty(ListItem(2).Art(poster))">$INFO[ListItem(2).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(2).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(2).Icon]</value>
+        <value>$INFO[ListItem(2).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem3Var">
-        <value condition="!IsEmpty(ListItem(3).Art(poster))">$INFO[ListItem(3).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(3).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(3).Icon]</value>
+        <value>$INFO[ListItem(3).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem4Var">
-        <value condition="!IsEmpty(ListItem(4).Art(poster))">$INFO[ListItem(4).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(4).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(4).Icon]</value>
+        <value>$INFO[ListItem(4).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem5Var">
-        <value condition="!IsEmpty(ListItem(5).Art(poster))">$INFO[ListItem(5).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(5).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(5).Icon]</value>
+        <value>$INFO[ListItem(5).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem6Var">
-        <value condition="!IsEmpty(ListItem(6).Art(poster))">$INFO[ListItem(6).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(6).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(6).Icon]</value>
+        <value>$INFO[ListItem(6).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem7Var">
-        <value condition="!IsEmpty(ListItem(7).Art(poster))">$INFO[ListItem(7).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(7).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(7).Icon]</value>
+        <value>$INFO[ListItem(7).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem8Var">
-        <value condition="!IsEmpty(ListItem(8).Art(poster))">$INFO[ListItem(8).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(8).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(8).Icon]</value>
+        <value>$INFO[ListItem(8).Art(thumb)]</value>
     </variable>
     <variable name="ShowcaseItem9Var">
-        <value condition="!IsEmpty(ListItem(9).Art(poster))">$INFO[ListItem(9).Art(poster)]</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem(9).Label,special://skin/extras/moviegenres/,.jpg]</value>
-        <value>$INFO[ListItem(9).Icon]</value>
+        <value>$INFO[ListItem(9).Art(thumb)]</value>
     </variable>
     <variable name="IconOverlay-1Var">
-        <value condition="ListItem(-1).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(-1).Overlay]</value>
+		
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(-1).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(-1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(-1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(-1).Overlay]</value>
     </variable>
     <variable name="IconOverlay0Var">
-        <value condition="ListItem.IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem.Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem.Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem.Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem.Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem.Overlay]</value>
     </variable>
     <variable name="IconOverlay1Var">
-        <value condition="ListItem(1).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(1).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(1).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(1).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(1).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(1).Overlay]</value>
     </variable>
     <variable name="IconOverlay2Var">
-        <value condition="ListItem(2).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(2).Overlay]</value>
+	
+		<!-- Ribbons -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(2).Overlay]</value>
+	
+		<!-- Circles -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(2).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(2).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(2).Overlay]</value>
     </variable>
     <variable name="IconOverlay3Var">
-        <value condition="ListItem(3).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(3).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(3).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(3).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(3).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(3).Overlay]</value>
     </variable>
     <variable name="IconOverlay4Var">
-        <value condition="ListItem(4).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(4).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(4).Overlay]</value>
+		
+		<!-- Circle -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(4).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(4).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(4).Overlay]</value>
     </variable>
     <variable name="IconOverlay5Var">
-        <value condition="ListItem(5).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(5).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(5).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(5).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(5).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(5).Overlay]</value>
     </variable>
     <variable name="IconOverlay6Var">
-        <value condition="ListItem(6).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(6).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(6).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(6).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(6).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(6).Overlay]</value>
     </variable>
     <variable name="IconOverlay7Var">
-        <value condition="ListItem(7).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(7).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(7).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(7).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(7).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(7).Overlay]</value>
     </variable>
     <variable name="IconOverlay8Var">
-        <value condition="ListItem(8).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(8).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(8).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(8).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(8).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(8).Overlay]</value>
     </variable>
     <variable name="IconOverlay9Var">
-        <value condition="ListItem(9).IsResumable + IsEmpty(Window(Home).Property(Overlay.Resumable))">overlays/showcase/resumable.png</value>
-        <value>$INFO[Window(Home).Property(Overlay.Path)]$INFO[ListItem(9).Overlay]</value>
+	
+		<!-- Ribbons -->
+        <value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/0/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/1/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/2/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/3/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/4/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/5/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/6/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + !Skin.HasSetting(Enable.Circles)">overlays/showcase/7/$INFO[ListItem(9).Overlay]</value>
+		
+		<!-- Circles -->
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/0/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/1/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/2/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/3/$INFO[ListItem(9).Overlay]</value>
+        <value condition="!Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/4/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/5/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + !Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/6/$INFO[ListItem(9).Overlay]</value>
+		<value condition="Skin.HasSetting(Disable.Resumable) + Skin.HasSetting(Disable.Unwatched) + !Skin.HasSetting(Disable.Watched) + Skin.HasSetting(Enable.Circles)">overlays/circle/7/$INFO[ListItem(9).Overlay]</value>
     </variable>
     <variable name="ShowcaseCase-7Var">
         <value condition="SubString(Container(501).ListItem(-7).Filename,.3D.)">3d.png</value>

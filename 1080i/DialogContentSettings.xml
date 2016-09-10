@@ -131,6 +131,7 @@
                             <width>1134</width>
                             <height>60</height>
                             <texture border="5">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                             <visible>Control.HasFocus(4)</visible>
                             <include>VisibleFadeEffect</include>
                         </control>
@@ -232,8 +233,8 @@
                         <width>312</width>
                         <height>360</height>
                         <aspectratio aligny="bottom">keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="1,1,2,1">thumbs/panel_border.png</bordertexture>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <bordertexture border="1,1,2,1">empty.png</bordertexture>
                         <bordersize>1,1,2,1</bordersize>
                     </control>
                 </control>

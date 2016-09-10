@@ -17,8 +17,8 @@
 					<movement>2</movement>
 					<focusposition>1</focusposition>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
-					<onleft>SetFocus(9050)</onleft>
-					<onright>60</onright>
+					<onleft>SetFocus(9050,0)</onleft>
+					<onright>noop</onright>
 					<onup>508</onup>
 					<ondown>508</ondown>
 					<pagecontrol>60</pagecontrol>
@@ -32,17 +32,35 @@
 					<animation effect="slide" end="0,0" time="160" condition="Container(508).Row(4)">Conditional</animation>
 					<animation effect="slide" end="0,0" time="160" condition="Container(508).Row(5)">Conditional</animation>
 					<itemlayout height="100" width="1300" condition="Container.Content(songs)">
-						<control type="label">
+						<control type="group">
 							<posy>15</posy>
 							<posx>275</posx>
 							<width>1000</width>
 							<height>70</height>
-							<font>font30</font>
-							<textcolor>grey</textcolor>
-							<selectedcolor>selected</selectedcolor>
 							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.TrackNumber]. $INFO[ListItem.Title]</label>
+							
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<width max="895" min="10">auto</width>
+								<height>70</height>
+								<font>font30</font>
+								<textcolor>grey</textcolor>
+								<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
+								<aligny>center</aligny>
+								<label>$VAR[TrackNumberVar]. $INFO[ListItem.Title]</label>
+							</control>
+							<control type="label">
+								<posx>1000</posx>
+								<align>right</align>
+								<font>IconSmall</font>
+								<width>105</width>
+								<height>70</height>
+								<aligny>center</aligny>
+								<textcolor>grey2</textcolor>
+								<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
+								<label></label>
+								<visible>ListItem.Property(primaryExtraKey) + Container.Content(songs)</visible>
+							</control>
 						</control>
 					</itemlayout>
 					<focusedlayout height="275" width="1300" condition="Container.Content(songs)">
@@ -51,6 +69,7 @@
 							<width>1300</width>
 							<height>275</height>
 							<texture>listselect_fo.png</texture>
+							<colordiffuse>$VAR[Colour_SongListHighlightColourVar]</colordiffuse>
 						</control>
 						<control type="image">
 							<posx>15</posx>
@@ -58,8 +77,7 @@
 							<width>245</width>
 							<height>245</height>
 							<aspectratio>scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
-							<fadetime>IconCrossfadeTime</fadetime>
+							<texture>$INFO[ListItem.Art(smallThumb)]</texture>
 						</control>
 						<control type="label">
 							<posx>275</posx>
@@ -68,11 +86,24 @@
 							<height>70</height>
 							<font>font30</font>
 							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>[B]$INFO[ListItem.TrackNumber]. $INFO[ListItem.Title][/B]</label>
+							<label>[B]$VAR[TrackNumberVar]. $INFO[ListItem.Title][/B]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(508)">Conditional</animation>
+						</control>
+						<control type="label">
+							<posx>1275</posx>
+							<posy>0</posy>
+							<align>right</align>
+							<font>IconSmall</font>
+							<width>105</width>
+							<height>70</height>
+							<aligny>center</aligny>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
+							<label></label>
+							<visible>ListItem.Property(primaryExtraKey) + Container.Content(songs)</visible>
 						</control>
 						<control type="label">
 							<posx>275</posx>
@@ -80,8 +111,8 @@
 							<width>990</width>
 							<height>70</height>
 							<font>font16_title</font>
-							<textcolor>themecolor</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<textcolor>$VAR[Colour_SongListThemeColourVar]</textcolor>
+							<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Artist]</label>
@@ -94,7 +125,7 @@
 							<height>70</height>
 							<font>font16</font>
 							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Album] $INFO[ListItem.Year,[,]]</label>
@@ -107,20 +138,11 @@
 							<height>110</height>
 							<font>font16</font>
 							<textcolor>white</textcolor>
-							<selectedcolor>selected</selectedcolor>
+							<selectedcolor>$VAR[Colour_SongListThemeColourVar]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label fallback="• • • •">$VAR[MusicListLabel4Var]</label>
 							<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(508)">Conditional</animation>
-						</control>
-						<control type="image">
-							<posx>175</posx>
-							<posy>220</posy>
-							<width>400</width>
-							<height>45</height>
-							<colordiffuse>grey</colordiffuse>
-							<aspectratio>keep</aspectratio>
-							<texture colordiffuse="themecolor" fallback="rating0.png">$INFO[ListItem.StarRating]</texture>
 						</control>
 					</focusedlayout>
 				</control>
@@ -133,7 +155,7 @@
 					<ondown>60</ondown>
 					<onleft>508</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
-					<onright>SetFocus(9050)</onright>
+					<onright>SetFocus(9050,0)</onright>
 					<texturesliderbackground>-</texturesliderbackground>
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>

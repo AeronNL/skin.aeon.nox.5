@@ -59,7 +59,7 @@
                     <width>960</width>
                     <height>540</height>
                     <onleft>9000</onleft>
-                    <onright>60</onright>
+                    <onright>9000</onright>
                     <onup>450</onup>
                     <ondown>450</ondown>
                     <pagecontrol>60</pagecontrol>
@@ -93,6 +93,7 @@
                             <width>960</width>
                             <height>62</height>
                             <texture border="5">listselect_fo.png</texture>
+							<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -115,7 +116,7 @@
                     <width>960</width>
                     <height>540</height>
                     <onleft>9000</onleft>
-                    <onright>60</onright>
+                    <onright>9000</onright>
                     <onup>451</onup>
                     <ondown>451</ondown>
                     <pagecontrol>60</pagecontrol>
@@ -149,6 +150,7 @@
                             <width>960</width>
                             <height>62</height>
                             <texture border="5">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                             <!--<visible>Control.HasFocus(451)</visible>-->
                             <include>VisibleFadeEffect</include>
                         </control>
@@ -185,36 +187,27 @@
                 <posx>1006</posx>
                 <posy>72</posy>
                 <control type="image">
+					<posy>11</posy>
                     <width>534</width>
-                    <height>300</height>
+                    <height>373</height>
                     <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[Container(450).ListItem.Icon]</texture>
+                    <texture>$INFO[Container(450).ListItem.Icon]</texture>
                     <bordertexture border="5">dialogs/default/inner.png</bordertexture>
                     <bordersize>1</bordersize>
-                    <visible>!SubString(Control.GetLabel(416),*)</visible>
                 </control>
                 <control type="image">
-                    <width>534</width>
-                    <height>300</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true" flipx="true">$INFO[ListItem.Icon]</texture>
-                    <bordertexture border="5">dialogs/default/inner.png</bordertexture>
-                    <bordersize>1</bordersize>
-                    <visible>SubString(Control.GetLabel(416),*)</visible>
-                </control>
-                <control type="image">
-                    <posy>314</posy>
+                    <posy>432</posy>
                     <width>536</width>
-                    <height>242</height>
+                    <height>122</height>
                     <texture border="5">dialogs/default/inner.png</texture>
                 </control>
                 <control type="grouplist" id="9000">
                     <posx>1</posx>
-                    <posy>316</posy>
+                    <posy>433</posy>
                     <width>534</width>
-                    <height>240</height>
+                    <height>120</height>
                     <orientation>vertical</orientation>
-                    <onleft>60</onleft>
+                    <onleft>450</onleft>
                     <onright>450</onright>
                     <onup>9000</onup>
                     <ondown>9000</ondown>
@@ -227,17 +220,6 @@
                         <description>Cancel button</description>
                         <label>222</label>
                         <width>534</width>
-                    </control>
-                    <control type="button" id="415">
-                        <description>Create folder button</description>
-                        <label>119</label>
-                        <width>534</width>
-                    </control>
-                    <control type="radiobutton" id="416">
-                        <description>Flip Image button</description>
-                        <radioposx>460</radioposx>
-                        <width>534</width>
-                        <label>749</label>
                     </control>
                 </control>
             </control>

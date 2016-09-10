@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog">
+<window type="dialog" id="2000">
     <defaultcontrol always="true">3</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -43,7 +43,6 @@
                 <label>$LOCALIZE[13406]</label>
                 <align>center</align>
                 <textcolor>dialogheader</textcolor>
-                <font>font15_title</font>
             </control>
             <control type="group">
                 <posx>676</posx>
@@ -67,8 +66,8 @@
                 <height>480</height>
                 <onup>3</onup>
                 <ondown>3</ondown>
-                <onleft>5</onleft>
-                <onright>60</onright>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <animation effect="slide" start="0" end="157" time="0" tween="quadratic" condition="!Control.IsVisible(5)">Conditional</animation>
@@ -84,7 +83,7 @@
                         <textoffsetx>15</textoffsetx>
                         <font>font14</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -96,7 +95,7 @@
                         <textoffsetx>15</textoffsetx>
                         <font>font14</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label2]</label>
@@ -113,7 +112,7 @@
                         <width>630</width>
                         <height>60</height>
                         <texture border="5">listselect_fo.png</texture>
-                        <!--<visible>Control.HasFocus(3)</visible>-->
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <include>VisibleFadeEffect</include>
                     </control>
                     <control type="label">
@@ -122,7 +121,7 @@
                         <textoffsetx>15</textoffsetx>
                         <font>font14</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <scroll>true</scroll>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -136,7 +135,7 @@
                         <textoffsetx>15</textoffsetx>
                         <font>font14</font>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label2]</label>
@@ -151,8 +150,8 @@
                 <height>480</height>
                 <onup>6</onup>
                 <ondown>6</ondown>
-                <onleft>9001</onleft>
-                <onright>60</onright>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <itemlayout height="60" width="641">
@@ -171,7 +170,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -184,7 +183,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
@@ -203,7 +202,7 @@
                         <width>630</width>
                         <height>60</height>
                         <texture border="5">listselect_fo.png</texture>
-                        <!--<visible>Control.HasFocus(6)</visible>-->
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <include>VisibleFadeEffect</include>
                     </control>
                     <control type="label">
@@ -214,7 +213,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -228,29 +227,12 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(6)">Conditional</animation>
                     </control>
                 </focusedlayout>
-            </control>
-            <control type="grouplist" id="9001">
-                <posx>676</posx>
-                <posy>434</posy>
-                <height>134</height>
-                <onleft>60</onleft>
-                <onright>3</onright>
-                <ondown>9001</ondown>
-                <onup>9001</onup>
-                <itemgap>14</itemgap>
-                <control type="button" id="5">
-                    <description>Manual button</description>
-                    <width>300</width>
-                    <label>186</label>
-                    <texturefocus border="5">button_fo.png</texturefocus>
-                    <texturenofocus border="5">dialogs/default/inner.png</texturenofocus>
-                </control>
             </control>
             <control type="scrollbar" id="60">
                 <posx>664</posx>

@@ -52,7 +52,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <onleft>1300</onleft>
@@ -78,7 +78,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <onleft>1300</onleft>
@@ -102,7 +102,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <onleft>1300</onleft>
@@ -126,7 +126,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <font>IconTiny</font>
@@ -151,7 +151,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <font>IconTiny</font>
@@ -175,7 +175,7 @@
                     <height>35</height>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey</textcolor>
-                    <focusedcolor>blue</focusedcolor>
+                    <focusedcolor>$VAR[Colour_ThemeColourVar]</focusedcolor>
                     <textwidth>300</textwidth>
                     <aligny>center</aligny>
                     <font>IconTiny</font>
@@ -198,9 +198,9 @@
                 <zorder>10</zorder>
                 <width>350</width>
                 <height>1080</height>
-                <onright>9050</onright>
-                <onback>9050</onback>
-                <onleft>9050</onleft>
+                <onright>SetFocus(9050,0)</onright>
+                <onback>SetFocus(9050,0)</onback>
+                <onleft>SetFocus(9050,0)</onleft>
                 <!-- View Options Title -->
                 <control type="label" id="201">
                     <width>350</width>
@@ -208,7 +208,7 @@
                     <textoffsetx>15</textoffsetx>
                     <font>font13_title</font>
                     <label>31006</label>
-                    <textcolor>themecolor</textcolor>
+                    <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                     <aligny>center</aligny>
                 </control>
                 <!-- Change View type -->
@@ -240,7 +240,7 @@
                     <aligny>center</aligny>
                     <font>font13</font>
                     <label>$LOCALIZE[33068]</label>
-                    <label2>[COLOR labelheader]$VAR[BackgroundLabelVar][/COLOR]</label2>
+                    <label2>[COLOR $VAR[Colour_ThemeColourVar]]$VAR[BackgroundLabelVar][/COLOR]</label2>
                     <onclick>$VAR[VideoBackgroundClickVar]</onclick>
                     <visible>!Container.Content(genres)</visible>
                 </control>
@@ -256,7 +256,7 @@
                     <aligny>center</aligny>
                     <font>font13</font>
                     <label>$LOCALIZE[31018]</label>
-                    <label2>[COLOR labelheader]$VAR[InfoPanelLabelVar][/COLOR]</label2>
+                    <label2>[COLOR $VAR[Colour_ThemeColourVar]]$VAR[InfoPanelLabelVar][/COLOR]</label2>
                     <onclick>$VAR[52VideoInfoPanelVar]</onclick>
                     <visible>Control.IsVisible(52)</visible>
                 </control>
@@ -272,7 +272,7 @@
                     <aligny>center</aligny>
                     <font>font13</font>
                     <label>$LOCALIZE[31018]</label>
-                    <label2>[COLOR labelheader]$VAR[InfoPanelLabelVar][/COLOR]</label2>
+                    <label2>[COLOR $VAR[Colour_ThemeColourVar]]$VAR[InfoPanelLabelVar][/COLOR]</label2>
                     <onclick>$VAR[53VideoInfoPanelVar]</onclick>
                     <visible>Control.IsVisible(53)</visible>
                 </control>
@@ -287,11 +287,67 @@
                     <focusedcolor>white</focusedcolor>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <label>LowList toggle</label>
+                    <label>$LOCALIZE[42013]</label>
                     <onclick>Skin.ToggleSetting(nohighlist)</onclick>
                     <onclick>ReloadSkin()</onclick>
                     <visible>Control.IsVisible(501)</visible>
                 </control>
+				<!-- List: Theme Colour -->
+				<control type="button" id="207">
+					<description>Change List View Theme Colour</description>
+					<textwidth>255</textwidth>
+					<width>350</width>
+					<height>60</height>
+					<textoffsetx>15</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textwidth>300</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<radioposx>340</radioposx>
+					<label>$LOCALIZE[42310]</label>
+					<label2>[COLOR $VAR[Colour_ListThemeColourVar]]$VAR[Colour_ListThemeColourVar][/COLOR]</label2>
+					<onclick>ActivateWindow(1151)</onclick>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+				
+				<!-- List: Highlight Colour -->
+				<control type="button" id="208">
+					<description>Change List View Highlight Colour</description>
+					<textwidth>255</textwidth>
+					<width>350</width>
+					<height>60</height>
+					<textoffsetx>15</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textwidth>300</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<radioposx>340</radioposx>
+					<label>$LOCALIZE[42266]</label>
+					<label2>[COLOR $VAR[Colour_ListHighlightColourVar]]$VAR[Colour_ListHighlightColourVar][/COLOR]</label2>
+					<onclick>ActivateWindow(1152)</onclick>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+				
+				<!-- List: Watched Status Colour -->
+				<control type="button" id="209">
+					<description>Change Movie Watched Status Colour</description>
+					<textwidth>255</textwidth>
+					<width>350</width>
+					<height>60</height>
+					<textoffsetx>15</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textwidth>300</textwidth>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<radioposx>340</radioposx>
+					<label>$LOCALIZE[42311]</label>
+					<label2>[COLOR $VAR[Colour_ListWatchedStatusColourVar]]$VAR[Colour_ListWatchedStatusColourVar][/COLOR]</label2>
+					<onclick>ActivateWindow(1153)</onclick>
+					<visible>Control.IsVisible(50) + ![Container.PlexContent(channels) | Container.PlexContent(channel)]</visible>
+				</control>
             </control>
             <!-- Filters -->
             <control type="group" id="1300">
@@ -309,7 +365,7 @@
                 <width>350</width>
                 <height>1080</height>
                 <onleft>1300</onleft>
-                <onright>9050</onright>
+                <onright>SetFocus(9050,0)</onright>
                 <onup>19000</onup>
                 <ondown>19000</ondown>
                 <onback>ClearProperty(MediaMenu,Home)</onback>
@@ -325,7 +381,7 @@
                     <height>52</height>
                     <textoffsetx>15</textoffsetx>
                     <font>font13_title</font>
-                    <textcolor>themecolor</textcolor>
+                    <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                     <aligny>center</aligny>
                 </control>
                 <!-- primary filters list -->
@@ -334,7 +390,7 @@
                     <height>120</height>
                     <width>350</width>
                     <font>font12</font>
-                    <onright>9050</onright>
+                    <onright>SetFocus(9050,0)</onright>
                     <onleft>1300</onleft>
                     <onup>1300</onup>
                     <onback>ClearProperty(MediaMenu,Home)</onback>
@@ -351,9 +407,9 @@
                     <height>52</height>
                     <textoffsetx>15</textoffsetx>
                     <font>font13_title</font>
-                    <textcolor>themecolor</textcolor>
+                    <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                     <aligny>center</aligny>
-                    <label>FILTER</label>
+                    <label>$LOCALIZE[587]</label>
                     <visible>!IsEmpty(Container.Property(HasAdvancedFilters))</visible>
                 </control>
                 <!-- secondary filters list -->
@@ -362,7 +418,7 @@
                     <height>435</height>
                     <width>350</width>
                     <font>font12</font>
-                    <onright>9050</onright>
+                    <onright>SetFocus(9050,0)</onright>
                     <onleft>1300</onleft>
                     <onup>19000</onup>
                     <onback>ClearProperty(MediaMenu,Home)</onback>
@@ -421,9 +477,9 @@
                     <height>52</height>
                     <textoffsetx>15</textoffsetx>
                     <font>font13_title</font>
-                    <textcolor>themecolor</textcolor>
+                    <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                     <aligny>center</aligny>
-                    <label>SORT</label>
+                    <label>$LOCALIZE[42015]</label>
                     <visible>!IsEmpty(Container.Property(HasAdvancedFilters))</visible>
                 </control>
                 <!-- sorting list -->
@@ -432,7 +488,7 @@
                     <!-- 780 -->
                     <height>300</height>
                     <width>350</width>
-                    <onright>9050</onright>
+                    <onright>SetFocus(9050,0)</onright>
                     <onleft>1300</onleft>
                     <onup>19001</onup>
                     <onback>ClearProperty(MediaMenu,Home)</onback>

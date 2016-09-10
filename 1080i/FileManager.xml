@@ -74,7 +74,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
@@ -85,7 +85,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
@@ -100,6 +100,7 @@
                         <width>821</width>
                         <height>60</height>
                         <texture border="5">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <visible>Control.HasFocus(20)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
@@ -109,7 +110,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20)">Conditional</animation>
                     </control>
@@ -120,7 +121,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20)">Conditional</animation>
@@ -199,7 +200,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
@@ -210,7 +211,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
@@ -225,6 +226,7 @@
                         <width>821</width>
                         <height>60</height>
                         <texture border="5">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <visible>Control.HasFocus(21)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
@@ -234,7 +236,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(21)">Conditional</animation>
                     </control>
@@ -245,7 +247,7 @@
                         <font>font14</font>
                         <textoffsetx>15</textoffsetx>
                         <textcolor>grey</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
                         <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(21)">Conditional</animation>
@@ -259,6 +261,7 @@
             <width>1920</width>
             <height>140</height>
             <texture border="1">gradient_floor.png</texture>
+				<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
         </control>
         <include>Topbar</include>
         <control type="label">

@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<window id="10202" type="dialog">
+<window id="10202">
     <defaultcontrol always="true">19020</defaultcontrol>
     <controls>
         <!-- ViewsDialog.xml -->
         <control type="group">
             <posx>0</posx>
-            <posy>100</posy>
+            <posy>23</posy>
             <animation type="WindowOpen" condition="true" reversible="false">
-                <effect type="rotatey" center="220" start="-90,360" end="0,360" time="300" />
-                <effect type="fade" start="0" end="100" time="0" delay="0" />
+                <!--<effect type="rotatey" center="220" start="-90,360" end="0,360" time="300" />-->
+                <effect type="fade" start="0" end="100" time="400" delay="0" />
             </animation>
             <animation type="WindowClose" condition="true" reversible="false">
-                <effect type="rotatey" center="220" start="0,360" end="-90,360" time="300" />
-                <effect type="fade" start="100" end="0" time="230" />
+                <!--<effect type="rotatey" center="220" start="0,360" end="-90,360" time="300" />-->
+                <effect type="fade" start="100" end="0" time="400" />
             </animation>
             <!-- sub-list -->
             <control type="group" id="1400">
@@ -30,15 +30,15 @@
                         <height>52</height>
                         <textoffsetx>15</textoffsetx>
                         <font>font13_title</font>
-                        <textcolor>themecolor</textcolor>
+                        <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                         <aligny>center</aligny>
                     </control>
                 </control>
                 <control type="grouplist" id="19020">
-                    <posy>60</posy>
+                    <posy>52</posy>
                     <width>350</width>
                     <font>font12</font>
-                    <height>920</height>
+                    <height>980</height>
                     <posx>0</posx>
                     <onup>19020</onup>
                     <ondown>19020</ondown>
@@ -53,7 +53,7 @@
                     <texturenofocus border="0">-</texturenofocus>
                     <radiowidth>50</radiowidth>
                     <radioheight>50</radioheight>
-					<textureradiofocus>check.png</textureradiofocus> 
+					<textureradiofocus>tick-big.png</textureradiofocus> 
 					<textureradionofocus></textureradionofocus>
                     <!-- overlays/list/OverlayUnwatched.png -->
                     <texturefocus border="1">listselect_fo.png</texturefocus>

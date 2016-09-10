@@ -31,54 +31,46 @@
                     <width>448</width>
                     <height>270</height>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[31000]:[/COLOR][CR]$INFO[ListItem.Director]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>!IsEmpty(ListItem.Director)</visible>
                     </control>
-                    <!--<control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[126]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.Status)]</label>
-                        <width>448</width>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.Status))</visible>
-                    </control>-->
+                    
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[31019]:[/COLOR][CR]$INFO[ListItem.Property(mediaTag-Studio)]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>[Container.Content(tvshows) | Container.Content(seasons)]</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Premiered]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[20416]:[/COLOR][CR]$INFO[ListItem.Date]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(ListItem.Premiered) + [Container.Content(episodes) | [[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Disable.NextAired)]]</visible>
+                        <visible>!IsEmpty(ListItem.Date) + [Container.Content(episodes) | [[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Disable.NextAired)]]</visible>
                     </control>
+                    
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31010]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
-                    </control>
-                    <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[31011]:[/COLOR][CR]$INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>
-                        <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>[Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(Window(Home).Property(NextAired.LatestDate)) + IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
-                    </control>
-                    <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>!IsEmpty(ListItem.Genre)</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[2050]:[/COLOR][CR]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[2050]:[/COLOR][CR]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>!IsEmpty(ListItem.Duration)</visible>
                     </control>
+					<control type="button">
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]Seasons:[/COLOR][CR]$INFO[Container.NumItems]</label>
+                        <width>448</width>
+                        <include>ShowCaseInfoPanelButtonsValues</include>
+                        <visible>!IsEmpty(Container.NumItems) + Container.Content(tvshows)</visible>
+                    </control>
                 </control>
                 <control type="textbox" id="70">
-                    <label>$VAR[VideoPlotVar]</label>
+                    <label>$VAR[PlotVar]</label>
                     <posx>15</posx>
                     <posy>370</posy>
                     <width>418</width>
@@ -86,7 +78,20 @@
                     <font>font14_textbox</font>
                     <pagecontrol>62</pagecontrol>
                     <include>ShowCaseInfoPanelButtonsValues</include>
-                    <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
+					<visible>!Skin.HasSetting(General.SmallPlotText)</visible>
+                </control>
+				<control type="textbox" id="70">
+                    <label>$VAR[PlotVar]</label>
+                    <posx>15</posx>
+                    <posy>370</posy>
+                    <width>418</width>
+                    <height>402</height>
+                    <font>font14_textbox_tripanel</font>
+                    <pagecontrol>62</pagecontrol>
+                    <include>ShowCaseInfoPanelButtonsValues</include>
+                    <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(62)</autoscroll>
+					<visible>Skin.HasSetting(General.SmallPlotText)</visible>
                 </control>
                 <control type="scrollbar" id="62">
                     <posx>448</posx>
@@ -98,7 +103,7 @@
                     <ondown>PageUp(70)</ondown>
                     <onleft>50</onleft>
                     <onright>SetProperty(MediaMenu,True,home)</onright>
-                    <onright>SetFocus(9050)</onright>
+                    <onright>SetFocus(9050,0)</onright>
                     <texturesliderbackground>-</texturesliderbackground>
                     <texturesliderbar border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
                     <texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -113,10 +118,21 @@
                     <width>570</width>
                     <height>835</height>
                     <aspectratio aligny="bottom" align="right">scale</aspectratio>
-                    <texture background="true">$VAR[PosterThumbVar]</texture>
-                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture>$INFO[ListItem.Art(bigThumb)]</texture>
+                    <fadetime>400</fadetime>
                     <bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
                     <bordersize>20</bordersize>
+					<visible>!Container.Content(episodes)</visible>
+                </control>
+				<control type="image">
+                    <width>570</width>
+                    <height>835</height>
+                    <aspectratio aligny="bottom" align="right">scale</aspectratio>
+                    <texture>$INFO[Container.Thumb]</texture>
+                    <fadetime>400</fadetime>
+                    <bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
+                    <bordersize>20</bordersize>
+					<visible>Container.Content(episodes)</visible>
                 </control>
                 <control type="image">
                     <posx>30</posx>
@@ -124,9 +140,21 @@
                     <width>540</width>
                     <height>835</height>
                     <aspectratio aligny="top" align="right">scale</aspectratio>
-                    <fadetime>IconCrossfadeTime</fadetime>
-                    <texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$VAR[PosterThumbVar]</texture>
+                    <fadetime>400</fadetime>
+                    <texture diffuse="thumbs/thumb_reflect.png" flipy="true">$INFO[ListItem.Art(bigThumb)]</texture>
                     <bordersize>20</bordersize>
+					<visible>!Container.Content(episodes)</visible>
+                </control>
+				<control type="image">
+                    <posx>30</posx>
+                    <posy>797</posy>
+                    <width>540</width>
+                    <height>835</height>
+                    <aspectratio aligny="top" align="right">scale</aspectratio>
+                    <fadetime>400</fadetime>
+                    <texture diffuse="thumbs/thumb_reflect.png" flipy="true">$INFO[Container.Thumb]</texture>
+                    <bordersize>20</bordersize>
+					<visible>Container.Content(episodes)</visible>
                 </control>
                 <control type="image">
                     <posx>550</posx>
@@ -161,7 +189,7 @@
                     <width>806</width>
                     <height>840</height>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                    <onleft>SetFocus(9050)</onleft>
+                    <onleft>SetFocus(9050,0)</onleft>
                     <onright>60</onright>
                     <onup>55</onup>
                     <ondown>55</ondown>
@@ -182,8 +210,8 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <textcolor>labelheader</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -196,7 +224,7 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="image">
@@ -208,18 +236,52 @@
                             <texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
                             <colordiffuse>grey2</colordiffuse>
                         </control>
+						
+						<!-- User Rating -->
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
-                            <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <align>center</align>
+							<textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.RatingAndVotes]</label>
+                            <label>$VAR[RatingVar]</label>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- Standard Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$VAR[RatingVar]</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + IsEmpty(ListItem.Property(ratingImage))</visible>
+                        </control>
+						
+						<!-- Rotten Tomatoes Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Property(ratingPercent)]%</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>742</posx>
                             <posy>3</posy>
@@ -227,6 +289,7 @@
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
                             <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </itemlayout>
                     <focusedlayout height="70" width="806" condition="Container.Content(movies)">
@@ -240,7 +303,8 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+
+							<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -248,7 +312,7 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -261,7 +325,7 @@
                             <width>505</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
@@ -274,18 +338,52 @@
                             <texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
                             <animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
+						
+                        <!-- User Rating -->
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <align>center</align>
+							<textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.RatingAndVotes]</label>
-                            <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
+                            <label>$VAR[RatingVar]</label>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- Standard Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$VAR[RatingVar]</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + IsEmpty(ListItem.Property(ratingImage))</visible>
+                        </control>
+						
+						<!-- Rotten Tomatoes Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Property(ratingPercent)]%</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating)) + !IsEmpty(ListItem.Property(ratingImage))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>742</posx>
                             <posy>3</posy>
@@ -293,6 +391,7 @@
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
                             <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </focusedlayout>
                     <itemlayout height="70" width="806" condition="Container.Content(tvshows)">
@@ -307,8 +406,8 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <textcolor>labelheader</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -321,28 +420,48 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
+						
+						<!-- Standard Rating -->
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
+                            <align>center</align>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Rating]</label>
+                            <label>$VAR[RatingVar]</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- User Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$VAR[RatingVar]</label>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>742</posx>
                             <posy>3</posy>
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+                            <texture>overlays/tvlist/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                         <control type="group">
                             <description>Unwatched episodes</description>
@@ -353,7 +472,7 @@
                                 <posy>3</posy>
                                 <width>64</width>
                                 <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
+                                <texture>overlays/tvlist/OverlayUnWatched.png</texture>
                                 <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
                             </control>
                             <control type="label">
@@ -395,7 +514,7 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+						<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -403,7 +522,7 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -416,29 +535,50 @@
                             <width>565</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
+						
+						<!-- Standard Rating -->
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <align>center</align>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Rating]</label>
+                            <label>$VAR[RatingVar]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
+							<visible>IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- User Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+							<textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$VAR[RatingVar]</label>
+                            <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>742</posx>
                             <posy>3</posy>
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+                            <texture>overlays/tvlist/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                         <control type="group">
                             <description>Unwatched episodes</description>
@@ -449,7 +589,7 @@
                                 <posy>3</posy>
                                 <width>64</width>
                                 <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
+                                <texture>overlays/tvlist/OverlayUnWatched.png</texture>
                                 <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
                             </control>
                             <control type="label">
@@ -474,7 +614,7 @@
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>+</label>
-                                <textcolor>grey3</textcolor>
+                                <textcolor>white</textcolor>
                                 <textoffsetx>18</textoffsetx>
                                 <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99)</visible>
                             </control>
@@ -492,8 +632,8 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
-                            <label>$INFO[ListItem.Label]</label>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
                         <control type="image">
@@ -502,21 +642,40 @@
                             <width>42</width>
                             <height>28</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$VAR[UnFocusHDIndicator]</texture>
+                            <texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
                             <colordiffuse>grey2</colordiffuse>
                         </control>
+						
+						<!-- Standard Rating -->
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
+                            <align>center</align>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Rating]</label>
+                            <label>$VAR[RatingVar]</label>
+							<visible>IsEmpty(ListItem.Property(hasUserRating))</visible>
                         </control>
+						
+						<!-- User Rating -->
+						<control type="label">
+                            <posx>709</posx>
+                            <posy>0</posy>
+                            <width>96</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>center</align>
+                            <textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$VAR[RatingVar]</label>
+							<visible>!IsEmpty(ListItem.Property(hasUserRating))</visible>
+                        </control>
+						
                         <control type="image">
                             <posx>742</posx>
                             <posy>3</posy>
@@ -524,33 +683,7 @@
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
                             <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
-                        </control>
-                        <control type="group">
-                            <description>Unwatched episodes</description>
-                            <posx>742</posx>
-                            <posy>0</posy>
-                            <visible>Container.Content(tvshows)</visible>
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>3</posy>
-                                <width>64</width>
-                                <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
-                                <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
-                            </control>
-                            <control type="label">
-                                <posx>32</posx>
-                                <posy>0</posy>
-                                <width>100</width>
-                                <height>68</height>
-                                <font>font12_title</font>
-                                <align>center</align>
-                                <aligny>center</aligny>
-                                <label>$VAR[ListOverlayEpisodesVar]</label>
-                                <textcolor>grey3</textcolor>
-                                <textoffsetx>18</textoffsetx>
-                                <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
-                            </control>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </itemlayout>
                     <focusedlayout height="70" width="806" condition="Container.Content(episodes)">
@@ -564,15 +697,15 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+						<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
                             <width>610</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
-                            <label>$INFO[ListItem.Label]</label>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
@@ -582,19 +715,19 @@
                             <width>42</width>
                             <height>28</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$VAR[UnFocusHDIndicator]</texture>
+                            <texture>$INFO[ListItem.Property(mediaTag-videoResolution),overlays/list/,.png]</texture>
                             <animation effect="fade" start="100" end="60" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
                         <control type="label">
-                            <posx>730</posx>
+                            <posx>709</posx>
                             <posy>0</posy>
-                            <width>620</width>
+                            <width>96</width>
                             <height>68</height>
                             <font>font15</font>
-                            <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <align>center</align>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Rating]</label>
+                            <label>$VAR[RatingVar]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
                         <control type="image">
@@ -604,33 +737,7 @@
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
                             <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
-                        </control>
-                        <control type="group">
-                            <description>Unwatched episodes</description>
-                            <posx>742</posx>
-                            <posy>0</posy>
-                            <visible>Container.Content(tvshows)</visible>
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>3</posy>
-                                <width>64</width>
-                                <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
-                                <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
-                            </control>
-                            <control type="label">
-                                <posx>32</posx>
-                                <posy>0</posy>
-                                <width>64</width>
-                                <height>68</height>
-                                <font>font12_title</font>
-                                <align>center</align>
-                                <aligny>center</aligny>
-                                <label>$VAR[ListOverlayEpisodesVar]</label>
-                                <textcolor>white</textcolor>
-                                <textoffsetx>18</textoffsetx>
-                                <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
-                            </control>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </focusedlayout>
                     <itemlayout height="70" width="806" condition="Container.Content(seasons)">
@@ -647,7 +754,7 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
@@ -658,9 +765,9 @@
                             <font>font15</font>
                             <align>right</align>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20453]]</label>
+                            <label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
                         </control>
                         <control type="image">
                             <posx>742</posx>
@@ -668,7 +775,8 @@
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+                            <texture>overlays/tvlist/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                         <control type="group">
                             <description>Unwatched episodes</description>
@@ -679,7 +787,7 @@
                                 <posy>3</posy>
                                 <width>64</width>
                                 <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
+                                <texture>overlays/tvlist/OverlayUnWatched.png</texture>
                                 <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
                             </control>
                             <control type="label">
@@ -708,7 +816,7 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+							<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -717,7 +825,7 @@
                             <width>600</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
@@ -728,9 +836,9 @@
                             <height>68</height>
                             <font>font15</font>
                             <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20453]]</label>
+                            <label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
                         <control type="image">
@@ -739,7 +847,8 @@
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>overlays/list/$INFO[ListItem.Overlay]</texture>
+                            <texture>overlays/tvlist/$INFO[ListItem.Overlay]</texture>
+							<colordiffuse>$VAR[Colour_TriPanelWatchedStatusColourVar]</colordiffuse>
                         </control>
                         <control type="group">
                             <description>Unwatched episodes</description>
@@ -750,13 +859,13 @@
                                 <posy>3</posy>
                                 <width>64</width>
                                 <height>64</height>
-                                <texture>overlays/list/OverlayUnWatched.png</texture>
+                                <texture>overlays/tvlist/OverlayUnWatched.png</texture>
                                 <visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
                             </control>
                             <control type="label">
                                 <posx>32</posx>
                                 <posy>0</posy>
-                                <width>64</width>
+                                <width>100</width>
                                 <height>68</height>
                                 <font>font12_title</font>
                                 <align>center</align>
@@ -795,6 +904,7 @@
             </control>
         </control>
     </include>
+	
     <!-- Music TriPanel -->
     <include name="MusicTriPanel">
         <control type="group">
@@ -821,46 +931,140 @@
                     <texture border="40">listpanel_back.png</texture>
                 </control>
                 <control type="grouplist">
-                    <posx>0</posx>
+					<posx>0</posx>
+					<posy>92</posy>
+					<width>448</width>
+					<height>420</height>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>Container.Content(songs)</visible>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Artist)</visible>
+					</control>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[558]:[/COLOR][CR]$INFO[ListItem.Album]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Album)</visible>
+					</control>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Genre)</visible>
+					</control>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[345]:[/COLOR][CR]$INFO[ListItem.Year]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="image">
+						<posy>-15</posy>
+						<posx>12</posx>
+						<include>MediaFlagVars</include>
+						<texture>$INFO[ListItem.FileExtension,flags/audio/,.png]</texture>
+						<visible>!IsEmpty(ListItem.FileExtension)</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posx>0</posx>
+					<posy>92</posy>
+					<width>448</width>
+					<height>420</height>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>Container.Content(albums)</visible>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Artist)</visible>
+					</control>
+					<control type="button">
+						<label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+						<width>448</width>
+						<include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!IsEmpty(ListItem.Genre)</visible>
+					</control>
+					<control type="textbox">
+                        <label>$INFO[ListItem.Property(summary)]</label>
+                        <posx>15</posx>
+                        <posy>15</posy>
+                        <width>418</width>
+                        <height>200</height>
+                        <font>font14_textbox</font>
+                        <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                        <include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>Container.Content(albums) + !Skin.HasSetting(General.SmallPlotText)</visible>
+                    </control>
+					<control type="textbox">
+                        <label>$INFO[ListItem.Property(summary)]</label>
+                        <posx>15</posx>
+                        <posy>15</posy>
+                        <width>418</width>
+                        <height>200</height>
+                        <font>font14_textbox_tripanelmusicalbums</font>
+                        <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                        <include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>Container.Content(albums) + Skin.HasSetting(General.SmallPlotText)</visible>
+                    </control>
+				</control>
+				<control type="grouplist">
+					<visible>Container.Content(artists)</visible>
+					<posx>0</posx>
                     <posy>92</posy>
                     <width>448</width>
                     <height>410</height>
                     <usecontrolcoords>true</usecontrolcoords>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[557]:[/COLOR][CR]$INFO[ListItem.Artist]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(ListItem.Artist)</visible>
+                        <visible>!IsEmpty(ListItem.Artist) + !Container.Content(artists)</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.Property(Addon.Creator)]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.Property(Addon.Creator)]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>!IsEmpty(ListItem.Property(Addon.Creator))</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[558]:[/COLOR][CR]$INFO[ListItem.Album]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[558]:[/COLOR][CR]$INFO[ListItem.Album]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
-                        <visible>!IsEmpty(ListItem.Album) + !Container.COntent(albums)</visible>
+                        <visible>!IsEmpty(ListItem.Album) + !Container.Content(albums)</visible>
                     </control>
                     <control type="button">
-                        <label>[COLOR labelheader]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
+                        <label>[COLOR $VAR[Colour_TriPanelThemeColourVar]]$LOCALIZE[515]:[/COLOR][CR]$INFO[ListItem.Genre]</label>
                         <width>448</width>
                         <include>ShowCaseInfoPanelButtonsValues</include>
                         <visible>!IsEmpty(ListItem.Genre)</visible>
                     </control>
                     <control type="textbox">
-                        <label>$VAR[MusicPlotVar]</label>
+                        <label>$INFO[ListItem.Property(summary)]</label>
                         <posx>15</posx>
                         <posy>15</posy>
                         <width>418</width>
                         <height>320</height>
                         <font>font14_textbox</font>
-                        <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                        <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
                         <include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>!Skin.HasSetting(General.SmallPlotText)</visible>
                     </control>
-                </control>
+					<control type="textbox">
+                        <label>$INFO[ListItem.Property(summary)]</label>
+                        <posx>15</posx>
+                        <posy>15</posy>
+                        <width>418</width>
+                        <height>320</height>
+                        <font>font14_textbox_tripanelmusic</font>
+                        <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                        <include>ShowCaseInfoPanelButtonsValues</include>
+						<visible>Skin.HasSetting(General.SmallPlotText)</visible>
+                    </control>
+				</control>
             </control>
             <control type="group">
                 <posx>846</posx>
@@ -869,8 +1073,8 @@
                     <width>570</width>
                     <height>570</height>
                     <aspectratio aligny="bottom" align="right">scale</aspectratio>
-                    <texture background="true">$INFO[ListItem.Icon]</texture>
-                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture>$INFO[ListItem.Art(thumb)]</texture>
+                    <fadetime>400</fadetime>
                     <bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
                     <bordersize>20</bordersize>
                 </control>
@@ -880,8 +1084,8 @@
                     <width>540</width>
                     <height>570</height>
                     <aspectratio aligny="top" align="right">scale</aspectratio>
-                    <fadetime>IconCrossfadeTime</fadetime>
-                    <texture diffuse="thumbs/thumb_reflect.png" flipy="true" background="true">$INFO[ListItem.Icon]</texture>
+                    <fadetime>400</fadetime>
+                    <texture diffuse="thumbs/thumb_reflect.png" flipy="true">$INFO[ListItem.Art(thumb)]</texture>
                     <bordersize>20</bordersize>
                 </control>
                 <control type="image">
@@ -917,7 +1121,7 @@
                     <width>806</width>
                     <height>575</height>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                    <onleft>SetFocus(9050)</onleft>
+                    <onleft>SetFocus(9050,0)</onleft>
                     <onright>60</onright>
                     <onup>55</onup>
                     <ondown>55</ondown>
@@ -938,8 +1142,8 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <textcolor>labelheader</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[Colour_TriPanelThemeColourVar]</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -952,7 +1156,7 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
@@ -963,7 +1167,7 @@
                             <font>font15</font>
                             <align>right</align>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.Label2]</label>
                             <visible>StringCompare(Container.SortMethod,$LOCALIZE[557])</visible>
@@ -980,7 +1184,7 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+							<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -988,7 +1192,7 @@
                             <width>90</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <align>left</align>
                             <aligny>center</aligny>
                             <label fallback="• • • •">$INFO[ListItem.Year]</label>
@@ -1001,7 +1205,7 @@
                             <width>620</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
@@ -1012,14 +1216,14 @@
                             <height>68</height>
                             <font>font15</font>
                             <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.label2]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                             <visible>StringCompare(Container.SortMethod,$LOCALIZE[557])</visible>
                         </control>
                     </focusedlayout>
-                    <itemlayout height="70" width="806" condition="!Container.Content(albums)">
+                    <itemlayout height="70" width="806" condition="Container.Content(artists)">
                         <control type="image">
                             <posy>10</posy>
                             <width>806</width>
@@ -1033,7 +1237,7 @@
                             <height>68</height>
                             <font>font15</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
@@ -1044,12 +1248,12 @@
                             <font>font15</font>
                             <align>right</align>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="70" width="806" condition="!Container.Content(albums)">
+                    <focusedlayout height="70" width="806" condition="Container.Content(artists)">
                         <control type="image">
                             <posy>12</posy>
                             <width>806</width>
@@ -1060,7 +1264,7 @@
                             <width>806</width>
                             <height>70</height>
                             <texture border="4">listselect_fo.png</texture>
-                            <!--<visible>Control.HasFocus(55)</visible>-->
+							<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
                             <include>VisibleFadeEffect</include>
                         </control>
                         <control type="label">
@@ -1069,7 +1273,7 @@
                             <width>775</width>
                             <height>68</height>
                             <font>font15</font>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
@@ -1080,9 +1284,102 @@
                             <height>68</height>
                             <font>font15</font>
                             <align>right</align>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.label2]</label>
+                            <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
+                        </control>
+                    </focusedlayout>
+					<itemlayout height="70" width="806" condition="Container.Content(songs)">
+                        <control type="image">
+                            <posy>10</posy>
+                            <width>806</width>
+                            <height>60</height>
+                            <texture border="1">separator2.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>15</posx>
+                            <posy>0</posy>
+                            <width>775</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label>$VAR[TrackNumberVar].  $INFO[ListItem.Label]</label>
+                        </control>
+						<control type="label">
+							<visible>ListItem.Property(primaryExtraKey) + Container.Content(songs)</visible>
+							<posx>700</posx>
+                            <posy>0</posy>
+                            <width>68</width>
+                            <height>68</height>
+                            <font>IconSmall</font>
+                            <align>right</align>
+							<aligny>center</aligny>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label></label>
+						</control>
+                        <control type="label">
+                            <posx>790</posx>
+                            <posy>0</posy>
+                            <width>680</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>right</align>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Duration]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="70" width="806" condition="Container.Content(songs)">
+                        <control type="image">
+                            <posy>12</posy>
+                            <width>806</width>
+                            <height>60</height>
+                            <texture border="1">separator2.png</texture>
+                        </control>
+                        <control type="image">
+                            <width>806</width>
+                            <height>70</height>
+                            <texture border="4">listselect_fo.png</texture>
+							<colordiffuse>$VAR[Colour_TriPanelHighlightColourVar]</colordiffuse>
+							<include>VisibleFadeEffect</include>
+                        </control>
+                        <control type="label">
+                            <posx>15</posx>
+                            <posy>0</posy>
+                            <width>775</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label>$VAR[TrackNumberVar].  $INFO[ListItem.Label]</label>
+                            <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
+                        </control>
+						<control type="label">
+							<visible>ListItem.Property(primaryExtraKey) + Container.Content(songs)</visible>
+							<posx>700</posx>
+                            <posy>0</posy>
+                            <width>68</width>
+                            <height>68</height>
+                            <font>IconSmall</font>
+                            <align>right</align>
+							<aligny>center</aligny>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <label></label>
+						</control>
+                        <control type="label">
+                            <posx>790</posx>
+                            <posy>0</posy>
+                            <width>680</width>
+                            <height>68</height>
+                            <font>font15</font>
+                            <align>right</align>
+                            <selectedcolor>$VAR[Colour_TriPanelThemeColourVar]</selectedcolor>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Duration]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(55)">Conditional</animation>
                         </control>
                     </focusedlayout>

@@ -1,325 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window>
-    <coordinates>
-        <system>1</system>
-        <posx>0</posx>
-        <posy>0</posy>
-    </coordinates>
-    <onload condition="VideoPlayer.Content(livetv)">SetFocus(808)</onload>
-    <onload condition="!VideoPlayer.Content(livetv)">SetFocus(602)</onload>
+<window id="2901">
+    <defaultcontrol always="true">410</defaultcontrol>
+	<zorder>2</zorder>
     <controls>
-        <control type="slider">
-            <description>Seek Slider</description>
-            <posx>0</posx>
-            <posy>1014</posy>
-            <width>1920</width>
-            <height>64</height>
-            <texturesliderbar>seekslider2.png</texturesliderbar>
-            <textureslidernib>-</textureslidernib>
-            <textureslidernibfocus>-</textureslidernibfocus>
-            <action>seek</action>
-            <visible>!VideoPlayer.Content(LiveTV)</visible>
+	
+		<!-- Set Default OSD Button -->
+        <control type="button" id="410">
+			<include>HiddenObject</include>
+            <onfocus>Dialog.Close(FullscreenInfo)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Playlists)">SetFocus(11)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Bookmarks)">SetFocus(12)</onfocus>
+			<onfocus condition="SubString(Skin.String(OSD.DefaultButton),Subtitles)">SetFocus(14)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Previous)">SetFocus(9)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Rewind)">SetFocus(3)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Stop)">SetFocus(5)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Fast Forward)">SetFocus(6)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Next)">SetFocus(10)</onfocus>
+			<onfocus condition="SubString(Skin.String(OSD.DefaultButton),Screenshot)">SetFocus(707)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Video Settings)">SetFocus(13)</onfocus>
+            <onfocus condition="SubString(Skin.String(OSD.DefaultButton),Audio Settings)">SetFocus(800)</onfocus>
+            <onfocus condition="IsEmpty(Skin.String(OSD.DefaultButton))">SetFocus(4)</onfocus>
         </control>
+		
         <control type="group">
-            <animation effect="slide" end="0,-238" time="240" tween="quadratic" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(PVROSDTeletext) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1118)">Conditional</animation>
-            <animation effect="slide" start="0,-238" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="0,-238" start="0,0" time="240" tween="quadratic">WindowClose</animation>
-            <posy>0</posy>
-            <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1920</width>
-                <height>136</height>
-                <texture border="1,1,1,40">topbar.png</texture>
-            </control>
-            <control type="grouplist" id="202">
-                <posy>0</posy>
-                <height>144</height>
-                <width>1920</width>
-                <align>center</align>
+            <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(1115) | Window.IsVisible(10204)] + !Skin.HasSetting(Enable.ScreenshotMode)</visible>
+            <include>Animation_OpenCloseFade</include>
+            <include>Animation_FadedByOSDSettings</include>
+            
+            <control type="grouplist" id="2001">
+				<animation effect="slide" end="-268,0" time="0" condition="StringCompare(Skin.String(OSD.VideoIconStyle),Disabled)">Conditional</animation>
+                <posx>298</posx>
+                <posy>975</posy>
+                <width>1577</width>
                 <itemgap>0</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
                 <orientation>horizontal</orientation>
-                <onup>703</onup>
-                <ondown>701</ondown>
-                <onleft>202</onleft>
-                <onright>202</onright>
-                <visible>!VideoPlayer.Content(LiveTV)</visible>
-                <control type="button" id="700">
-                    <textoffsety>60</textoffsety>
-                    <texturefocus>osd/buttons/OSDBookMarksFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDBookMarksNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+                <onleft>709</onleft>
+                <onright>11</onright>
+                <onup>noop</onup>
+                <ondown>noop</ondown>
+				
+				<!-- OSD Playlist Button -->
+                <control type="button" id="11">
+                    <description>Playlists</description>
                     <height>100</height>
-                    <font>-</font>
+                    <width>100</width>
+					<texturefocus>osd/buttons/osdplaylistfo.png</texturefocus>
+					<texturenofocus>osd/buttons/osdplaylistnf.png</texturenofocus>
+					<onclick>ReplaceWindow(10094, plexserver://playqueue/video)</onclick>
+					<colordiffuse>-</colordiffuse>
+                </control>  
+								
+				<!-- OSD Bookmarks Button -->
+                <control type="button" id="12">
+                    <description>Bookmarks</description>
+                    <height>100</height>
+                    <width>100</width>
+                    <texturefocus>osd/buttons/osdbookmarksfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdbookmarksnf.png</texturenofocus>
                     <onclick>ActivateWindow(videobookmarks)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="701">
-                    <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+								
+				<!-- OSD Subtitles Button -->
+                <control type="button" id="14">
+                    <description>OSD Subtitles</description>
                     <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(osdaudiosettings)</onclick>
-                </control>
-                <control type="button" id="702">
-                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
-                    <label>-</label>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(osdvideosettings)</onclick>
-                </control>
-                <control type="button" id="600">
-                    <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Previous)</onclick>
-                </control>
-                <control type="button" id="601">
-                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Rewind)</onclick>
-                </control>
-                <control type="togglebutton" id="602">
-                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
-                    <label>-</label>
-                    <altlabel>208</altlabel>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                    <onclick>PlayerControl(Play)</onclick>
-                </control>
-                <control type="button" id="603">
-                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Stop)</onclick>
-                </control>
-                <control type="button" id="604">
-                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Forward)</onclick>
-                </control>
-                <control type="button" id="605">
-                    <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Next)</onclick>
-                </control>
-                <control type="button" id="703">
-                    <texturefocus>osd/buttons/OSDSubtitlesFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDSubtitlesNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>Close</onclick>
+                    <texturefocus>osd/buttons/osdsubtitlesfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdsubtitlesnf.png</texturenofocus>
                     <onclick>ActivateWindow(10204)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="704">
-                    <texturefocus>osd/buttons/OSDDvdFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDDvdNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+				
+				<!-- OSD Previous Button -->
+                <control type="button" id="9">
+                    <description>Previous</description>
                     <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(ShowVideoMenu)</onclick>
-                    <visible>VideoPlayer.HasMenu</visible>
-                </control>
-                <control type="button" id="705">
-                    <texturefocus>osd/buttons/OSDStereoscopicFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDStereoscopicNF.png</texturenofocus>
-                    <label>-</label>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ToggleStereoMode</onclick>
-                    <visible>VideoPlayer.IsStereoscopic</visible>
-                </control>
-                <control type="button" id="706">
-                    <texturefocus>osd/buttons/OSDInfoFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDInfoNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>Close</onclick>
-                    <onclick>ActivateWindow(1118)</onclick>
-                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
-                </control>
-            </control>
-            <control type="grouplist" id="202">
-                <posy>0</posy>
-                <height>144</height>
-                <width>1920</width>
-                <align>center</align>
-                <itemgap>0</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
-                <orientation>horizontal</orientation>
-                <onup>800</onup>
-                <ondown>807</ondown>
-                <onleft>202</onleft>
-                <onright>202</onright>
-                <visible>VideoPlayer.Content(LiveTV)</visible>
-                <control type="button" id="800">
-                    <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(osdaudiosettings)</onclick>
-                </control>
-                <control type="button" id="801">
-                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(osdvideosettings)</onclick>
-                </control>
-                <control type="button" id="802">
-                    <texturefocus>osd/buttons/OSDChannelUPFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDChannelUPNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
+                    <texturefocus>osd/buttons/osdprevtrackfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdprevtracknf.png</texturenofocus>
                     <onclick>PlayerControl(Previous)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="803">
-                    <textoffsety>60</textoffsety>
-                    <texturefocus>osd/buttons/OSDChannelDownFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDChannelDownNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+				
+				<!-- OSD Rewind Button -->
+                <control type="button" id="3">
+                    <description>Rewind</description>
                     <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Next)</onclick>
+                    <width>100</width>
+                    <texturefocus>osd/buttons/osdrewindfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdrewindnf.png</texturenofocus>
+                    <onclick>PlayerControl(rewind)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="804">
-                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+				
+				<!-- OSD Stop Button -->
+                <control type="button" id="5">
+                    <description>Stop</description>
                     <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Rewind)</onclick>
-                    <enable>Player.SeekEnabled</enable>
+                    <width>100</width>
+                    <texturefocus>osd/buttons/osdstopfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdstopnf.png</texturenofocus>
+                    <onclick>PlayerControl(stop)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="togglebutton" id="812">
-                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
-                    <label>-</label>
-                    <altlabel>208</altlabel>
-                    <width>100</width>
+				
+				<!-- OSD Play/Pause Button -->
+                <control type="togglebutton" id="4">
+                    <description>Play</description>
                     <height>100</height>
-                    <font>-</font>
+                    <width>100</width>
+                    <texturefocus>osd/buttons/osdpausefo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdpausenf.png</texturenofocus>
                     <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                    <onclick>PlayerControl(Play)</onclick>
-                    <enable>Player.PauseEnabled</enable>
+                    <alttexturefocus>osd/buttons/osdplayfo.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/osdplaynf.png</alttexturenofocus>
+                    <disabledcolor>-</disabledcolor>
+                    <colordiffuse>-</colordiffuse>
+                    <onclick>PlayerControl(play)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="805">
-                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
+				
+				<!-- OSD Fast Forward Button -->
+                <control type="button" id="6">
+                    <description>Forward</description>
                     <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Stop)</onclick>
-                </control>
-                <control type="button" id="806">
-                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
-                    <label>-</label>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Forward)</onclick>
-                    <enable>Player.SeekEnabled</enable>
+                    <texturefocus>osd/buttons/osdforwardfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdforwardnf.png</texturenofocus>
+                    <onclick>PlayerControl(forward)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="togglebutton" id="10">
-                    <texturefocus>osd/buttons/OSDRecordOffFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDRecordOffNF.png</texturenofocus>
-                    <alttexturefocus>osd/buttons/OSDRecordOnFO.png</alttexturefocus>
-                    <alttexturenofocus>osd/buttons/OSDRecordOnNF.png</alttexturenofocus>
-                    <label>-</label>
-                    <altlabel>208</altlabel>
+				
+				<!-- OSD Next Button -->
+                <control type="button" id="10">
+                    <description>Next</description>
+                    <height>100</height>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>PlayerControl(Record)</onclick>
-                    <enable>Player.CanRecord</enable>
-                    <usealttexture>Player.Recording</usealttexture>
+                    <texturefocus>osd/buttons/osdnexttrackfo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdnexttracknf.png</texturenofocus>
+                    <onclick>PlayerControl(Next)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="807">
-                    <texturefocus>osd/buttons/OSDChannelListFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDChannelListNF.png</texturenofocus>
-                    <label>-</label>
+				
+				<!-- Screenshot Button -->
+				<control type="button" id="707">
+					<texturefocus>osd/buttons/osdscreenshotfo.png</texturefocus>
+					<texturenofocus>osd/buttons/osdscreenshotnf.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>Dialog.Close(2901)</onclick>
+					<onclick>Skin.ToggleSetting(Enable.ScreenshotMode)</onclick>
+					<onclick>Notification($LOCALIZE[19098]:,$LOCALIZE[42123],1500,camera.png)</onclick>
+					<onclick>AlarmClock(Take a Screenshot,TakeScreenshot,00:03,silent)</onclick>
+					<onclick>AlarmClock(Reset ScreenshotMode,Skin.Reset(Enable.ScreenshotMode),00:04,silent)</onclick>
+					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+					<colordiffuse>-</colordiffuse>
+				</control>
+				
+				<!-- OSD Video Settings -->
+                <control type="button" id="13">
+                    <description>Video Settings</description>
+                    <height>100</height>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(PVROSDChannels)</onclick>
-                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                    <texturefocus>osd/buttons/osdvideofo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdvideonf.png</texturenofocus>
+                    <onclick>ActivateWindow(osdvideosettings)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="808">
-                    <texturefocus>osd/buttons/OSDepgFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDepgNF.png</texturenofocus>
-                    <label>-</label>
+				
+				<!-- OSD Audio Settings -->
+                <control type="button" id="800">
+                    <description>Audio Settings</description>
+                    <height>100</height>
                     <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(PVROSDGuide)</onclick>
-                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                    <texturefocus>osd/buttons/osdaudiofo.png</texturefocus>
+                    <texturenofocus>osd/buttons/osdaudionf.png</texturenofocus>
+                    <onclick>ActivateWindow(osdaudiosettings)</onclick>
+					<colordiffuse>-</colordiffuse>
                 </control>
-                <control type="button" id="809">
-                    <texturefocus>osd/buttons/OSDStereoscopicFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDStereoscopicNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ToggleStereoMode</onclick>
-                    <visible>VideoPlayer.IsStereoscopic</visible>
-                </control>
-                <control type="button" id="810">
-                    <texturefocus>osd/buttons/OSDTeleTextFO.png</texturefocus>
-                    <texturenofocus>osd/buttons/OSDTeleTextNF.png</texturenofocus>
-                    <label>-</label>
-                    <width>100</width>
-                    <height>100</height>
-                    <font>-</font>
-                    <onclick>ActivateWindow(Teletext)</onclick>
-                </control>
+				
+				<!-- OSD Options -->
+				<control type="button" id="709">
+					<texturefocus>osd/buttons/OSDSkinFO.png</texturefocus>
+					<texturenofocus>osd/buttons/OSDSkinNF.png</texturenofocus>
+					<label>-</label>
+					<width>100</width>
+					<height>100</height>
+					<font>-</font>
+					<onclick>ActivateWindow(1115)</onclick>
+					<colordiffuse>-</colordiffuse>
+				</control>
             </control>
-        </control>
+			
+			<!-- Display Large Pause Symbol -->
+			<control type="group">
+				<animation type="WindowOpen" reversible="false">
+					<effect type="fade" start="0" end="100" time="500" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="fade" start="100" end="0" time="0" />
+				</animation>
+				<animation type="VisibleChange" reversible="false">
+					<effect type="fade" start="0" end="100" time="500" />
+				</animation>
+				<animation effect="slide" end="0,-100" time="0" condition="[StringCompare(Skin.String(OSD.Plot),Paused) + Player.Paused] | StringCompare(Skin.String(OSD.Plot),Always)">Conditional</animation>
+				<posx>867</posx>
+				<posy>370</posy>
+				<visible>Player.Paused + !Player.Seeking + !Player.Caching + !Skin.HasSetting(OSD.PauseSymbol.Disable)</visible>
+				
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>186</width>
+					<height>186</height>
+					<texture>osd/bg_play_large.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>186</width>
+					<height>186</height>
+					<texture>osd/btn_pause.png</texture>
+				</control>
+			</control>
+			
+			<!-- Rewind / Fast Forward -->
+			<control type="grouplist">
+				<posx>30</posx>
+				<posy>66</posy>
+				<width>748</width>
+				<height>150</height>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>
+				<include>VisibleFadeEffect</include>
+				<visible>Player.Forwarding | Player.Rewinding</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="image">
+					<posy>3</posy>
+					<width>90</width>
+					<height>87</height>
+					<aspectratio>keep</aspectratio>
+					<texture flipx="true">osd/ff.png</texture>
+					<colordiffuse>FFe5e5e5</colordiffuse>
+					<animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+					<visible>Player.Rewinding</visible>
+				</control>
+				<control type="label">
+					<label>$VAR[OSDForwardRewindVar]</label>
+					<width min="10" max="300">auto</width>
+					<height>90</height>
+					<textoffsetx>0</textoffsetx>
+					<aligny>center</aligny>
+					<font>font_MainMenu</font>
+					<shadowcolor>44000000</shadowcolor>
+					<textcolor>DDe5e5e5</textcolor>
+				</control>
+				<control type="image">
+					<posy>3</posy>
+					<width>90</width>
+					<height>87</height>
+					<aspectratio>keep</aspectratio>
+					<texture>osd/ff.png</texture>
+					<colordiffuse>FFe5e5e5</colordiffuse>
+					<animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
+					<visible>Player.Forwarding</visible>
+				</control>
+			</control>
+        </control>  
     </controls>
 </window>

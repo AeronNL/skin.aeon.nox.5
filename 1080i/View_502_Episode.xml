@@ -8,15 +8,7 @@
             <control type="group">
                 <posx>0</posx>
                 <posy>0</posy>
-                <!-- TV Show Logo -->
-                <control type="image">
-                    <posx>50</posx>
-                    <posy>870</posy>
-                    <width>390</width>
-                    <height>164</height>
-                    <aspectratio aligny="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Art(tvshow.clearlogo)]</texture>
-                </control>
+				
                 <control type="fixedlist" id="502">
                     <posx>60</posx>
                     <posy>180</posy>
@@ -26,8 +18,8 @@
                     <movement>2</movement>
                     <focusposition>3</focusposition>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                    <onleft>SetFocus(9050)</onleft>
-                    <onright>60</onright>
+                    <onleft>SetFocus(9050,0)</onleft>
+                    <onright>noop</onright>
                     <onup>502</onup>
                     <ondown>502</ondown>
                     <pagecontrol>60</pagecontrol>
@@ -41,18 +33,20 @@
                     <animation effect="slide" end="0,0" time="160" condition="Container(502).Row(4)">Conditional</animation>
                     <animation effect="slide" end="0,0" time="160" condition="Container(502).Row(5)">Conditional</animation>
                     <itemlayout height="100" width="1820" condition="Container.Content(episodes)">
+
                         <!-- Title -->
                         <control type="label">
-                            <posx>925</posx>
+                            <posx>1715</posx>
                             <width>790</width>
                             <height>70</height>
                             <font>font30</font>
                             <textcolor>grey2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_EpisodeThemeColourVar]</selectedcolor>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Label]</label>
+                            <label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
                         </control>
+						
                         <!-- Watched Status -->
                         <control type="image">
                             <posx>1750</posx>
@@ -60,7 +54,8 @@
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.Overlay]</texture>
+                            <texture>$INFO[ListItem.Overlay,overlays/list/]</texture>
+							<colordiffuse>$VAR[Colour_EpisodeWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </itemlayout>
                     <focusedlayout height="275" width="1820" condition="Container.Content(episodes)">
@@ -70,8 +65,7 @@
                             <width>484</width>
                             <height>290</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                            <fadetime>IconCrossfadeTime</fadetime>
+                            <texture>$VAR[EpisodeThumbnailVar]</texture>
                             <bordertexture border="20">thumbs/thumb_shadow.png</bordertexture>
                             <bordersize>20</bordersize>
                         </control>
@@ -83,6 +77,8 @@
                             <texture>black.png</texture>
                             <colordiffuse>88ffffff</colordiffuse>
                         </control>
+						
+						<!-- Rating -->
                         <control type="label">
                             <posx>1270</posx>
                             <posy>205</posy>
@@ -91,36 +87,41 @@
                             <align>left</align>
                             <textoffsetx>10</textoffsetx>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[ListItem.Label2]</label>
+                            <label>$INFO[ListItem.RatingAndVotes]</label>
                             <font>font14</font>
                         </control>
+						
+						<!-- First Aired Date -->
                         <control type="label">
-                            <posx>1271</posx>
+                            <posx>1715</posx>
                             <posy>205</posy>
                             <width>444</width>
                             <height>40</height>
                             <align>right</align>
                             <textoffsetx>10</textoffsetx>
                             <textcolor>grey2</textcolor>
-                            <label>$VAR[VideoListLabel2Var]</label>
+                            <label>$INFO[ListItem.Date]</label>
                             <font>font14</font>
                         </control>
+						
                         <!-- Title -->
                         <control type="label">
+							<posx>1220</posx>
                             <posy>-15</posy>
-                            <width>1220</width>
+                            <width>850</width>
                             <height>70</height>
                             <font>font30</font>
                             <textcolor>white2</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <selectedcolor>$VAR[Colour_EpisodeThemeColourVar]</selectedcolor>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <label>$INFO[ListItem.Label]</label>
+                            <label>$INFO[ListItem.Episode]. $INFO[ListItem.Label]</label>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(502)">Conditional</animation>
                         </control>
+						
                         <!-- Plot -->
                         <control type="textbox">
-                            <label>$VAR[VideoPlotVar]</label>
+                            <label>$VAR[PlotVar]</label>
                             <posy>70</posy>
                             <posx>370</posx>
                             <width>850</width>
@@ -128,9 +129,24 @@
                             <align>right</align>
                             <textcolor>white2</textcolor>
                             <font>font15_textbox</font>
-                            <autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                            <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
                             <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(502)">Conditional</animation>
+							<visible>!Skin.HasSetting(General.SmallPlotText)</visible>
                         </control>
+						<control type="textbox">
+                            <label>$VAR[PlotVar]</label>
+                            <posy>70</posy>
+                            <posx>370</posx>
+                            <width>850</width>
+                            <height>180</height>
+                            <align>right</align>
+                            <textcolor>white2</textcolor>
+                            <font>font15_textbox_episode</font>
+                            <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
+                            <animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(502)">Conditional</animation>
+							<visible>Skin.HasSetting(General.SmallPlotText)</visible>
+                        </control>
+						
                         <!-- Watched Status -->
                         <control type="image">
                             <posx>1750</posx>
@@ -138,10 +154,12 @@
                             <width>64</width>
                             <height>64</height>
                             <aspectratio>keep</aspectratio>
-                            <texture>$INFO[ListItem.Overlay]</texture>
+                            <texture>$INFO[ListItem.Overlay,overlays/list/]</texture>
+							<colordiffuse>$VAR[Colour_EpisodeWatchedStatusColourVar]</colordiffuse>
                         </control>
                     </focusedlayout>
                 </control>
+				
                 <!-- Scrollbar -->
                 <control type="scrollbar" id="60">
                     <posx>1906</posx>
@@ -153,7 +171,7 @@
                     <ondown>60</ondown>
                     <onleft>502</onleft>
                     <onright>SetProperty(MediaMenu,True,home)</onright>
-                    <onright>SetFocus(9050)</onright>
+                    <onright>SetFocus(9050,0)</onright>
                     <texturesliderbackground>-</texturesliderbackground>
                     <texturesliderbar border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
                     <texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>

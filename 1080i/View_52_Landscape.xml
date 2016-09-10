@@ -7,6 +7,7 @@
             <include>ViewAnimation</include>
             <include condition="Skin.HasSetting(HorizontalListNav)">LandscapeFixed</include>
             <include condition="!Skin.HasSetting(HorizontalListNav)">LandscapeWrap</include>
+			
             <control type="group">
                 <posy>-10</posy>
                 <camera x="960" y="200" />
@@ -181,8 +182,8 @@
         <onleft>52</onleft>
         <onright>52</onright>
         <onup>SetProperty(MediaMenu,True,home)</onup>
-        <onup>SetFocus(9050)</onup>
-        <ondown>61</ondown>
+        <onup>SetFocus(9050,0)</onup>
+        <ondown>noop</ondown>
         <pagecontrol>61</pagecontrol>
         <focusposition>1</focusposition>
         <orientation>horizontal</orientation>
@@ -191,7 +192,8 @@
         <scrolltime tween="sine" easing="inout">500</scrolltime>
         <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(artists)</visible>
         <itemlayout width="642" height="680"></itemlayout>
-        <focusedlayout width="636" height="680"></focusedlayout>
+        <focusedlayout width="636" height="680">
+		</focusedlayout>
     </include>
     <include name="LandscapeThumbCommonValues">
         <posx>0</posx>
@@ -220,154 +222,284 @@
     <include name="LandscapeItem-3">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem-3Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem-3Var]</texture>
         </control>
         <control type="image">
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem-3Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem-3Var]</texture>
         </control>
         <control type="group">
             <posx>42</posx>
             <posy>42</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-3</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-3</include>
+        </control>
+		<control type="group">
+            <posx>42</posx>
+            <posy>332</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-3</include>
         </control>
     </include>
     <include name="LandscapeItem-2">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem-2Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem-2Var]</texture>
         </control>
         <control type="image">
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>299</width>
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem-2Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem-2Var]</texture>
         </control>
         <control type="group">
             <posx>42</posx>
             <posy>42</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-2</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-2</include>
+        </control>
+		<control type="group">
+            <posx>42</posx>
+            <posy>332</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-2</include>
         </control>
     </include>
     <include name="LandscapeItem-1">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem-1Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem-1Var]</texture>
         </control>
         <control type="image">
             <aspectratio scalediffuse="false" aligny="top" align="left">scale</aspectratio>
             <width>314</width>
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem-1Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem-1Var]</texture>
         </control>
         <control type="image">
             <include>WatchedOverlayLandscape</include>
             <texture>$VAR[IconOverlay-1Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
         </control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>42</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay-1Var]</texture>
+		</control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>332</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay-1Var]</texture>
+		</control>
         <control type="group">
             <posx>42</posx>
             <posy>42</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon-1</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
+        </control>
+		<control type="group">
+            <posx>42</posx>
+            <posy>332</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon-1</include>
         </control>
     </include>
     <include name="LandscapeItem0">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem0Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem0Var]</texture>
         </control>
         <control type="image">
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem0Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem0Var]</texture>
         </control>
         <control type="image">
             <include>WatchedOverlayLandscape</include>
-            <texture>$VAR[IconOverlay0Var]</texture>
+            <texture background="true">$VAR[IconOverlay0Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
         </control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>42</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay0Var]</texture>
+		</control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>332</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay0Var]</texture>
+		</control>
         <control type="group">
             <posx>42</posx>
             <posy>42</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon0</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon0</include>
+        </control>
+		<control type="group">
+            <posx>42</posx>
+            <posy>332</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon0</include>
         </control>
     </include>
     <include name="LandscapeItem1">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem1Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem1Var]</texture>
         </control>
         <control type="image">
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>370</posx>
             <width>310</width>
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem1Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem1Var]</texture>
         </control>
         <control type="image">
             <include>WatchedOverlayLandscape</include>
             <texture>$VAR[IconOverlay1Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
         </control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>42</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay1Var]</texture>
+		</control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>332</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay1Var]</texture>
+		</control>
         <control type="group">
             <posx>42</posx>
             <posy>42</posy>
-            <include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon1</include>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + !Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon1</include>
+        </control>
+		<control type="group">
+            <posx>42</posx>
+            <posy>332</posy>
+            <include condition="!Skin.HasSetting(Disable.UnwatchedIcon) + Skin.HasSetting(Enable.LowerCircles)">UnwatchedIcon1</include>
         </control>
     </include>
     <include name="LandscapeItem2">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem2Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem2Var]</texture>
         </control>
         <control type="image">
             <aspectratio scalediffuse="false" aligny="top" align="right">scale</aspectratio>
             <posx>380</posx>
             <width>300</width>
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem2Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem2Var]</texture>
         </control>
         <control type="image">
             <include>WatchedOverlayLandscape</include>
             <texture>$VAR[IconOverlay2Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
         </control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>42</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay2Var]</texture>
+		</control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>332</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay2Var]</texture>
+		</control>
     </include>
     <include name="LandscapeItem3">
         <control type="image">
             <include>LandscapeThumbCommonValues</include>
-            <texture background="true" diffuse="thumbs/thumb_mask.png">$VAR[LandscapeItem3Var]</texture>
+            <texture diffuse="thumbs/thumb_mask.png" background="true">$VAR[LandscapeItem3Var]</texture>
         </control>
         <control type="image">
             <include>LandscapeThumbReflectionCommonValues</include>
-            <texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[LandscapeItem3Var]</texture>
+            <texture flipy="true" diffuse="thumbs/thumb_diffuse.png" background="true">$VAR[LandscapeItem3Var]</texture>
         </control>
         <control type="image">
             <include>WatchedOverlayLandscape</include>
             <texture>$VAR[IconOverlay3Var]</texture>
+			<visible>!Skin.HasSetting(Enable.Circles)</visible>
         </control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + !Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>42</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay3Var]</texture>
+		</control>
+		<control type="image">
+			<visible>Skin.HasSetting(Enable.Circles) + Skin.HasSetting(Enable.LowerCircles)</visible>
+			<posx>622</posx>
+            <posy>332</posy>
+			<width>36</width>
+			<height>36</height>
+			<aspectratio>keep</aspectratio>
+			<colordiffuse>$VAR[Colour_LandscapeWatchedStatusColourVar]</colordiffuse>
+			<texture>$VAR[IconOverlay3Var]</texture>
+		</control>
     </include>
     <variable name="LandscapeItem-3Var">
-        <value condition="!IsEmpty(ListItem(-3).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(-3).Art(fanart)]</value>
-        <value>$INFO[ListItem(-3).Icon]</value>
+        <value condition="!IsEmpty(ListItem(-3).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(-3).Status(unwatched) | ListItem(-3).Status(inprogress)]]]">$INFO[ListItem(-3).Art(fanart)]</value>
+        <value>$INFO[ListItem(-3).Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem-2Var">
-        <value condition="!IsEmpty(ListItem(-2).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(-2).Art(fanart)]</value>
-        <value>$INFO[ListItem(-2).Icon]</value>
+        <value condition="!IsEmpty(ListItem(-2).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(-2).Status(unwatched) | ListItem(-2).Status(inprogress)]]]">$INFO[ListItem(-2).Art(fanart)]</value>
+        <value>$INFO[ListItem(-2).Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem-1Var">
-        <value condition="!IsEmpty(ListItem(-1).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(-1).Art(fanart)]</value>
-        <value>$INFO[ListItem(-1).Icon]</value>
+        <value condition="!IsEmpty(ListItem(-1).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(-1).Status(unwatched) | ListItem(-1).Status(inprogress)]]]">$INFO[ListItem(-1).Art(fanart)]</value>
+        <value>$INFO[ListItem(-1).Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem0Var">
-        <value condition="!IsEmpty(ListItem.Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem.Art(fanart)]</value>
-        <value>$INFO[ListItem.Icon]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem.Status(unwatched) | ListItem.Status(inprogress)]]]">$INFO[ListItem.Art(fanart)]</value>
+        <value>$INFO[ListItem.Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem1Var">
-        <value condition="!IsEmpty(ListItem(1).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(1).Art(fanart)]</value>
-        <value>$INFO[ListItem(1).Icon]</value>
+        <value condition="!IsEmpty(ListItem(1).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(1).Status(unwatched) | ListItem(1).Status(inprogress)]]]">$INFO[ListItem(1).Art(fanart)]</value>
+        <value>$INFO[ListItem(1).Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem2Var">
-        <value condition="!IsEmpty(ListItem(2).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(2).Art(fanart)]</value>
-        <value>$INFO[ListItem(2).Icon]</value>
+        <value condition="!IsEmpty(ListItem(2).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(2).Status(unwatched) | ListItem(2).Status(inprogress)]]]">$INFO[ListItem(2).Art(fanart)]</value>
+        <value>$INFO[ListItem(2).Art(thumb)]</value>
     </variable>
     <variable name="LandscapeItem3Var">
-        <value condition="!IsEmpty(ListItem(3).Art(fanart)) + ![Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem(3).Art(fanart)]</value>
-        <value>$INFO[ListItem(3).Icon]</value>
+        <value condition="!IsEmpty(ListItem(3).Art(fanart)) + [![Container.Content(episodes) | Container.Content(seasons)] | [Container.Content(episodes) + Skin.HasSetting(Disable.UnwatchedPlot) + [ListItem(3).Status(unwatched) | ListItem(3).Status(inprogress)]]]">$INFO[ListItem(3).Art(fanart)]</value>
+        <value>$INFO[ListItem(3).Art(thumb)]</value>
     </variable>
 </includes>

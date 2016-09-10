@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window id="4">
     <defaultcontrol always="true">9000</defaultcontrol>
+	<onload>Skin.SetString(SectionType,Settings)</onload>
+	<onload>SetProperty(Window.HasSettings,True,home)</onload>
+	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
+	<onunload>Skin.Reset(SectionType)</onunload>
     <allowoverlay>no</allowoverlay>
     <controls>
-        <!-- NOWALL Settings Background -->
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture>special://skin/backgrounds/system.jpg</texture>
-        </control>
-        <!-- Visualization Background -->
-        <control type="visualisation">
-            <include>FullscreenDimensions</include>
-            <visible>Player.HasAudio + !Skin.HasSetting(Disable.ShowBackgroundVis)</visible>
-            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
-        </control>
-        <!-- Video Background -->
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture>black.png</texture>
-            <visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo)</visible>
-        </control>
-        <control type="videowindow">
-            <include>FullscreenDimensions</include>
-            <visible>Player.HasVideo + !Skin.HasSetting(Disable.ShowBackgroundVideo)</visible>
-        </control>
-        <include>Topbar</include>
+	
+        <!-- Background -->
+		<include>CommonBackground</include>
+		
+       <include>Topbar</include>
+		
         <control type="group">
             <posx>0</posx>
             <posy>128</posy>
@@ -56,7 +45,7 @@
                         <font>font15</font>
                         <textoffsetx>20</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -75,6 +64,8 @@
                         <width>356</width>
                         <height>90</height>
                         <texture border="4">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <include>VisibleFadeEffect</include>
                     </control>
                     <control type="label">
@@ -85,7 +76,7 @@
                         <font>font15</font>
                         <textoffsetx>20</textoffsetx>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -93,6 +84,7 @@
                     </control>
                 </focusedlayout>
                 <content>
+				
                     <!-- Appearance Settings -->
                     <item id="1">
                         <label>480</label>
@@ -101,6 +93,7 @@
                         <onclick>ActivateWindow(AppearanceSettings)</onclick>
                         <icon>-</icon>
                     </item>
+					
                     <!-- Playback Settings -->
                     <item id="2">
                         <label>31610</label>
@@ -109,6 +102,7 @@
                         <onclick>ActivateWindow(VideosSettings)</onclick>
                         <icon>-</icon>
                     </item>
+					
                     <!-- System Settings -->
                     <item id="8">
                         <label>13000</label>
@@ -117,6 +111,7 @@
                         <onclick>ActivateWindow(SystemSettings)</onclick>
                         <icon>-</icon>
                     </item>
+					
                     <!-- Network Settings -->
                     <item id="9">
                         <label>31602</label>
@@ -127,6 +122,7 @@
                     </item>
                 </content>
             </control>
+			
             <!-- Display Scrollbar -->
             <control type="scrollbar" id="61">
                 <posx>65</posx>
@@ -143,6 +139,7 @@
                 <texturesliderbar border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
                 <texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
             </control>
+			
             <!-- Display Aeon Nox logo -->
             <control type="image">
                 <description>LOGO</description>
@@ -153,25 +150,55 @@
                 <aspectratio>keep</aspectratio>
                 <texture>aeon-nox-logo.png</texture>
             </control>
+			
             <!-- Display Right Panel -->
             <include>SystemRightPanel</include>
             <control type="image">
+				<visible>Container(9000).HasFocus(1)</visible>
                 <posx>522</posx>
                 <posy>32</posy>
                 <width>1316</width>
                 <height>839</height>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">special://skin/backgrounds/default_settings.jpg</texture>
+                <texture>special://skin/backgrounds/appearance.jpg</texture>
+            </control>
+			<control type="image">
+				<visible>Container(9000).HasFocus(2)</visible>
+                <posx>522</posx>
+                <posy>32</posy>
+                <width>1316</width>
+                <height>839</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture>special://skin/backgrounds/playback.jpg</texture>
+            </control>
+			<control type="image">
+				<visible>Container(9000).HasFocus(8)</visible>
+                <posx>522</posx>
+                <posy>32</posy>
+                <width>1316</width>
+                <height>839</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture>special://skin/backgrounds/system.jpg</texture>
+            </control>
+			<control type="image">
+				<visible>Container(9000).HasFocus(9)</visible>
+                <posx>522</posx>
+                <posy>32</posy>
+                <width>1316</width>
+                <height>839</height>
+                <aspectratio align="center">scale</aspectratio>
+                <texture>special://skin/backgrounds/network.jpg</texture>
             </control>
             <control type="image">
                 <posx>522</posx>
                 <posy>32</posy>
                 <width>1316</width>
                 <height>839</height>
-                <aspectratio align="center">scale</aspectratio>
-                <texture>black.png</texture>
-                <animation effect="fade" start="45" end="45" time="0" condition="true">conditional</animation>
+                <aspectratio align="center">stretch</aspectratio>
+                <texture>logo_back.png</texture>
+                <!--<animation effect="fade" start="45" end="45" time="0" condition="true">conditional</animation>-->
             </control>
+			
             <!-- Display Description -->
             <control type="textbox">
                 <description>description area</description>
@@ -182,7 +209,7 @@
                 <font>font15_textbox</font>
                 <align>left</align>
                 <textcolor>grey2</textcolor>
-                <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+                <autoscroll time="3000" delay="6000" repeat="5000">Skin.HasSetting(Enable.AutoScroll)</autoscroll>
                 <label>$INFO[Container(9000).ListItem.Property(description)]</label>
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>

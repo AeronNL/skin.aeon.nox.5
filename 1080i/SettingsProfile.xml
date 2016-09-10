@@ -36,7 +36,7 @@
                         <font>font15</font>
                         <textoffsetx>20</textoffsetx>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -55,6 +55,7 @@
                         <width>356</width>
                         <height>90</height>
                         <texture border="4">listselect_fo.png</texture>
+						<colordiffuse>$VAR[Colour_ThemeColourVar]</colordiffuse>
                         <visible>Control.HasFocus(2)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
@@ -66,7 +67,7 @@
                         <font>font15</font>
                         <textoffsetx>20</textoffsetx>
                         <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[Colour_ThemeColourVar]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
@@ -132,7 +133,7 @@
                 <control type="button" id="5">
                     <description>Auto Login</description>
                     <label>$LOCALIZE[33084]</label>
-                    <label2>$INFO[System.ProfileAutoLogin, [COLOR labelheader],[/COLOR]]</label2>
+                    <label2>$INFO[System.ProfileAutoLogin, [COLOR $VAR[Colour_ThemeColourVar]],[/COLOR]]</label2>
                     <width>1316</width>
                     <height>90</height>
                     <font>font15</font>
@@ -166,7 +167,7 @@
                     <width>1181</width>
                     <height>115</height>
                     <aligny>top</aligny>
-                    <textcolor>labelheader</textcolor>
+                    <textcolor>$VAR[Colour_ThemeColourVar]</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <textoffsetx>15</textoffsetx>
                     <font>font15_title</font>
